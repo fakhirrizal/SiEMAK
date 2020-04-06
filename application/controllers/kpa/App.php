@@ -8,18 +8,18 @@ class App extends CI_Controller {
 	}
 	public function launcher()
 	{
-		// $this->load->view('admin/template/header',$data);
-		$this->load->view('admin/app/launcher');
-		// $this->load->view('admin/template/footer');
+		// $this->load->view('kpa/template/header',$data);
+		$this->load->view('kpa/app/launcher');
+		// $this->load->view('kpa/template/footer');
 	}
     public function home()
 	{
 		$data['parent'] = 'home';
 		$data['child'] = '';
 		$data['grand_child'] = '';
-		$this->load->view('admin/template/header',$data);
-		$this->load->view('admin/app/home',$data);
-		$this->load->view('admin/template/footer');
+		$this->load->view('kpa/template/header',$data);
+		$this->load->view('kpa/app/home',$data);
+		$this->load->view('kpa/template/footer');
 	}
 	public function menu()
 	{
@@ -27,9 +27,9 @@ class App extends CI_Controller {
 		$data['child'] = '';
 		$data['grand_child'] = '';
 		$data['clinic_center_menu'] = $this->Main_model->getSelectedData('menu a', '*', array("parent_id" => "", "a.app_key" => "clinic_center", "a.menu_status" => '1', 'deleted' => '0'), 'a.menu_order ASC','','','','')->result();
-		$this->load->view('admin/template/header',$data);
-		$this->load->view('admin/app/menu',$data);
-		$this->load->view('admin/template/footer');
+		$this->load->view('kpa/template/header',$data);
+		$this->load->view('kpa/app/menu',$data);
+		$this->load->view('kpa/template/footer');
 	}
 	public function log_activity()
 	{
@@ -41,9 +41,9 @@ class App extends CI_Controller {
 			'on' => 'a.user_id=b.id',
 			'pos' => 'LEFT'
 		))->result();
-		$this->load->view('admin/template/header',$data);
-		$this->load->view('admin/app/log_activity',$data);
-		$this->load->view('admin/template/footer');
+		$this->load->view('kpa/template/header',$data);
+		$this->load->view('kpa/app/log_activity',$data);
+		$this->load->view('kpa/template/footer');
 	}
 	public function cleaning_log(){
 		$this->db->trans_start();
@@ -51,11 +51,11 @@ class App extends CI_Controller {
 		$this->db->trans_complete();
 		if($this->db->trans_status() === false){
 			$this->session->set_flashdata('gagal','<div class="alert alert-warning"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><strong></i>Oops! </strong>data gagal dihapus.<br /></div>' );
-			echo "<script>window.location='".base_url()."admin_side/log_activity/'</script>";
+			echo "<script>window.location='".base_url()."kpa_side/log_activity/'</script>";
 		}
 		else{
 			$this->session->set_flashdata('sukses','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><strong></i>Yeah! </strong>data telah berhasil dihapus.<br /></div>' );
-			echo "<script>window.location='".base_url()."admin_side/log_activity/'</script>";
+			echo "<script>window.location='".base_url()."kpa_side/log_activity/'</script>";
 		}
 	}
 	public function about()
@@ -63,18 +63,18 @@ class App extends CI_Controller {
 		$data['parent'] = 'about';
 		$data['child'] = '';
 		$data['grand_child'] = '';
-		$this->load->view('admin/template/header',$data);
-		$this->load->view('admin/app/about',$data);
-		$this->load->view('admin/template/footer');
+		$this->load->view('kpa/template/header',$data);
+		$this->load->view('kpa/app/about',$data);
+		$this->load->view('kpa/template/footer');
 	}
 	public function helper()
 	{
 		$data['parent'] = 'helper';
 		$data['child'] = '';
 		$data['grand_child'] = '';
-		$this->load->view('admin/template/header',$data);
-		$this->load->view('admin/app/helper',$data);
-		$this->load->view('admin/template/footer');
+		$this->load->view('kpa/template/header',$data);
+		$this->load->view('kpa/app/helper',$data);
+		$this->load->view('kpa/template/footer');
 	}
 	/* Menu setting and user's permission */
 	public function ajax_function(){
@@ -84,7 +84,7 @@ class App extends CI_Controller {
 				'on' => 'a.user_id=b.id',
 				'pos' => 'LEFT'
 			))->result();
-			$this->load->view('admin/app/ajax_detail_log_aktifitas',$data);
+			$this->load->view('kpa/app/ajax_detail_log_aktifitas',$data);
 		}
 	}
 }

@@ -46,7 +46,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END PAGE LEVEL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
         <!-- END THEME LAYOUT STYLES -->
-        <link rel="shortcut icon" href="<?= site_url(); ?>assets/icon.png" /> </head>
+        <link rel="shortcut icon" href="http://iainpekalongan.ac.id/images/favicon.ico" /> </head>
     <!-- END HEAD -->
 
     <body class=" login">
@@ -54,7 +54,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="logo">
             <a href="#">
                 <img src="<?=base_url('assets/pages/img/logo.png');?>" style="height: 100px;" alt="" />
-                <h4>Sistem Informasi Evaluasi dan Monitoring Anggaran dan Kegiatan</h4> </a>
+                <!-- <font color='black'><b><h4>Sistem Informasi Evaluasi dan Monitoring Anggaran dan Kegiatan</h4><h3>Institut Agama Islam Negeri</h3></b></font> -->
+            </a>
         </div>
         <!-- END LOGO -->
         <!-- BEGIN LOGIN -->
@@ -122,7 +123,7 @@ License: You must have a valid license purchased only from themeforest(the above
             </form>
             <!-- END FORGOT PASSWORD FORM -->
         </div>
-        <div class="copyright"> 2020 © </div>
+        <div class="copyright"> 2020 © SiEMAK </div>
         <!-- END LOGIN -->
         <!--[if lt IE 9]>
 <script src="../assets/global/plugins/respond.min.js"></script>

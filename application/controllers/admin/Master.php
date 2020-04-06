@@ -873,9 +873,98 @@ class Master extends CI_Controller {
 		$data_tampil = array();
 		$no = 1;
 		foreach ($get_data1 as $key => $value) {
+			$return_on_click = "return confirm('Anda yakin?')";
+			if($value->id==$this->session->userdata('id')){
+				echo'';
+			}else{
+				$isi['number'] = $no++.'.';
+				$isi['nama'] = $value->fullname;
+				$isi['username'] = $value->username;
+				$isi['role'] = 'Admin';
+				$isi['total_login'] = number_format($value->total_login,0).'x';
+				if($value->last_activity==NULL){
+					$isi['last_activity'] = '-';
+				}else{
+					$isi['last_activity'] = $this->Main_model->convert_datetime($value->last_activity);
+				}
+				$isi['action'] =	'
+									<div class="btn-group" style="text-align: center;">
+										<button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Aksi
+											<i class="fa fa-angle-down"></i>
+										</button>
+										<ul class="dropdown-menu" role="menu">
+											<li>
+												<a href="'.site_url('admin_side/ubah_data_admin/'.md5($value->id)).'">
+													<i class="icon-wrench"></i> Ubah Data </a>
+											</li>
+											<li>
+												<a onclick="'.$return_on_click.'" href="'.site_url('admin_side/hapus_data_admin/'.md5($value->id)).'">
+													<i class="icon-trash"></i> Hapus Data </a>
+											</li>
+											<li class="divider"> </li>
+											<li>
+												<a href="'.site_url('admin_side/atur_ulang_kata_sandi_admin/'.md5($value->id)).'">
+													<i class="fa fa-refresh"></i> Atur Ulang Sandi
+												</a>
+											</li>
+										</ul>
+									</div>
+									';
+				$data_tampil[] = $isi;
+			}
+		}
+		$get_data2 = $this->Main_model->getSelectedData('user a', 'a.*',array("a.is_active" => '1','a.deleted' => '0','b.role_id' => '2'),'','','','',array(
+			'table' => 'user_to_role b',
+			'on' => 'a.id=b.user_id',
+			'pos' => 'LEFT'
+		))->result();
+		foreach ($get_data2 as $key => $value) {
 			$isi['number'] = $no++.'.';
 			$isi['nama'] = $value->fullname;
 			$isi['username'] = $value->username;
+			$isi['role'] = 'Admin KPA';
+			$isi['total_login'] = number_format($value->total_login,0).'x';
+			if($value->last_activity==NULL){
+				$isi['last_activity'] = '-';
+			}else{
+				$isi['last_activity'] = $this->Main_model->convert_datetime($value->last_activity);
+			}
+			$return_on_click = "return confirm('Anda yakin?')";
+			$isi['action'] =	'
+								<div class="btn-group" style="text-align: center;">
+									<button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Aksi
+										<i class="fa fa-angle-down"></i>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li>
+											<a href="'.site_url('admin_side/ubah_data_admin/'.md5($value->id)).'">
+												<i class="icon-wrench"></i> Ubah Data </a>
+										</li>
+										<li>
+											<a onclick="'.$return_on_click.'" href="'.site_url('admin_side/hapus_data_admin/'.md5($value->id)).'">
+												<i class="icon-trash"></i> Hapus Data </a>
+										</li>
+										<li class="divider"> </li>
+										<li>
+											<a href="'.site_url('admin_side/atur_ulang_kata_sandi_admin/'.md5($value->id)).'">
+												<i class="fa fa-refresh"></i> Atur Ulang Sandi
+											</a>
+										</li>
+									</ul>
+								</div>
+								';
+			$data_tampil[] = $isi;
+		}
+		$get_data3 = $this->Main_model->getSelectedData('user a', 'a.*',array("a.is_active" => '1','a.deleted' => '0','b.role_id' => '3'),'','','','',array(
+			'table' => 'user_to_role b',
+			'on' => 'a.id=b.user_id',
+			'pos' => 'LEFT'
+		))->result();
+		foreach ($get_data3 as $key => $value) {
+			$isi['number'] = $no++.'.';
+			$isi['nama'] = $value->fullname;
+			$isi['username'] = $value->username;
+			$isi['role'] = 'Admin PPK';
 			$isi['total_login'] = number_format($value->total_login,0).'x';
 			if($value->last_activity==NULL){
 				$isi['last_activity'] = '-';
@@ -944,7 +1033,7 @@ class Master extends CI_Controller {
 
 			$data_insert2 = array(
 				'user_id' => $get_user_id['id']+1,
-				'role_id' => '1'
+				'role_id' => $this->input->post('role_id')
 			);
 			$this->Main_model->insertData('user_to_role',$data_insert2);
 			// print_r($data_insert2);

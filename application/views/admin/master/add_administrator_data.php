@@ -37,6 +37,21 @@
 									</div>
 								</div>
 							</div>
+							<div class="form-group form-md-line-input has-danger">
+								<label class="col-md-2 control-label" for="form_control_1">Level Pengguna <span class="required"> * </span></label>
+								<div class="col-md-10">
+									<div class="input-icon">
+										<select class="form-control" id='role_id' name="role_id" required>
+											<option value=''>-- Pilih --</option>
+											<option value='1'>Admin</option>
+											<option value='2'>Admin KPA</option>
+											<option value='3'>Admin PPK</option>
+										</select>
+										<div class="form-control-focus"> </div>
+										<i class="icon-pin"></i>
+									</div>
+								</div>
+							</div>
 							<hr>
 							<div class="form-group form-md-line-input has-danger">
 								<label class="col-md-2 control-label" for="form_control_1">Username <span class="required"> * </span></label>

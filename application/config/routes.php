@@ -140,6 +140,58 @@ $route['admin_side/penggunaan_anggaran'] = 'admin/Report/penggunaan_anggaran';
 $route['admin_side/detail_belanja/(:any)'] = 'admin/Report/detail_belanja/$1';
 $route['admin_side/hapus_data_belanja/(:any)'] = 'admin/Report/hapus_data_belanja/$1';
 
+/* KPA */
+$route['kpa_side/launcher'] = 'kpa/App/launcher';
+$route['kpa_side/beranda'] = 'kpa/App/home';
+$route['kpa_side/menu'] = 'kpa/App/menu';
+$route['kpa_side/log_activity'] = 'kpa/App/log_activity';
+$route['kpa_side/cleaning_log'] = 'kpa/App/cleaning_log';
+$route['kpa_side/tentang_aplikasi'] = 'kpa/App/about';
+$route['kpa_side/bantuan'] = 'kpa/App/helper';
+
+$route['kpa_side/departemen'] = 'kpa/Master/departemen_data';
+
+$route['kpa_side/kegiatan'] = 'kpa/Master/kegiatan_data';
+
+$route['kpa_side/output'] = 'kpa/Master/output_data';
+
+$route['kpa_side/sub_output'] = 'kpa/Master/sub_output_data';
+
+$route['kpa_side/komponen'] = 'kpa/Master/komponen_data';
+
+$route['kpa_side/sub_komponen'] = 'kpa/Master/sub_komponen_data';
+
+$route['kpa_side/pendapatan'] = 'kpa/Report/pendapatan';
+
+$route['kpa_side/penggunaan_anggaran'] = 'kpa/Report/penggunaan_anggaran';
+$route['kpa_side/detail_belanja/(:any)'] = 'kpa/Report/detail_belanja/$1';
+
+/* PPK */
+$route['ppk_side/launcher'] = 'ppk/App/launcher';
+$route['ppk_side/beranda'] = 'ppk/App/home';
+$route['ppk_side/menu'] = 'ppk/App/menu';
+$route['ppk_side/log_activity'] = 'ppk/App/log_activity';
+$route['ppk_side/cleaning_log'] = 'ppk/App/cleaning_log';
+$route['ppk_side/tentang_aplikasi'] = 'ppk/App/about';
+$route['ppk_side/bantuan'] = 'ppk/App/helper';
+
+$route['ppk_side/departemen'] = 'ppk/Master/departemen_data';
+
+$route['ppk_side/kegiatan'] = 'ppk/Master/kegiatan_data';
+
+$route['ppk_side/output'] = 'ppk/Master/output_data';
+
+$route['ppk_side/sub_output'] = 'ppk/Master/sub_output_data';
+
+$route['ppk_side/komponen'] = 'ppk/Master/komponen_data';
+
+$route['ppk_side/sub_komponen'] = 'ppk/Master/sub_komponen_data';
+
+$route['ppk_side/pendapatan'] = 'ppk/Report/pendapatan';
+
+$route['ppk_side/penggunaan_anggaran'] = 'ppk/Report/penggunaan_anggaran';
+$route['ppk_side/detail_belanja/(:any)'] = 'ppk/Report/detail_belanja/$1';
+
 /* REST API */
 $route['api'] = 'Rest_server/documentation';
 
