@@ -1,0 +1,1527 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 25 Mar 2020 pada 17.46
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `siemak`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `activity_logs`
+--
+
+CREATE TABLE `activity_logs` (
+  `activity_id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) UNSIGNED NOT NULL,
+  `company_id` int(11) UNSIGNED NOT NULL,
+  `activity_type` varchar(64) NOT NULL,
+  `activity_data` text DEFAULT NULL,
+  `activity_time` datetime NOT NULL,
+  `activity_ip_address` varchar(15) DEFAULT NULL,
+  `activity_device` varchar(32) DEFAULT NULL,
+  `activity_os` varchar(16) DEFAULT NULL,
+  `activity_browser` varchar(16) DEFAULT NULL,
+  `activity_location` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `activity_logs`
+--
+
+INSERT INTO `activity_logs` (`activity_id`, `user_id`, `company_id`, `activity_type`, `activity_data`, `activity_time`, `activity_ip_address`, `activity_device`, `activity_os`, `activity_browser`, `activity_location`) VALUES
+(1, 0, 0, 'Login to system', 'Login via web browser', '2020-03-19 09:39:44', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(2, 0, 0, 'Login to system', 'Login via web browser', '2020-03-19 12:59:47', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(3, 0, 0, 'Update admin\'s data', 'Reset password admin\'s account (Administrator)', '2020-03-19 13:03:50', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(4, 0, 0, 'Update admin\'s data', 'Reset password admin\'s account (Administrator)', '2020-03-19 13:04:03', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(5, 0, 0, 'Adding data', 'Menambahkan data Admin (Fakhir Rizal)', '2020-03-19 13:05:57', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(6, 0, 0, 'Deleting admin\'s data', 'Delete admin\'s data (M. Fakhir Rizal)', '2020-03-19 13:14:14', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(7, 0, 0, 'Updating data', 'Mengubah data Departemen (dfsdfs)', '2020-03-19 17:57:37', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(8, 0, 0, 'Updating data', 'Mengubah data Departemen (dfgdf)', '2020-03-19 17:58:16', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(9, 0, 0, 'Deleting departemen\'s data', 'Delete departemen\'s data ()', '2020-03-19 18:05:57', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(10, 0, 0, 'Adding data', 'Menambahkan data Departemen (2)', '2020-03-19 18:10:16', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(11, 0, 0, 'Deleting departemen\'s data', 'Delete departemen\'s data (2)', '2020-03-19 18:12:28', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(12, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:14:06', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(13, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:17:42', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(14, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:22:19', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(15, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:31:35', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(16, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:32:49', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(17, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:33:42', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(18, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:34:43', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(19, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:35:43', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(20, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:36:46', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(21, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:37:50', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(22, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:40:45', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(23, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:41:58', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(24, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 19:43:41', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(25, 0, 0, 'Login to system', 'Login via web browser', '2020-03-19 20:21:05', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(26, 0, 0, 'Login to system', 'Login via web browser', '2020-03-19 23:49:24', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(27, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-19 23:49:49', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(28, 0, 0, 'Login to system', 'Login via web browser', '2020-03-20 00:15:16', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(29, 0, 0, 'Login to system', 'Login via web browser', '2020-03-20 00:16:44', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(30, 0, 0, 'Login to system', 'Login via web browser', '2020-03-25 00:01:38', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(31, 0, 0, 'Login to system', 'Login via web browser', '2020-03-25 16:30:33', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(32, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-25 16:32:32', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(33, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-25 16:42:22', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(34, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-25 16:49:04', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(35, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-25 16:54:53', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(36, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-25 16:59:10', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(37, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-25 17:00:32', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(38, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-25 17:01:39', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(39, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-25 17:03:18', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(40, 0, 0, 'Importing data', 'Import data anggaran kegiatan', '2020-03-25 17:04:16', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(41, 0, 0, 'Login to system', 'Login via web browser', '2020-03-25 20:40:48', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(42, 0, 0, 'Adding data', 'Menambahkan data kegiatan (Tes)', '2020-03-25 21:31:57', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(43, 0, 0, 'Updating data', 'Mengubah data kegiatan (Tes Tes)', '2020-03-25 21:47:45', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(44, 0, 0, 'Updating data', 'Mengubah data kegiatan (Tes Tes Tes)', '2020-03-25 21:48:00', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL),
+(45, 0, 0, 'Deleting data', 'Menghapus data kegiatan (Tes Tes Tes)', '2020-03-25 21:48:36', '::1', 'PC', 'Windows 10', 'Chrome 80.0.3987', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `departemen`
+--
+
+CREATE TABLE `departemen` (
+  `id_departemen` int(10) NOT NULL,
+  `kode_departemen` text DEFAULT NULL,
+  `departemen` text DEFAULT NULL,
+  `kode_anggaran` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `departemen`
+--
+
+INSERT INTO `departemen` (`id_departemen`, `kode_departemen`, `departemen`, `kode_anggaran`) VALUES
+(0, 'FASYA', 'Fakultas Syariah', 'C'),
+(1, 'FUAD', NULL, 'E'),
+(2, 'FTIK', 'FAKULTAS TARBIYAH DAN ILMU KEGURUAN', 'B'),
+(3, 'FEBI', NULL, 'D'),
+(4, 'PASCA', 'FAKULTAS PASCA SARJANA', 'F'),
+(5, 'LPM', NULL, 'H'),
+(6, 'LP2M', NULL, 'G'),
+(7, 'Perpus', 'PERPUSTAKAAN', 'I'),
+(8, 'PTIPD', NULL, 'K'),
+(9, 'UPB', NULL, 'J'),
+(10, 'AKMA', NULL, 'L'),
+(11, 'UMUM', 'BAGIAN UMUM', 'N'),
+(12, 'Rektorat', 'REKTORAT', 'A');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kegiatan`
+--
+
+CREATE TABLE `kegiatan` (
+  `id_kegiatan` int(10) NOT NULL,
+  `kode_kegiatan` text DEFAULT NULL,
+  `kegiatan` text DEFAULT NULL,
+  `pagu` text DEFAULT NULL,
+  `tahun_anggaran` int(4) DEFAULT NULL,
+  `id_departemen` int(9) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kegiatan`
+--
+
+INSERT INTO `kegiatan` (`id_kegiatan`, `kode_kegiatan`, `kegiatan`, `pagu`, `tahun_anggaran`, `id_departemen`) VALUES
+(0, 'AH', ' SEMINAR NASIONAL PEMBANGUNAN RUMAH MODERASI BERAGAMA', '78262000', NULL, 12),
+(1, 'CA', ' UJIAN TINGKAT AKHIR FAKULTAS SYARIAH', '68300000', NULL, 0),
+(2, 'CB', ' PRAKTIKUM MAHASISWA FAKULTAS SYARIAH', '18900000', NULL, 0),
+(3, 'CC', ' PRAKTIK PENGALAMAN LAPANGAN', '79505000', NULL, 0),
+(4, 'CD', ' KULIAH KERJA LAPANGAN', '34225000', NULL, 0),
+(5, 'CE', ' LAYANAN PERWALIAN/PENASEHAT AKADEMIK', '80575000', NULL, 0),
+(6, 'CF', ' HONORARIUM KELEBIHAN JAM MENGAJAR', '41100000', NULL, 0),
+(7, 'CG', ' LAYANAN ADMINISTRASI SEMESTER PENDEK FASYA', '23250000', NULL, 0),
+(8, 'CA', ' PARTISIPASI TENAGA PENDIDIK DAN KEPENDIDIKAN PADA KEGIATAN SEMINAR/SEJENIS', '122508000', NULL, 0),
+(9, 'CB', ' RAPAT KERJA FAKULTAS SYARIAH', '46142000', NULL, 0),
+(10, 'CC', ' PENGELOLAAN JURNAL HUKUM ISLAM', '30560000', NULL, 0),
+(11, 'CD', ' WORKSHOP PENINGKATAN KUALITAS AKADEMIK DOSEN', '33950000', NULL, 0),
+(12, 'CE', ' WORKSHOP TENAGA KEPENDIDIKAN FAKULTAS SYARIAH', '34105000', NULL, 0),
+(13, 'CF', ' SEMINAR NASIONAL & CALL PAPER FAKULTAS SYARIAH', '80650000', NULL, 0),
+(14, 'CG', ' SEMINAR JURUSAN HUKUM EKONOMI SYARIAH', '18230000', NULL, 0),
+(15, 'CH', ' SOSIALISASI ORANG TUA MAHASISWA', '12195000', NULL, 0),
+(16, 'CI', ' VISITASI AKREDITASI PRODI HUKUM TATA NEGARA', '16500000', NULL, 0),
+(17, 'CJ', ' SEMINAR JURUSAN HUKUM KELUARGA', '18230000', NULL, 0),
+(18, 'CK', ' WORKSHOP PENGUATAN KELEMBAGAAN LBH FAKULTAS SYARIAH', '32625000', NULL, 0),
+(19, 'CL', ' WORKSHOP IMPLEMENTASI DOKUMEN SPM', '23945000', NULL, 0),
+(20, 'CM', ' SEMINAR JURUSAN HUKUM TATA NEGARA', '17280000', NULL, 0),
+(21, 'CN', ' TRAINING MOTIVASI AKADEMIK MAHASISWA FAKULTAS SYARIAH (SOFTSKILL)', '21375000', NULL, 0),
+(22, 'CP', ' FGD KONSORSIUM DOSEN', '16530000', NULL, 0),
+(23, 'CQ', ' KLINIK JURNAL INTERNASIONAL BAGI DOSEN', '21665000', NULL, 0),
+(24, 'CA', ' PENGUKUHAN KELULUSAN MAHASISWA', '26226000', NULL, 0),
+(25, 'CA', ' VISITASI AKREDITASI PRODI HUKUM KELUARGA ISLAM', '16500000', NULL, 0),
+(26, 'CA', ' MENGGALI MINAT BAKAT MAHASISWA', '134620000', NULL, 0),
+(27, 'CA', ' LAYANAN ADMINISTRASI DOSEN LUAR BIASA', '238560000', NULL, 0),
+(28, 'CA', ' ACHIEVEMENT MOTIVATION TRAINING FOR SUCCSESS STUDY FASYA', '19652000', NULL, 0),
+(29, 'CB', ' FGD ALUMNI FAKULTAS SYARIAH', '10639000', NULL, 0),
+(30, 'CF', ' STUDIUM GENERAL FAKULTAS', '26339000', NULL, 0),
+(31, 'CA', ' BELANJA KEPERLUAN PERKANTORAN', '152150000', NULL, 0),
+(32, 'EA', ' PEMBINAAN UKM', '147800000', NULL, 1),
+(33, 'EB', ' PENGENALAN BUDAYA AKADEMIK DAN KEMAHASISWAAN', '16400000', NULL, 1),
+(34, 'EC', ' WORKSHOP MENYONGSONG ISO 9001:2015', '25350000', NULL, 1),
+(35, 'EA', ' UJIAN TINGKAT AKHIR FAKULTAS', '68500000', NULL, 1),
+(36, 'EB', ' PRAKTIKUM IBADAH TILAWAH', '10400000', NULL, 1),
+(37, 'EC', ' SKPI', '49100000', NULL, 1),
+(38, 'ED', ' STUDIUM GENERAL SEMESTER GENAP', '22114000', NULL, 1),
+(39, 'EF', ' HONORARIUM KELEBIHAN MENGAJAR', '63300000', NULL, 1),
+(40, 'EG', ' SEMESTER PENDEK', '18480000', NULL, 1),
+(41, 'EH', ' PPL FUAD', '75865000', NULL, 1),
+(42, 'EI', ' KULIAH KERJA LAPANGAN (KKL) FUAD', '51999000', NULL, 1),
+(43, 'EJ', ' PRAKTIKUM FUAD', '2000000', NULL, 1),
+(44, 'EA', ' PENGELOLAAN JURNAL RELIGIA', '30560000', NULL, 1),
+(45, 'EB', ' \"1st INTERNATIONAL CONFERENCE ON INDONESIA: THE CLASH OF RELIGIOUS FUNDAMENTALISM AND MODERATISM\"', '137040000', NULL, 1),
+(46, 'EC', ' SEMINAR PENDIDIKAN', '69201000', NULL, 1),
+(47, 'ED', ' WORKSHOP \"REVIEW KURIKULUM KKNI DALAM MEWUJUDKAN ISLAM MODERAT (FROM FUAD TO ISLAM RAHMATAN LIL\'ALAMIN\"', '35422000', NULL, 1),
+(48, 'EF', ' WORKSHOP \"PENGUATAN KOMPETENSI KEILMUAN DOSEN DALAM TRI DHARMA PERGURUAN TINGGI\"', '36727000', NULL, 1),
+(49, 'EA', ' WISUDA FAKULTAS', '34150000', NULL, 1),
+(50, 'EA', ' PENGADAAN PERALATAN LABORATORIUM KPI', '100080000', NULL, 1),
+(51, 'EB', ' PENGADAAN PERALATAN LABORATORIUM TASAWUF DAN PSIKOTERAPI', '42294000', NULL, 1),
+(52, 'EC', ' PENGADAAN PERALATAN LABORATORIUM BPI', '35540000', NULL, 1),
+(53, 'ED', ' PENGADAAN PERALATAN PERKANTORAN', '128156000', NULL, 1),
+(54, 'EA', ' VISITASI AKREDITASI 4 PRODI  FUAD', '71024000', NULL, 1),
+(55, 'EA', ' HONOR DOSEN LUAR BIASA FUAD', '433440000', NULL, 1),
+(56, 'EA', ' LAYANAN PERWALIAN/PENASEHAT AKADEMIK', '82000000', NULL, 1),
+(57, 'EC', ' RAPAT KERJA TAHUNAN FAKULTAS', '49529000', NULL, 1),
+(58, 'EA', ' BELANJA BARANG CETAKAN', '58550000', NULL, 1),
+(59, 'EC', ' PENDELEGASIAN TENAGA PENDIDIK DAN KEPENDIDIKAN PADA SEMINAR/KEGIATAN SEJENIS (SPD)', '82800000', NULL, 1),
+(60, 'BA', ' ACHIEVEMENT MOTIVATION TRAINING FOR SUCCSESS STUDY FTIK', '48343000', NULL, 2),
+(61, 'BA', ' UJIAN TINGKAT AKHIR FTIK', '552375000', NULL, 2),
+(62, 'BB', ' KULIAH KERJA LAPANGAN FTIK', '142825000', NULL, 2),
+(63, 'BC', ' PRAKTIKUM IBADAH DAN TILAWAH', '28820000', NULL, 2),
+(64, 'BD', ' LAYANAN PERWALIAN/PENASEHAT AKADEMIK', '220875000', NULL, 2),
+(65, 'BE', ' PRAKTIK MENGAJAR', '232250000', NULL, 2),
+(66, 'BH', ' ORIENTASI PENGENALAN PRAMUKA DAN OUTDOOR LEARNING', '32410000', NULL, 2),
+(67, 'BI', ' PRAKTIKUM SENI TARI DAN MICROTEACHING', '24900000', NULL, 2),
+(68, 'BJ', ' SEMESTER PENDEK FTIK', '19180000', NULL, 2),
+(69, 'BK', ' SKPI MAHASISWA FTIK', '109350000', NULL, 2),
+(70, 'BL', ' KELEBIHAN MENGAJAR', '153500000', NULL, 2),
+(71, 'BA', ' WORKSHOP MANAJEMEN TATA KELOLA FTIK', '35530000', NULL, 2),
+(72, 'BB', ' SEMINAR PENDIDIKAN DOSEN (PIAUD DAN PBA)', '37345000', NULL, 2),
+(73, 'BC', ' RAPAT KERJA FTIK', '64327000', NULL, 2),
+(74, 'BD', ' PELATIHAN PENGEMBANGAN MULTIMEDIA PEMBELAJARAN (PGMI)', '38930000', NULL, 2),
+(75, 'BE', ' WORKSHOP PENGELOLAAN PPG FTIK', '30020000', NULL, 2),
+(76, 'BF', ' PELATIHAN GURU PROFESIONAL', '34710000', NULL, 2),
+(77, 'BG', ' PELATIHAN METODOLOGI PENELITIAN T. BAHASA INGGRIS', '35600000', NULL, 2),
+(78, 'BA', ' VISITASI JURUSAN T. MTK DAN T. BAHASA INGGRIS', '24900000', NULL, 2),
+(79, 'BA', ' MENGGALI MINAT DAN BAKAT MAHASISWA FTIK', '174600000', NULL, 2),
+(80, 'BA', ' HONOR DOSEN LUAR BIASA FTIK', '880200000', NULL, 2),
+(81, 'BA', ' WORKSHOP METODOLOGI PENELITIAN T. MTK', '30067000', NULL, 2),
+(82, 'BB', ' PENGELOLAAN JURNAL EDUKASIA ISLAMIKA', '34460000', NULL, 2),
+(83, 'BC', ' PENGELOLAAN JURNAL ALSINATUNA', '34460000', NULL, 2),
+(84, 'BD', ' AKREDITASI JURNAL ALSINATUNA DAN EDUKASIA ISLAMIKA', '28390000', NULL, 2),
+(85, 'BE', ' FGD KONSORSIUM KURIKULUM FTIK', '36070000', NULL, 2),
+(86, 'BF', ' SEMINAR PENDIDIKAN DOSEN JURUSAN PAI', '17972000', NULL, 2),
+(87, 'BG', ' WORKSHOP PENULISAN SKRIPSI', '13500000', NULL, 2),
+(88, 'BA', ' STUDIUM GENERAL SMT GENAP', '127154000', NULL, 2),
+(89, 'BA', ' OPERASIONAL FTIK', '287000000', NULL, 2),
+(90, 'DA', ' ACHIEVEMENT MOTIVATION TRAINING FOR SUCCSESS STUDY FEBI', '37818000', NULL, 3),
+(91, 'DC', ' SEMINAR PENDIDIKAN FEBI', '22756000', NULL, 3),
+(92, 'DE', ' ACADEMIC WRITING ADVOKASI STUDI MAHASISWA)', '37556000', NULL, 3),
+(93, 'DF', ' SEMINAR MOTIVASI MAHASISWA', '22755000', NULL, 3),
+(94, 'DG', ' PROGRAM KREATIFITAS MAHASISWA KEWIRAUSAHAAN', '25245000', NULL, 3),
+(95, 'DA', ' LAYANAN PERWALIAN / PENASEHAT AKADEMIK', '167700000', NULL, 3),
+(96, 'DB', ' HONORARIUM MENGAJAR KELEBIHAN MENGAJAR', '75900000', NULL, 3),
+(97, 'DD', ' UJIAN TINGKAT AKHIR FEBI', '287050000', NULL, 3),
+(98, 'DF', ' KKL FEBI', '114266000', NULL, 3),
+(99, 'DG', ' PPL FEBI', '241453000', NULL, 3),
+(100, 'DI', ' PRAKTIKUM IBADAH DAN TILAWAH', '33380000', NULL, 3),
+(101, 'DA', ' EKSPO FEBI', '13051000', NULL, 3),
+(102, 'DB', ' STUDIUM GENERAL', '2890000', NULL, 3),
+(103, 'DC', ' PENDELEGASIAN TENAGA PENDIDIK DAN KEPENDIDIKAN PADA SEMINAR/ KEGIATAN SEJENISNYA', '78250000', NULL, 3),
+(104, 'DD', ' PENGELOLAAN JURNAL IJIBEC', '32560000', NULL, 3),
+(105, 'DE', ' WISUDA DAN PELATIHAN SOFTSKILL BAGI  MAHASISWA FEBI', '38346000', NULL, 3),
+(106, 'DF', ' RAPAT KERJA PENGELOLA FEBI', '63550000', NULL, 3),
+(107, 'DG', ' PENDELEGASIAN SDM', '27975000', NULL, 3),
+(108, 'DA', ' PENGADAAN PERALATAN KANTOR FEBI', '112500000', NULL, 3),
+(109, 'DA', ' AKREDITASI PRODI.AKUNTANSI SYARIAH DAN PERBANKAN SYARIAH', '48976000', NULL, 3),
+(110, 'DA', ' STUDIUM GENERAL', '24350000', NULL, 3),
+(111, 'DB', ' PRAKTIKUM FEBI', '20350000', NULL, 3),
+(112, 'DA', ' MENGGALI MINAT DAN BAKAT MAHASISWA', '131900000', NULL, 3),
+(113, 'DA', ' HONOR DOSEN LUAR BIASA FEBI', '447000000', NULL, 3),
+(114, 'DB', ' STUDIUM GENERAL', '9000000', NULL, 3),
+(115, 'DF', ' Operasional dan Pemeliharaan kantor lainnya', '68000000', NULL, 3),
+(116, 'DG', ' PEMELIHARAAN GEDUNG', '75150000', NULL, 3),
+(117, 'DA', ' WORKSHOP METODE PENELITIAN EKONOMI BAGI DOSEN', '40580000', NULL, 3),
+(118, 'DB', ' FGD PERSIAPAN AKREDITASI JURNAL IJIBEC', '9540000', NULL, 3),
+(119, 'DB', ' SERTIFIKASI KOMPETENSI PENDAMPING IJAZAH MAHASISWA FEBI', '14740000', NULL, 3),
+(120, 'DC', ' SEMESTER PENDEK', '30600000', NULL, 3),
+(121, 'DD', ' PENYUSUNAN DOKUMEN AKADEMIK DAN AKADEMIK', '77850000', NULL, 3),
+(122, 'FA', ' UJIAN TINGKAT AKHIR PROGRAM PASCASARJANA', '82000000', NULL, 4),
+(123, 'FB', ' UJIAN AKHIR SEMESTER PROGRAM PASCASARJANA', '28700000', NULL, 4),
+(124, 'FC', ' HONOR KELEBIHAN MENGAJAR', '336000000', NULL, 4),
+(125, 'FD', ' HONOR DOSEN LUAR BIASA', '180800000', NULL, 4),
+(126, 'FE', ' HONOR PENASEHAT AKADEMIK', '17400000', NULL, 4),
+(127, 'FF', ' STUDIUM GENERAL PROG. PASCASARJANA', '30350000', NULL, 4),
+(128, 'FG', ' STUDENT FIELD TRIP PASCASARJANA', '57200000', NULL, 4),
+(129, 'FA', ' PENGELOLAAN JURNAL HIKMATUNA', '40360000', NULL, 4),
+(130, 'FB', ' INTERNATIONAL CONFERENCE', '150660000', NULL, 4),
+(131, 'FC', ' WORKSHOP ACADEMIC WRITING', '40781000', NULL, 4),
+(132, 'FD', ' LOKAKARYA PEMBUKAAN PROGRAM STUDI', '38095000', NULL, 4),
+(133, 'FE', ' PENYUSUNAN BORANG 3 PRODI BARU', '17655000', NULL, 4),
+(134, 'FF', ' FGD BEDAH BORANG TIGA PRODI BARU PASCASARJANA', '38545000', NULL, 4),
+(135, 'FA', ' PENERIMAAN MAHASISWA BARU PASCASARJANA', '23230000', NULL, 4),
+(136, 'FB', ' SOSIALISASI PMB PASCASARJANA', '16276000', NULL, 4),
+(137, 'FA', ' OPERASIONAL PASCASARJANA', '41520000', NULL, 4),
+(138, 'HA', ' PELATIHAN DAN REKRUTMEN AUDITOR AMI', '39975000', NULL, 5),
+(139, 'HB', ' SOSIALISASI LAM INTERNASIONAL', '43310000', NULL, 5),
+(140, 'HC', ' TRAINING AUDITOR AIQA', '47000000', NULL, 5),
+(141, 'HD', ' WORKSHOP BKD ONLINE', '39895000', NULL, 5),
+(142, 'HE', ' EVALUASI BKD', '14976000', NULL, 5),
+(143, 'HA', ' SERTIFIKASI DOSEN TAHUN 2019', '2790000', NULL, 5),
+(144, 'HB', ' AUDIT MUTU INTERNAL (AMI)', '18550000', NULL, 5),
+(145, 'HC', ' FGD IDENTIFIKASI DOKUMEN PENDUKUNG APS', '35175000', NULL, 5),
+(146, 'HE', ' RAPAT KERJA LPM', '17900000', NULL, 5),
+(147, 'HF', ' PELATIHAN PENYUSUNAN BORANG APS 9 KRITERIA', '45535000', NULL, 5),
+(148, 'GA', ' PENYUSUNAN JADWAL IMSAKIYAH', '38350000', NULL, 6),
+(149, 'GB', ' PENGELOLAAN JURNAL PENELITIAN', '33260000', NULL, 6),
+(150, 'GC', ' FGD PENELITIAN, PUBLIKASI, PENGABDIAN, DAN GA TAHUN 2019', '24235000', NULL, 6),
+(151, 'GD', ' PENGELOLAAN JURNAL ISJOUST', '33260000', NULL, 6),
+(152, 'GE', ' RAPAT KERJA LP2M TAHUN 2019', '23510000', NULL, 6),
+(153, 'GF', ' SELEKSI DAN SEMINAR PROPOSAL PENELITIAN TAHUN 2020', '30090000', NULL, 6),
+(154, 'GA', ' BANTUAN PEMBERDAYAAN MASYARAKAT BERBASIS PRODI BAGI DOSEN', '311000000', NULL, 6),
+(155, 'GB', ' PEMBEKALAN KLASIKAL KKN [1 TAHUN 2 GELOMBANG]', '58350000', NULL, 6),
+(156, 'GC', ' KKN BERBASIS PRODI [ 1 TAHUN 2 GELOMBANG]', '646100000', NULL, 6),
+(157, 'GD', ' SEMINAR PROPOSAL DAN HASIL DESA BINAAN BERBASIS PROGRAM STUDI BAGI DOSEN', '49590000', NULL, 6),
+(158, 'GA', ' REVIEW SEMINAR PROPOSAL PENELITIAN TAHUN 2020', '19500000', NULL, 6),
+(159, 'IA', ' FGD PENGUATAN PERPUSTAKAAN', '19514000', NULL, 7),
+(160, 'IB', ' RAPAT KOORDINASI TAHUNAN PERPUSTAKAAN', '12073000', NULL, 7),
+(161, 'IC', ' PARTISIPASI TENAGA PENDIDIK/TENAGA KEPENDIDIKAN SDM PERPUSTAKAAN PADA KEGIATAN SEMINAR/SEJENIS', '29400000', NULL, 7),
+(162, 'ID', ' BEDAH BUKU', '18651000', NULL, 7),
+(163, 'IE', ' LOMBA RESENSI BUKU TINGKAT NASIONAL', '20362000', NULL, 7),
+(164, 'IA', ' PENAMBAHAN KOLEKSI PERPUSTAKAAN PTKI (RKP)', '211000000', NULL, 7),
+(165, 'IA', ' PENGADAAN PERALATAN PENUNJANG PERPUSTAKAAN', '142000000', NULL, 7),
+(166, 'IA', ' LANGGANAN PLAGIARISM CHECKER TOOLS', '95695000', NULL, 7),
+(167, 'IA', ' USER EDUCATION PEMUSTAKA', '41737000', NULL, 7),
+(168, 'KA', ' Pengadaan Peralatan Pengolah Data dan Informasi', '206856000', NULL, 8),
+(169, 'KA', ' LAYANAN UNIT TEKNOLOGI INFORMASI DAN PANGKALAN DATA (UTIPD)', '3125000', NULL, 8),
+(170, 'KA', ' PENGELOLAAN WEBSITE', '40000000', NULL, 8),
+(171, 'JA', ' PENINGKATAN KEMAMPUAN BAHASA ASING MAHASISWA', '15652000', NULL, 9),
+(172, 'JB', ' UJIAN TOEFL -TOAFL MAHASISWA WISUDA (GENAP DAN GANJIL)', '68050000', NULL, 9),
+(173, 'JC', ' PELATIHAN EPT (English Proficiency Test) BAGI MAHASISWA SEMESTER GENAP DAN GANJIL', '35642000', NULL, 9),
+(174, 'JD', ' PENYUSUNAN BANK SOAL TES KEMAMPUAN BAHSA INGGRIS', '7600000', NULL, 9),
+(175, 'JE', ' EVALUASI PPBAI', '8390000', NULL, 9),
+(176, 'JF', ' KELAS PENDAMPINGAN TOEFL - TOAFL', '11085000', NULL, 9),
+(177, 'JG', ' TES TOEFL ITP', '9100000', NULL, 9),
+(178, 'JA', ' LOMBA KETRAMPILAN BAHASA ARAB', '16450000', NULL, 9),
+(179, 'JA', ' PENYELENGGARAAN PROGRAM PEMBELAJARAN PPBAI', '716520000', NULL, 9),
+(180, 'LA', ' Bursa Kerja (Job Fair) dan Enterpreneurship Expo', '90800000', NULL, 10),
+(181, 'LA', ' Bidik Misi Rekruitmen Baru', '1234200000', NULL, 10),
+(182, 'LA', ' Bidik Misi On Going Tahun 2018', '1650000000', NULL, 10),
+(183, 'LB', ' Bidik Misi On Going Tahun 2017', '1254000000', NULL, 10),
+(184, 'LC', ' Bidik Misi On Going Tahun 2016', '1140000000', NULL, 10),
+(185, 'LA', ' Bidik Misi On Going Tahun 2015', '360000000', NULL, 10),
+(186, 'LA', ' Beasiswa Tahfidz Quran', '84000000', NULL, 10),
+(187, 'LA', ' PELATIHAN SOFT SKILL BAGI ALUMNI', '88210000', NULL, 10),
+(188, 'LA', ' BELANJA BARANG CETAKAN', '628150000', NULL, 10),
+(189, 'NA', ' REKRUTMEN CPNS (SUBBAG OKPP)', '18936000', NULL, 11),
+(190, 'NB', ' SOSIALISASI SKP ONLINE (Si-EKA) SUBBAG OKPP', '15940000', NULL, 11),
+(191, 'NC', ' EKSPOSE HASIL PENYUSUNAN ANJAB', '38666000', NULL, 11),
+(192, 'ND', ' WORKSHOP TATA NASKAH DINAS BAGI TENAGA KEPENDIDIKAN', '38835000', NULL, 11),
+(193, 'NA', ' KEGIATAN PMPRB DAN PMPZI (SUBBAG OKPP)', '81833000', NULL, 11),
+(194, 'NB', ' PENGANGKATAN SUMPAH PNS, PELANTIKAN PEJABAT DAN PEMBINAAN PEGAWAI (OKPP)', '16100000', NULL, 11),
+(195, 'NC', ' PELATIHAN PENINGKATAN KAPASITAS CLEANING SERVICE', '83360000', NULL, 11),
+(196, 'ND', ' BIMTEK APLIKASI Si-IMAN DAN KETATAUSAHAAN', '15821000', NULL, 11),
+(197, 'AA', ' Pengenalan Budaya Akademik dan Kemahasiswaan (PBAK)', '532582000', NULL, 12),
+(198, 'AB', ' PIONIR', '323602000', NULL, 12),
+(199, 'AC', ' Pembinaan Kemahasiswaan dan Pengembangan Bakat Minat (SEMA, DEMA, UKM )', '657600000', NULL, 12),
+(200, 'AD', ' SEMINAR PENGUATAN PERAN DAN FUNGSI KELEMBAGAAN KEMAHASISWAAN', '6900000', NULL, 12),
+(201, 'AE', ' PELATIHAN TOEFL DAN TOAFL MAHASISWA BIDIKMISI', '33820000', NULL, 12),
+(202, 'AF', ' PELATIHAN KEWIRAUSAHAAN BAGI MAHASISWA BIDIKMISI', '15217000', NULL, 12),
+(203, 'AK', ' PROGRAM DIROSAH TAHFIDZUL QUR\'AN', '41600000', NULL, 12),
+(204, 'AA', ' STUDIUM GENERAL', '115752000', NULL, 12),
+(205, 'AB', ' UJIAN SEMESTER', '1555483000', NULL, 12),
+(206, 'AC', ' FGD PENYUSUNAN BUKU PEDOMAN PENDIDIKAN DAN PENYUSUNAN KARYA TULIS ILMIAH', '27485000', NULL, 12),
+(207, 'AA', ' FGD PENGGUNA ALUMNI', '37990000', NULL, 12),
+(208, 'AB', ' WORKSHOP KOMPETENSI CALON DOSEN CPNS', '79741000', NULL, 12),
+(209, 'AC', ' WORKSHOP PENYUSUNAN ANALISIS JABATAN DAN REVIEW SOP', '65972000', NULL, 12),
+(210, 'AD', ' SABBATICAL LEAVE', '63375000', NULL, 12),
+(211, 'AE', ' FGD RANCANGAN KEPUTUSAN REKTOR', '55085000', NULL, 12),
+(212, 'AF', ' JURNAL MUWAZAH', '43760000', NULL, 12),
+(213, 'AI', ' PENGUATAN ANALISYS RESPONSIF GENDER', '41030000', NULL, 12),
+(214, 'AJ', ' PENELAAHAN RENCANA KERJA DAN ANGGARAN', '2572000', NULL, 12),
+(215, 'AK', ' FGD MANAJEMEN AMDAL LALIN KAMPUS II IAIN PEKALONGAN', '13990000', NULL, 12),
+(216, 'AL', ' FGD PERSIAPAN RUILSLAG TANAH DESA', '15292000', NULL, 12),
+(217, 'AM', ' SEMINAR MODERASI BERAGAMA UNTUK MEMPERKOKOH KEBERSAMAAN UMAT DAN NKRI', '28173000', NULL, 12),
+(218, 'AN', ' ASSESSMENT PEJABAT STRUKTURAL', '36700000', NULL, 12),
+(219, 'AO', ' SINKRONISASI PROGRAM KERJA AKHIR TAHUN ANGGARAN', '17774000', NULL, 12),
+(220, 'AP', ' OPNAME FISIK BMN', '14187000', NULL, 12),
+(221, 'AQ', ' PENYUSUNAN BUKU IAIN DALAM ANGKA', '39575000', NULL, 12),
+(222, 'AB', ' SARASEHAN PENGEMBANGAN KERJASAMA DENGAN PESANTREN MITRA', '22170000', NULL, 12),
+(223, 'AA', ' WISUDA', '1427477000', NULL, 12),
+(224, 'AA', ' BEASISWA MAHASISWA LUAR NEGERI', '64250000', NULL, 12),
+(225, 'AB', ' Beasiswa tenaga kependidikan', '80000000', NULL, 12),
+(226, 'AC', ' PENGAHARGAAN MAHASISWA NON PRESTASI', '15000000', NULL, 12),
+(227, 'AD', ' MANAJEMEN PENGELOLAAN BEASISWA BIDIK MISI', '84114000', NULL, 12),
+(228, 'AA', ' SISTEM INFORMASI PENGELOLAAN BEASISWA ONLINE', '50000000', NULL, 12),
+(229, 'AB', ' Pengadaan Meubelair perkantoran', '78450000', NULL, 12),
+(230, 'AC', ' PENGADAAN SERVER', '196500000', NULL, 12),
+(231, 'AD', ' PENGADAAN SOFTWARE APLIKASI SISTEM INFORMASI MANAJEMEN KEPEGAWAIAN', '50500000', NULL, 12),
+(232, 'AE', ' PENGADAAN PERALATAN PENUNJANG PERKANTORAN', '28500000', NULL, 12),
+(233, 'AF', ' RENOVASI RUANG SIDANG PASCASARJANA', '71000000', NULL, 12),
+(234, 'AG', ' PEMBUATAN KANOPI GEDUNG FEBI', '99000000', NULL, 12),
+(235, 'AH', ' PENGADAAN PERALATAN DOKUMENTASI', '39000000', NULL, 12),
+(236, 'AI', ' PENGADAAN SOFTWARE APLIKASI KETATAUSAHAAN', '48000000', NULL, 12),
+(237, 'AA', ' PEMBANGUNAN GEDUNG PERKULIAHAN TERPADU', '25000000000', NULL, 12),
+(238, 'A', '  BEASISWA PENINGKATAN PRESTASI AKADEMIK (PPA)', '188000000', NULL, 12),
+(239, 'A', '  BEASISWA MAHASISWA PADA PRODI [LANGKA PEMINAT]', '145000000', NULL, 12),
+(240, 'AA', ' KEGIATAN ASESMEN PROGRAM STUDI', '106906000', NULL, 12),
+(241, 'AA', ' SOSIALISASI PENERIMAAN MAHASISWA BARU', '56000000', NULL, 12),
+(242, 'AA', ' UJIAN MANDIRI PENERIMAAN MAHASISWA BARU', '367455000', NULL, 12),
+(243, 'AB', ' SOSIALISASI UM PTKIN', '136750000', NULL, 12),
+(244, 'AA', ' PENELITIAN PADA PTKIN', '1175597000', NULL, 12),
+(245, 'AB', ' PENELITIAN PERSYARATAN GURU BESAR', '154528000', NULL, 12),
+(246, 'AA', ' SARANA DAN PRASARANA KEMAHASISWAAN', '200000000', NULL, 12),
+(247, 'AC', ' PLANGISASI DAN BRANDING', '31100000', NULL, 12),
+(248, 'AA', ' PEMBINAAN KEROHANIAN DOSEN DAN PEGAWAI', '5700000', NULL, 12),
+(249, 'AB', ' MENGASAH JATI DIRI KEMBALI FITRI', '33480000', NULL, 12),
+(250, 'AC', ' ISTIGHOSAH MEWUJUDKAN PERDAMAIAN BANGSA', '51760000', NULL, 12),
+(251, 'AD', ' ASSESMENT ADIMINISTRATUR JABATAN STRUKTURAL', '13630000', NULL, 12),
+(252, 'AE', ' PENYUSUNAN PROPOSAL PHLN', '72000000', NULL, 12),
+(253, 'AF', ' PEMBINAAN MENTAL DAN SPIRITUAL PEGAWAI MENYAMBUT RAMADHAN', '13100000', NULL, 12),
+(254, 'AG', ' SEMINAR NASIONAL EKONOMI ISLAM', '18060000', NULL, 12),
+(256, 'AI', ' PENINGKATAN KAPASITAS TOEFL BAGI TENAGA KEPENDIDIKAN', '13900000', NULL, 12),
+(257, 'AJ', ' MONEV PELAKSANAAN ANGGARAN', '51580000', NULL, 12),
+(258, 'AK', ' REKRUTMEN DOSEN TETAP BUKAN PNS', '51396000', NULL, 12),
+(259, 'AL', ' PENYUSUNAN RKA-KL UNIT KERJA DI LINGKUNGAN IAIN PEKALONGAN', '111388000', NULL, 12),
+(260, 'AM', ' SEMINAR ISLAMIC EDUCATION IN INDONESIA AND PHILIPPHINES', '15925000', NULL, 12),
+(261, 'AN', ' SERTIFIKASI ISO', '200000000', NULL, 12),
+(262, 'AA', ' TRACER STUDY', '13335000', NULL, 12),
+(263, 'AA', ' HONORARIUM DOSEN TETAP NON PNS', '1029000000', NULL, 12),
+(264, 'AB', ' PENGUATAN BTQ MAHASANTRI DI PONDOK PESANTREN MITRA', '15200000', NULL, 12),
+(265, 'AC', ' WORKSHOP MAHASANTRI PONDOK PESANTREN MITRA', '9056000', NULL, 12),
+(266, 'AD', ' KAJIAN KITAB TURATS MAHASANTRI', '8960000', NULL, 12),
+(267, 'AA', ' Meubelair Perkantoran', '1595577000', NULL, 12),
+(268, 'AB', ' PENGADAAN PERALATAN TAMANISASI', '47751000', NULL, 12),
+(269, 'AC', ' PENGADAAN ALAT PRESENTASI', '22050000', NULL, 12),
+(270, 'AD', ' PEREDAM SUARA LAB MICROTEACHING', '51200000', NULL, 12),
+(271, 'AE', ' PENGADAAN ALAT PENDINGIN RUANGAN', '80024000', NULL, 12),
+(272, 'AF', ' PENGADAAN KARPET', '49980000', NULL, 12),
+(273, 'AG', ' PENGADAAN PERALATAN FASILITAS PERKANTORAN', '42600000', NULL, 12),
+(274, 'AN', ' PENGADAAN PERALATAN PENUNJANG IT NETWORK (RM)', '310780000', NULL, 12),
+(275, 'AO', ' PENGADAAN PERALATAN PENUNJANG KERJA', '129450000', NULL, 12),
+(276, 'AP', ' PENGADAAN ALAT PENDINGIN RUANGAN', '199000000', NULL, 12),
+(277, 'AA', ' Peninggian Lantai Gedung bagian Umum dan Fakultas Syariah', '219500000', NULL, 12),
+(278, 'AB', ' Renovasi Garasi Mobil', '129450000', NULL, 12),
+(279, 'AC', ' OUTPUT CADANGAN PNBP', '554248000', NULL, 12),
+(280, 'AD', ' RENOVASI POS SATPAM', '114900000', NULL, 12),
+(281, 'AE', ' PENGADAAN DAN PEMASANGAN PERLENGKAPAN RAMBU JALAN RAYA', '102250000', NULL, 12),
+(282, 'AF', ' TAMANISASI GEDUNG FTIK', '106725000', NULL, 12),
+(283, 'AG', ' PEMBUATAN JALAN KAMPUS FTIK', '218250000', NULL, 12),
+(284, 'AH', ' DESIGN INTERIOR RUANG PELAYANAN FTIK', '142375000', NULL, 12),
+(285, 'AI', ' PENINGGIAN HALAMAN DAN LANTAI GEDUNG KAMPUS I', '3741709000', NULL, 12),
+(286, 'AJ', ' PENATAAN LAHAN KAMPUS II', '2915677000', NULL, 12),
+(287, 'AK', ' SEKAT GEDUNG', '68800000', NULL, 12),
+(288, 'AL', ' RENOVASI PINTU GERBANG SEBELAH UTARA', '53250000', NULL, 12),
+(289, 'AM', ' JALAN GEDUNG PERKANTORAN TERPADU', '950000000', NULL, 12),
+(290, 'AN', ' PEKERJAAN LANJUTAN PENATAAN LAHAN KAMPUS II', '225000000', NULL, 12),
+(291, 'AO', ' PENAMBAHAN LAHAN PARKIR GEDUNG PERKULIAHAN TERPADU', '199220000', NULL, 12),
+(292, 'AP', ' PENAMBAHAN JALAN GEDUNG PERKULIAHAN TERPADU', '116000000', NULL, 12),
+(293, 'AA', ' Pengadaan Tanah Tahap II', '182070000', NULL, 12),
+(294, 'AA', ' ADMINISTRASI MANAJEMEN PERKANTORAN', '6423171000', NULL, 12),
+(295, 'AB', ' DOSEN YANG MENDAPAT TUGAS TAMBAHAN', '645600000', NULL, 12),
+(296, 'AC', ' PEMELIHARAAN GEDUNG PERKANTORAN', '775000000', NULL, 12),
+(297, 'AD', ' PEMELIHARAAN PERALATAN DAN MESIN', '1324500000', NULL, 12),
+(298, 'AE', ' KEGIATAN PENGHAPUSAN BMN', '3400000', NULL, 12),
+(299, 'AF', ' OUTSOURCING CLEANING SERVICE', '573426000', NULL, 12),
+(300, 'AG', ' PENDELEGASIAN TENDIK DAN TENAGA KEPENDIDIKAN', '154500000', NULL, 12),
+(301, 'A', '  GAJI DAN TUNJANGAN', '11363720000', NULL, 12),
+(302, 'AA', ' OPERASIONAL PERKANTORAN', '4694780000', NULL, 12),
+(303, 'AB', ' LANGGANAN DAYA DAN JASA', '1229220000', NULL, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `version` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `migrations`
+--
+
+INSERT INTO `migrations` (`version`) VALUES
+(0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_belanja`
+--
+
+CREATE TABLE `tbl_belanja` (
+  `id_belanja` int(9) NOT NULL,
+  `kode_jenis_belanja` text NOT NULL,
+  `kode_beban` text NOT NULL,
+  `kode_sub_komponen` text NOT NULL,
+  `kode_komponen` text NOT NULL,
+  `kode_sub_output` text NOT NULL,
+  `kode_output` text NOT NULL,
+  `kode_kegiatan` text NOT NULL,
+  `realisasi` varchar(15) NOT NULL,
+  `keterangan` text DEFAULT NULL,
+  `bulan` varchar(7) NOT NULL,
+  `created_by` int(9) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_belanja`
+--
+
+INSERT INTO `tbl_belanja` (`id_belanja`, `kode_jenis_belanja`, `kode_beban`, `kode_sub_komponen`, `kode_komponen`, `kode_sub_output`, `kode_output`, `kode_kegiatan`, `realisasi`, `keterangan`, `bulan`, `created_by`, `created_at`) VALUES
+(0, '511111', 'A', 'A', '001', '001', '994', '2135', '1607415420', 'Belanja Gaji Pokok PNS', '2020-01', NULL, NULL),
+(1, '511119', 'A', 'A', '001', '001', '994', '2135', '23979', 'Belanja Pembulatan Gaji PNS', '2020-01', NULL, NULL),
+(2, '511121', 'A', 'A', '001', '001', '994', '2135', '125074284', 'Belanja Tunj. Suami/Istri PNS', '2020-01', NULL, NULL),
+(3, '511122', 'A', 'A', '001', '001', '994', '2135', '38887106', 'Belanja Tunj. Anak PNS', '2020-01', NULL, NULL),
+(4, '511123', 'A', 'A', '001', '001', '994', '2135', '42500000', 'Belanja Tunj. Struktural PNS', '2020-01', NULL, NULL),
+(5, '511124', 'A', 'A', '001', '001', '994', '2135', '265575000', 'Belanja Tunj. Fungsional PNS', '2020-01', NULL, NULL),
+(6, '511125', 'A', 'A', '001', '001', '994', '2135', '5401397', 'Belanja Tunj. PPh PNS', '2020-01', NULL, NULL),
+(7, '511126', 'A', 'A', '001', '001', '994', '2135', '108702420', 'Belanja Tunj. Beras PNS', '2020-01', NULL, NULL),
+(8, '511151', 'A', 'A', '001', '001', '994', '2135', '43170000', 'Belanja Tunjangan Umum PNS', '2020-01', NULL, NULL),
+(9, '522111', 'A', 'AB', '002', '001', '994', '2135', '75353994', 'Beban Langganan Listrik', '2020-01', NULL, NULL),
+(10, '522112', 'A', 'AB', '002', '001', '994', '2135', '411434', 'Beban Langganan Telepon', '2020-01', NULL, NULL),
+(11, '522151', 'D', 'AH', '051', '401', '002', '2132', '13200000', 'Beban Jasa Profesi', '2020-01', NULL, NULL),
+(12, '521211', 'D', 'AA', '051', '400', '031', '2132', '27285000', 'Belanja Bahan', '2020-01', NULL, NULL),
+(13, '521111', 'D', 'AA', '002', '400', '994', '2132', '29580000', 'Belanja Keperluan Perkantoran', '2020-01', NULL, NULL),
+(14, '521811', 'D', 'AA', '002', '400', '994', '2132', '43770500', 'Belanja Barang Persediaan Barang Konsumsi', '2020-01', NULL, NULL),
+(15, '524114', 'D', 'AH', '051', '401', '002', '2132', '44940000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-01', NULL, NULL),
+(16, '523121', 'D', 'AD', '002', '400', '994', '2132', '95331100', 'Belanja Biaya Pemeliharaan Peralatan dan Mesin', '2020-01', NULL, NULL),
+(17, '521219', 'A', 'IA', '004', '519', '050', '2132', '96300000', 'Belanja Barang Non Operasional Lainnya', '2020-01', NULL, NULL),
+(18, '521115', 'D', 'AB', '002', '400', '994', '2132', '116500000', 'Belanja Honor Operasional Satuan Kerja', '2020-01', NULL, NULL),
+(19, '521213', 'D', 'AB', '051', '405', '002', '2132', '248400000', 'Belanja Honor Output Kegiatan', '2020-01', NULL, NULL),
+(20, '522141', 'D', 'AA', '002', '400', '994', '2132', '1289089092', 'Beban Sewa', '2020-01', NULL, NULL),
+(21, '511119', 'A', 'A', '001', '001', '994', '2135', '38079', 'Belanja Pembulatan Gaji PNS', '2020-02', NULL, NULL),
+(22, '521211', 'D', 'HD', '051', '401', '002', '2132', '360000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(23, '522151', 'D', 'CF', '051', '405', '002', '2132', '500000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(24, '522151', 'D', 'CG', '051', '405', '002', '2132', '500000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(25, '522151', 'D', 'CH', '051', '405', '002', '2132', '500000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(26, '521119', 'D', 'DA', '051', '412', '002', '2132', '580000', 'Belanja Barang Operasional Lainnya', '2020-02', NULL, NULL),
+(27, '521219', 'D', 'CA', '051', '412', '002', '2132', '800000', 'Belanja Barang Non Operasional Lainnya', '2020-02', NULL, NULL),
+(28, '522112', 'A', 'AB', '002', '001', '994', '2135', '823450', 'Beban Langganan Telepon', '2020-02', NULL, NULL),
+(29, '524113', 'D', 'DK', '051', '405', '002', '2132', '880000', 'Belanja Perjalanan Transport Dalam Kota', '2020-02', NULL, NULL),
+(30, '522151', 'D', 'DK', '051', '405', '002', '2132', '900000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(31, '522151', 'D', 'EH', '051', '405', '002', '2132', '900000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(32, '522151', 'D', 'ER', '051', '405', '002', '2132', '900000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(33, '521211', 'D', 'CH', '051', '405', '002', '2132', '1100000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(34, '521211', 'D', 'GB', '051', '401', '002', '2132', '1250000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(35, '521211', 'D', 'DK', '051', '405', '002', '2132', '1296000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(36, '524113', 'D', 'CF', '051', '405', '002', '2132', '1320000', 'Belanja Perjalanan Transport Dalam Kota', '2020-02', NULL, NULL),
+(37, '524113', 'D', 'CG', '051', '405', '002', '2132', '1320000', 'Belanja Perjalanan Transport Dalam Kota', '2020-02', NULL, NULL),
+(38, '524113', 'D', 'CH', '051', '405', '002', '2132', '1320000', 'Belanja Perjalanan Transport Dalam Kota', '2020-02', NULL, NULL),
+(39, '524114', 'D', 'FF', '051', '405', '002', '2132', '1390000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-02', NULL, NULL),
+(40, '524114', 'D', 'BJ', '051', '405', '002', '2132', '1400000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-02', NULL, NULL),
+(41, '524111', 'D', 'AA', '052', '412', '002', '2132', '1500000', 'Belanja Perjalanan Biasa', '2020-02', NULL, NULL),
+(42, '521211', 'D', 'EH', '051', '405', '002', '2132', '1550000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(43, '524114', 'D', 'ED', '051', '405', '002', '2132', '1553500', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-02', NULL, NULL),
+(44, '523111', 'D', 'BA', '002', '400', '994', '2132', '1560000', 'Belanja Biaya Pemeliharaan Gedung dan Bangunan', '2020-02', NULL, NULL),
+(45, '521211', 'D', 'CF', '051', '405', '002', '2132', '1605000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(46, '521211', 'D', 'CG', '051', '405', '002', '2132', '1605000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(47, '521811', 'D', 'EB', '002', '400', '994', '2132', '2000000', 'Belanja Barang Persediaan Barang Konsumsi', '2020-02', NULL, NULL),
+(48, '521213', 'A', 'CA', '004', '500', '050', '2132', '2425000', 'Belanja Honor Output Kegiatan', '2020-02', NULL, NULL),
+(49, '524111', 'D', 'DK', '051', '405', '002', '2132', '2700000', 'Belanja Perjalanan Biasa', '2020-02', NULL, NULL),
+(50, '521213', 'D', 'BJ', '051', '405', '002', '2132', '2975000', 'Belanja Honor Output Kegiatan', '2020-02', NULL, NULL),
+(51, '521213', 'D', 'ED', '051', '405', '002', '2132', '2975000', 'Belanja Honor Output Kegiatan', '2020-02', NULL, NULL),
+(52, '521211', 'D', 'ER', '051', '405', '002', '2132', '3110000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(53, '533111', 'K', 'AA', '051', '300', '012', '2132', '3320000', 'Belanja Modal Gedung dan Bangunan', '2020-02', NULL, NULL),
+(54, '521111', 'D', 'EA', '002', '400', '994', '2132', '3537000', 'Belanja Keperluan Perkantoran', '2020-02', NULL, NULL),
+(55, '521213', 'D', 'DG', '051', '405', '002', '2132', '3800000', 'Belanja Honor Output Kegiatan', '2020-02', NULL, NULL),
+(56, '521211', 'D', 'CA', '051', '412', '002', '2132', '4000000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(57, '521211', 'D', 'DA', '051', '412', '002', '2132', '4000000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(58, '521213', 'D', 'ER', '051', '405', '002', '2132', '4000000', 'Belanja Honor Output Kegiatan', '2020-02', NULL, NULL),
+(59, '521111', 'D', 'CA', '002', '400', '994', '2132', '4020000', 'Belanja Keperluan Perkantoran', '2020-02', NULL, NULL),
+(60, '521211', 'D', 'BB', '051', '401', '002', '2132', '4063000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(61, '521213', 'D', 'FF', '051', '405', '002', '2132', '4350000', 'Belanja Honor Output Kegiatan', '2020-02', NULL, NULL),
+(62, '521211', 'D', 'FF', '051', '405', '002', '2132', '4475000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(63, '524111', 'D', 'CD', '051', '401', '002', '2132', '4493800', 'Belanja Perjalanan Biasa', '2020-02', NULL, NULL),
+(64, '521211', 'D', 'BD', '051', '405', '002', '2132', '4672000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(65, '522151', 'D', 'BD', '051', '405', '002', '2132', '4800000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(66, '521111', 'D', 'DA', '002', '400', '994', '2132', '4814000', 'Belanja Keperluan Perkantoran', '2020-02', NULL, NULL),
+(67, '521211', 'D', 'EA', '051', '412', '002', '2132', '5000000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(68, '521111', 'D', 'BA', '002', '400', '994', '2132', '5022000', 'Belanja Keperluan Perkantoran', '2020-02', NULL, NULL),
+(69, '521211', 'D', 'DG', '051', '405', '002', '2132', '5240000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(70, '522151', 'A', 'CA', '004', '500', '050', '2132', '5800000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(71, '521219', 'D', 'CA', '051', '401', '002', '2132', '5912000', 'Belanja Barang Non Operasional Lainnya', '2020-02', NULL, NULL),
+(72, '522151', 'D', 'DG', '051', '405', '002', '2132', '6100000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(73, '522151', 'D', 'ED', '051', '405', '002', '2132', '6100000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(74, '521111', 'D', 'FA', '002', '400', '994', '2132', '6494500', 'Belanja Keperluan Perkantoran', '2020-02', NULL, NULL),
+(75, '522151', 'D', 'GB', '051', '401', '002', '2132', '6800000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(76, '521211', 'D', 'AA', '056', '200', '002', '2132', '6817000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(77, '524114', 'D', 'HD', '051', '401', '002', '2132', '7300000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-02', NULL, NULL),
+(78, '521211', 'D', 'AA', '051', '412', '002', '2132', '7500000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(79, '522151', 'D', 'BJ', '051', '405', '002', '2132', '7600000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(80, '521211', 'D', 'ED', '051', '405', '002', '2132', '7614000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(81, '522151', 'D', 'FF', '051', '405', '002', '2132', '8000000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(82, '511125', 'A', 'A', '001', '001', '994', '2135', '8169117', 'Belanja Tunj. PPh PNS', '2020-02', NULL, NULL),
+(83, '524111', 'D', 'ER', '051', '405', '002', '2132', '9600000', 'Belanja Perjalanan Biasa', '2020-02', NULL, NULL),
+(84, '521213', 'D', 'CH', '051', '405', '002', '2132', '10000000', 'Belanja Honor Output Kegiatan', '2020-02', NULL, NULL),
+(85, '524114', 'D', 'GB', '051', '401', '002', '2132', '11250000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-02', NULL, NULL),
+(86, '521211', 'D', 'AH', '051', '401', '002', '2132', '12728000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(87, '521115', 'D', 'AA', '002', '400', '994', '2132', '13110000', 'Belanja Honor Operasional Satuan Kerja', '2020-02', NULL, NULL),
+(88, '522151', 'D', 'AH', '051', '401', '002', '2132', '13200000', 'Beban Jasa Profesi', '2020-02', NULL, NULL),
+(89, '521213', 'D', 'DK', '051', '405', '002', '2132', '15000000', 'Belanja Honor Output Kegiatan', '2020-02', NULL, NULL),
+(90, '521211', 'D', 'BJ', '051', '405', '002', '2132', '17425000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(91, '521213', 'D', 'CF', '051', '405', '002', '2132', '18000000', 'Belanja Honor Output Kegiatan', '2020-02', NULL, NULL),
+(92, '521213', 'D', 'CG', '051', '405', '002', '2132', '19000000', 'Belanja Honor Output Kegiatan', '2020-02', NULL, NULL),
+(93, '521219', 'D', 'NK', '002', '400', '994', '2132', '22400000', 'Belanja Barang Non Operasional Lainnya', '2020-02', NULL, NULL),
+(94, '512211', 'A', 'E', '001', '001', '994', '2135', '25710000', 'Belanja Uang Lembur', '2020-02', NULL, NULL),
+(95, '521211', 'D', 'AA', '051', '400', '031', '2132', '27285000', 'Belanja Bahan', '2020-02', NULL, NULL),
+(96, '521115', 'A', 'AA', '002', '001', '994', '2135', '31840000', 'Belanja Honor Operasional Satuan Kerja', '2020-02', NULL, NULL),
+(97, '524114', 'D', 'DG', '051', '405', '002', '2132', '34060000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-02', NULL, NULL),
+(98, '521219', 'D', 'AA', '055', '401', '002', '2132', '40000000', 'Belanja Barang Non Operasional Lainnya', '2020-02', NULL, NULL),
+(99, '511122', 'A', 'A', '001', '001', '994', '2135', '58601290', 'Belanja Tunj. Anak PNS', '2020-02', NULL, NULL),
+(100, '511151', 'A', 'A', '001', '001', '994', '2135', '63645000', 'Belanja Tunjangan Umum PNS', '2020-02', NULL, NULL),
+(101, '511123', 'A', 'A', '001', '001', '994', '2135', '63750000', 'Belanja Tunj. Struktural PNS', '2020-02', NULL, NULL),
+(102, '521811', 'D', 'AA', '002', '400', '994', '2132', '82746500', 'Belanja Barang Persediaan Barang Konsumsi', '2020-02', NULL, NULL),
+(103, '521115', 'A', 'AA', '004', '522', '050', '2132', '84268000', 'Belanja Honor Operasional Satuan Kerja', '2020-02', NULL, NULL),
+(104, '524114', 'D', 'AH', '051', '401', '002', '2132', '93660000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-02', NULL, NULL),
+(105, '521219', 'A', 'IA', '004', '519', '050', '2132', '96300000', 'Belanja Barang Non Operasional Lainnya', '2020-02', NULL, NULL),
+(106, '522111', 'A', 'AB', '002', '001', '994', '2135', '145878860', 'Beban Langganan Listrik', '2020-02', NULL, NULL),
+(107, '523121', 'D', 'AD', '002', '400', '994', '2132', '149683159', 'Belanja Biaya Pemeliharaan Peralatan dan Mesin', '2020-02', NULL, NULL),
+(108, '511129', 'A', 'B', '001', '001', '994', '2135', '159279000', 'Belanja Uang Makan PNS', '2020-02', NULL, NULL),
+(109, '511126', 'A', 'A', '001', '001', '994', '2135', '163524360', 'Belanja Tunj. Beras PNS', '2020-02', NULL, NULL),
+(110, '521115', 'D', 'AB', '002', '400', '994', '2132', '177950000', 'Belanja Honor Operasional Satuan Kerja', '2020-02', NULL, NULL),
+(111, '511121', 'A', 'A', '001', '001', '994', '2135', '189135196', 'Belanja Tunj. Suami/Istri PNS', '2020-02', NULL, NULL),
+(112, '512411', 'A', 'D', '001', '001', '994', '2135', '226864137', 'Belanja Pegawai (Tunjangan Khusus/Kegiatan)', '2020-02', NULL, NULL),
+(113, '521111', 'D', 'AA', '002', '400', '994', '2132', '239276100', 'Belanja Keperluan Perkantoran', '2020-02', NULL, NULL),
+(114, '521213', 'D', 'AB', '051', '405', '002', '2132', '248400000', 'Belanja Honor Output Kegiatan', '2020-02', NULL, NULL),
+(115, '511153', 'A', 'C', '001', '001', '994', '2135', '374950000', 'Belanja Tunjangan Profesi Dosen', '2020-02', NULL, NULL),
+(116, '511124', 'A', 'A', '001', '001', '994', '2135', '396325000', 'Belanja Tunj. Fungsional PNS', '2020-02', NULL, NULL),
+(117, '521111', 'A', 'AA', '002', '001', '994', '2135', '598102000', 'Belanja Keperluan Perkantoran', '2020-02', NULL, NULL),
+(118, '522141', 'D', 'AA', '002', '400', '994', '2132', '1289089092', 'Beban Sewa', '2020-02', NULL, NULL),
+(119, '511111', 'A', 'A', '001', '001', '994', '2135', '2417153880', 'Belanja Gaji Pokok PNS', '2020-02', NULL, NULL),
+(120, '524119', 'A', 'AK', '004', '500', '050', '2132', '1', 'Belanja Perjalanan Lainnya', '2020-03', NULL, NULL),
+(121, '511119', 'A', 'A', '001', '001', '994', '2135', '51990', 'Belanja Pembulatan Gaji PNS', '2020-03', NULL, NULL),
+(122, '521211', 'D', 'HD', '051', '401', '002', '2132', '360000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(123, '522151', 'D', 'CF', '051', '405', '002', '2132', '500000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(124, '522151', 'D', 'CG', '051', '405', '002', '2132', '500000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(125, '522151', 'D', 'CH', '051', '405', '002', '2132', '500000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(126, '521119', 'D', 'DA', '051', '412', '002', '2132', '580000', 'Belanja Barang Operasional Lainnya', '2020-03', NULL, NULL),
+(127, '522151', 'D', 'DH', '051', '405', '002', '2132', '700000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(128, '521219', 'D', 'CA', '051', '412', '002', '2132', '800000', 'Belanja Barang Non Operasional Lainnya', '2020-03', NULL, NULL),
+(129, '524113', 'D', 'DK', '051', '405', '002', '2132', '880000', 'Belanja Perjalanan Transport Dalam Kota', '2020-03', NULL, NULL),
+(130, '522151', 'D', 'DK', '051', '405', '002', '2132', '900000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(131, '522151', 'D', 'EH', '051', '405', '002', '2132', '900000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(132, '522151', 'D', 'ER', '051', '405', '002', '2132', '900000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(133, '521211', 'D', 'CH', '051', '405', '002', '2132', '1100000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(134, '521211', 'D', 'GB', '051', '401', '002', '2132', '1250000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(135, '524114', 'A', 'CA', '004', '500', '050', '2132', '1295000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-03', NULL, NULL),
+(136, '521211', 'D', 'DK', '051', '405', '002', '2132', '1296000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(137, '524113', 'D', 'CF', '051', '405', '002', '2132', '1320000', 'Belanja Perjalanan Transport Dalam Kota', '2020-03', NULL, NULL),
+(138, '524113', 'D', 'CG', '051', '405', '002', '2132', '1320000', 'Belanja Perjalanan Transport Dalam Kota', '2020-03', NULL, NULL),
+(139, '524113', 'D', 'CH', '051', '405', '002', '2132', '1320000', 'Belanja Perjalanan Transport Dalam Kota', '2020-03', NULL, NULL),
+(140, '524114', 'D', 'FF', '051', '405', '002', '2132', '1390000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-03', NULL, NULL),
+(141, '524114', 'D', 'BJ', '051', '405', '002', '2132', '1400000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-03', NULL, NULL),
+(142, '524111', 'D', 'AA', '052', '412', '002', '2132', '1500000', 'Belanja Perjalanan Biasa', '2020-03', NULL, NULL),
+(143, '521211', 'D', 'EH', '051', '405', '002', '2132', '1550000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(144, '524114', 'D', 'ED', '051', '405', '002', '2132', '1553500', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-03', NULL, NULL),
+(145, '523111', 'D', 'BA', '002', '400', '994', '2132', '1560000', 'Belanja Biaya Pemeliharaan Gedung dan Bangunan', '2020-03', NULL, NULL),
+(146, '521211', 'D', 'CF', '051', '405', '002', '2132', '1605000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(147, '521211', 'D', 'CG', '051', '405', '002', '2132', '1605000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(148, '522112', 'A', 'AB', '002', '001', '994', '2135', '1755684', 'Beban Langganan Telepon', '2020-03', NULL, NULL),
+(149, '524113', 'D', 'EH', '051', '405', '002', '2132', '1980000', 'Belanja Perjalanan Transport Dalam Kota', '2020-03', NULL, NULL),
+(150, '521811', 'D', 'EB', '002', '400', '994', '2132', '2000000', 'Belanja Barang Persediaan Barang Konsumsi', '2020-03', NULL, NULL),
+(151, '521213', 'A', 'CA', '004', '500', '050', '2132', '2425000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(152, '521211', 'A', 'CA', '004', '500', '050', '2132', '2650000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(153, '524111', 'D', 'DK', '051', '405', '002', '2132', '2700000', 'Belanja Perjalanan Biasa', '2020-03', NULL, NULL),
+(154, '521213', 'D', 'BJ', '051', '405', '002', '2132', '2975000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(155, '521213', 'D', 'ED', '051', '405', '002', '2132', '2975000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(156, '521211', 'D', 'ER', '051', '405', '002', '2132', '3110000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(157, '533111', 'K', 'AA', '051', '300', '012', '2132', '3320000', 'Belanja Modal Gedung dan Bangunan', '2020-03', NULL, NULL),
+(158, '521213', 'D', 'DH', '051', '405', '002', '2132', '3500000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(159, '521111', 'D', 'EA', '002', '400', '994', '2132', '3537000', 'Belanja Keperluan Perkantoran', '2020-03', NULL, NULL),
+(160, '524114', 'D', 'AI', '051', '401', '002', '2132', '3740000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-03', NULL, NULL),
+(161, '521213', 'D', 'DG', '051', '405', '002', '2132', '3800000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(162, '524111', 'A', 'MA', '051', '002', '950', '2135', '3871200', 'Belanja Perjalanan Biasa', '2020-03', NULL, NULL),
+(163, '521211', 'D', 'CA', '051', '412', '002', '2132', '4000000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(164, '521211', 'D', 'DA', '051', '412', '002', '2132', '4000000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(165, '521213', 'D', 'ER', '051', '405', '002', '2132', '4000000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(166, '521111', 'D', 'CA', '002', '400', '994', '2132', '4020000', 'Belanja Keperluan Perkantoran', '2020-03', NULL, NULL),
+(167, '521211', 'D', 'BB', '051', '401', '002', '2132', '4063000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(168, '521213', 'D', 'FF', '051', '405', '002', '2132', '4350000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(169, '521211', 'D', 'FF', '051', '405', '002', '2132', '4475000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(170, '524111', 'D', 'CD', '051', '401', '002', '2132', '4493800', 'Belanja Perjalanan Biasa', '2020-03', NULL, NULL),
+(171, '521211', 'D', 'BD', '051', '405', '002', '2132', '4672000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(172, '522151', 'D', 'BD', '051', '405', '002', '2132', '4800000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(173, '521111', 'D', 'DA', '002', '400', '994', '2132', '4814000', 'Belanja Keperluan Perkantoran', '2020-03', NULL, NULL),
+(174, '521211', 'D', 'EA', '051', '412', '002', '2132', '5000000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(175, '521111', 'D', 'BA', '002', '400', '994', '2132', '5022000', 'Belanja Keperluan Perkantoran', '2020-03', NULL, NULL),
+(176, '521211', 'D', 'DG', '051', '405', '002', '2132', '5240000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(177, '522151', 'A', 'CA', '004', '500', '050', '2132', '5800000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(178, '521219', 'D', 'CA', '051', '401', '002', '2132', '5912000', 'Belanja Barang Non Operasional Lainnya', '2020-03', NULL, NULL),
+(179, '522151', 'D', 'DG', '051', '405', '002', '2132', '6100000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(180, '522151', 'D', 'ED', '051', '405', '002', '2132', '6100000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(181, '521111', 'D', 'FA', '002', '400', '994', '2132', '6494500', 'Belanja Keperluan Perkantoran', '2020-03', NULL, NULL),
+(182, '522151', 'D', 'GB', '051', '401', '002', '2132', '6800000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(183, '521211', 'D', 'AA', '056', '200', '002', '2132', '6817000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(184, '524114', 'D', 'HD', '051', '401', '002', '2132', '7300000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-03', NULL, NULL),
+(185, '521111', 'D', 'AF', '002', '400', '994', '2132', '7425000', 'Belanja Keperluan Perkantoran', '2020-03', NULL, NULL),
+(186, '521211', 'D', 'AA', '051', '412', '002', '2132', '7500000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(187, '522151', 'D', 'BJ', '051', '405', '002', '2132', '7600000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(188, '521211', 'D', 'ED', '051', '405', '002', '2132', '7614000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(189, '522151', 'D', 'FF', '051', '405', '002', '2132', '8000000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(190, '524111', 'D', 'DH', '051', '405', '002', '2132', '8250000', 'Belanja Perjalanan Biasa', '2020-03', NULL, NULL),
+(191, '524111', 'D', 'ER', '051', '405', '002', '2132', '9600000', 'Belanja Perjalanan Biasa', '2020-03', NULL, NULL),
+(192, '521213', 'D', 'CH', '051', '405', '002', '2132', '10000000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(193, '521213', 'D', 'EH', '051', '405', '002', '2132', '10500000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(194, '511125', 'A', 'A', '001', '001', '994', '2135', '10880182', 'Belanja Tunj. PPh PNS', '2020-03', NULL, NULL),
+(195, '524114', 'D', 'GB', '051', '401', '002', '2132', '11250000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-03', NULL, NULL),
+(196, '521211', 'D', 'AH', '051', '401', '002', '2132', '12728000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(197, '522151', 'D', 'AH', '051', '401', '002', '2132', '13200000', 'Beban Jasa Profesi', '2020-03', NULL, NULL),
+(198, '521213', 'D', 'DK', '051', '405', '002', '2132', '15000000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(199, '521211', 'D', 'BJ', '051', '405', '002', '2132', '17425000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(200, '521213', 'D', 'CF', '051', '405', '002', '2132', '18000000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(201, '521213', 'D', 'CG', '051', '405', '002', '2132', '19000000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(202, '521219', 'D', 'NK', '002', '400', '994', '2132', '22400000', 'Belanja Barang Non Operasional Lainnya', '2020-03', NULL, NULL),
+(203, '512211', 'A', 'E', '001', '001', '994', '2135', '25710000', 'Belanja Uang Lembur', '2020-03', NULL, NULL),
+(204, '521115', 'D', 'AA', '002', '400', '994', '2132', '26220000', 'Belanja Honor Operasional Satuan Kerja', '2020-03', NULL, NULL),
+(205, '521211', 'D', 'AA', '051', '400', '031', '2132', '27285000', 'Belanja Bahan', '2020-03', NULL, NULL),
+(206, '524114', 'D', 'DG', '051', '405', '002', '2132', '34060000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-03', NULL, NULL),
+(207, '521219', 'D', 'AA', '055', '401', '002', '2132', '40000000', 'Belanja Barang Non Operasional Lainnya', '2020-03', NULL, NULL),
+(208, '524119', 'D', 'AA', '051', '400', '031', '2132', '58000000', 'Belanja Perjalanan Lainnya', '2020-03', NULL, NULL),
+(209, '521115', 'A', 'AA', '002', '001', '994', '2135', '63680000', 'Belanja Honor Operasional Satuan Kerja', '2020-03', NULL, NULL),
+(210, '511122', 'A', 'A', '001', '001', '994', '2135', '78379776', 'Belanja Tunj. Anak PNS', '2020-03', NULL, NULL),
+(211, '511123', 'A', 'A', '001', '001', '994', '2135', '85000000', 'Belanja Tunj. Struktural PNS', '2020-03', NULL, NULL),
+(212, '511151', 'A', 'A', '001', '001', '994', '2135', '85785000', 'Belanja Tunjangan Umum PNS', '2020-03', NULL, NULL),
+(213, '524114', 'D', 'AH', '051', '401', '002', '2132', '93660000', 'Belanja Perjalanan DInas Paket Meeting Dalam Kota', '2020-03', NULL, NULL),
+(214, '521219', 'A', 'IA', '004', '519', '050', '2132', '96300000', 'Belanja Barang Non Operasional Lainnya', '2020-03', NULL, NULL),
+(215, '521811', 'D', 'AA', '002', '400', '994', '2132', '131573500', 'Belanja Barang Persediaan Barang Konsumsi', '2020-03', NULL, NULL),
+(216, '511129', 'A', 'B', '001', '001', '994', '2135', '159279000', 'Belanja Uang Makan PNS', '2020-03', NULL, NULL),
+(217, '521115', 'A', 'AA', '004', '522', '050', '2132', '164786000', 'Belanja Honor Operasional Satuan Kerja', '2020-03', NULL, NULL),
+(218, '523121', 'D', 'AD', '002', '400', '994', '2132', '180019909', 'Belanja Biaya Pemeliharaan Peralatan dan Mesin', '2020-03', NULL, NULL),
+(219, '522111', 'A', 'AB', '002', '001', '994', '2135', '207581743', 'Beban Langganan Listrik', '2020-03', NULL, NULL),
+(220, '511126', 'A', 'A', '001', '001', '994', '2135', '218491140', 'Belanja Tunj. Beras PNS', '2020-03', NULL, NULL),
+(221, '521111', 'D', 'AA', '002', '400', '994', '2132', '239276100', 'Belanja Keperluan Perkantoran', '2020-03', NULL, NULL),
+(222, '521115', 'D', 'AB', '002', '400', '994', '2132', '239400000', 'Belanja Honor Operasional Satuan Kerja', '2020-03', NULL, NULL),
+(223, '521213', 'D', 'AB', '051', '405', '002', '2132', '248400000', 'Belanja Honor Output Kegiatan', '2020-03', NULL, NULL),
+(224, '511121', 'A', 'A', '001', '001', '994', '2135', '253492948', 'Belanja Tunj. Suami/Istri PNS', '2020-03', NULL, NULL),
+(225, '511153', 'A', 'C', '001', '001', '994', '2135', '374950000', 'Belanja Tunjangan Profesi Dosen', '2020-03', NULL, NULL),
+(226, '523111', 'D', 'AC', '002', '400', '994', '2132', '427423000', 'Belanja Biaya Pemeliharaan Gedung dan Bangunan', '2020-03', NULL, NULL),
+(227, '511124', 'A', 'A', '001', '001', '994', '2135', '533775000', 'Belanja Tunj. Fungsional PNS', '2020-03', NULL, NULL),
+(228, '574111', 'A', 'LA', '055', '001', '035', '2132', '570000000', 'Belanja Bantuan Sosial Untuk Perlindungan Sosial Dalam Bentuk Uang', '2020-03', NULL, NULL),
+(229, '574111', 'A', 'LA', '054', '001', '035', '2132', '627000000', 'Belanja Bantuan Sosial Untuk Perlindungan Sosial Dalam Bentuk Uang', '2020-03', NULL, NULL),
+(230, '521111', 'A', 'AA', '002', '001', '994', '2135', '649645200', 'Belanja Keperluan Perkantoran', '2020-03', NULL, NULL),
+(231, '521219', 'A', 'AA', '004', '500', '050', '2132', '678000000', 'Belanja Barang Non Operasional Lainnya', '2020-03', NULL, NULL),
+(232, '512411', 'A', 'D', '001', '001', '994', '2135', '709459186', 'Belanja Pegawai (Tunjangan Khusus/Kegiatan)', '2020-03', NULL, NULL),
+(233, '574111', 'A', 'LA', '053', '001', '035', '2132', '825000000', 'Belanja Bantuan Sosial Untuk Perlindungan Sosial Dalam Bentuk Uang', '2020-03', NULL, NULL),
+(234, '574111', 'A', 'LA', '052', '001', '035', '2132', '1234200000', 'Belanja Bantuan Sosial Untuk Perlindungan Sosial Dalam Bentuk Uang', '2020-03', NULL, NULL),
+(235, '522141', 'D', 'AA', '002', '400', '994', '2132', '1289089092', 'Beban Sewa', '2020-03', NULL, NULL),
+(236, '511111', 'A', 'A', '001', '001', '994', '2135', '3228642840', 'Belanja Gaji Pokok PNS', '2020-03', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_kegiatan`
+--
+
+CREATE TABLE `tbl_kegiatan` (
+  `id_kegiatan` int(9) NOT NULL,
+  `kode_kegiatan` text NOT NULL,
+  `kegiatan` text NOT NULL,
+  `pagu` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_kegiatan`
+--
+
+INSERT INTO `tbl_kegiatan` (`id_kegiatan`, `kode_kegiatan`, `kegiatan`, `pagu`) VALUES
+(0, '2132', 'Peningkatan Akses, Mutu, Relevansi, dan Daya Saing Pendidikan Tinggi Keagamaan Islam', '87805952000'),
+(1, '2135', 'Dukungan Manajemen Pendidikan dan Pelayanan Tugas Teknis Lainnya Pendidikan Islam', '35098315000');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_komponen`
+--
+
+CREATE TABLE `tbl_komponen` (
+  `id_komponen` int(9) NOT NULL,
+  `kode_komponen` text NOT NULL,
+  `kode_sub_output` text NOT NULL,
+  `kode_output` text NOT NULL,
+  `kode_kegiatan` text NOT NULL,
+  `komponen` text NOT NULL,
+  `pagu` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_komponen`
+--
+
+INSERT INTO `tbl_komponen` (`id_komponen`, `kode_komponen`, `kode_sub_output`, `kode_output`, `kode_kegiatan`, `komponen`, `pagu`) VALUES
+(0, '051', '002', '950', '2135', 'Penyusunan Rencana Program dan Anggaran', '95000000'),
+(1, '001', '001', '994', '2135', 'Gaji dan Tunjangan', '28593315000'),
+(2, '002', '001', '994', '2135', 'Operasional dan Pemeliharaan Kantor', '6410000000'),
+(3, '056', '200', '002', '2132', 'Manajemen Beasiswa Mahasiswa', '97464000'),
+(4, '060', '200', '002', '2132', 'Manajemen Beasiswa Mahasiswa Asing', '100000000'),
+(5, '600', '400', '002', '2132', 'Penyelenggaraan PTKIN Bersumber PNBP', '3083135000'),
+(6, '051', '401', '002', '2132', 'Pengembangan Sistem Tata Kelola, Kelembagaan, dan SDM', '2721150000'),
+(7, '053', '401', '002', '2132', 'Peningkatan Kualifikasi Tenaga Pendidik dan Kependidikan', '90000000'),
+(8, '054', '401', '002', '2132', 'Pengembangan Kerjasama dan Kelembagaan', '41070000'),
+(9, '055', '401', '002', '2132', 'Peningkatan mutu dan kompetensi tenaga pendidik dan kependidikan', '328000000'),
+(10, '056', '401', '002', '2132', 'Peningkatan Mutu Perpustakaan', '112000000'),
+(11, '051', '403', '002', '2132', 'Mahasiswa Penerima Penghargaan dalam Bentuk Uang', '30000000'),
+(12, '051', '405', '002', '2132', 'Praktikum/Kuliah', '8557982000'),
+(13, '051', '411', '002', '2132', 'Yudisium/Wisuda', '1614100000'),
+(14, '051', '412', '002', '2132', 'Pembinaan kegiatan kemahasiswaan', '1648885000'),
+(15, '052', '412', '002', '2132', 'Pendelegasian Mahasiswa untuk Kegiatan Nasional/Internasional', '840680000'),
+(16, '051', '400', '007', '2132', 'Sarana dan Prasarana PTKI', '378881000'),
+(17, '051', '300', '012', '2132', 'Peningkatan Sarana dan Prasarana PTKI melalui SBSN', '40481279000'),
+(18, '051', '001', '022', '2132', 'Mahasiswa Penerima Beasiswa Peningkatan Prestasi dan Akademik (RM)', '64000000'),
+(19, '051', '400', '025', '2132', 'Beasiswa Kajian Keislaman', '100000000'),
+(20, '051', '200', '027', '2132', 'Percepatan Akreditasi Prodi PTKI', '52248000'),
+(21, '051', '400', '031', '2132', 'Penerimaan Mahasiswa Baru', '577576000'),
+(22, '052', '001', '035', '2132', 'Bidik Misi (on going 2019 - 2 semester)', '2468400000'),
+(23, '053', '001', '035', '2132', 'Bidik Misi (on going 2018 -2 semester)', '1650000000'),
+(24, '054', '001', '035', '2132', 'Bidik Misi (On going 2017 - 2 semester)', '1254000000'),
+(25, '055', '001', '035', '2132', 'Bidik Misi (On going - 1 semester)', '570000000'),
+(26, '051', '400', '041', '2132', 'Pemberian Beasiswa Tahfidz Al Quran', '84000000'),
+(27, '004', '500', '050', '2132', 'Dukungan Operasional Penyelenggaraan Pendidikan', '3213497000'),
+(28, '004', '502', '050', '2132', 'Dukungan Operasional Penyelenggaraan Pendidikan', '145255000'),
+(29, '004', '503', '050', '2132', 'Dukungan Operasional Penyelenggaraan Pendidikan', '200000000'),
+(30, '004', '505', '050', '2132', 'Dukungan Operasional Penyelenggaraan Pendidikan', '951360000'),
+(31, '004', '511', '050', '2132', 'Dukungan Operasional Penyelenggaraan Pendidikan', '200000000'),
+(32, '004', '519', '050', '2132', 'Dukungan Operasional Penyelenggaraan Pendidikan', '105500000'),
+(33, '004', '520', '050', '2132', 'Dukungan Operasional Penyelenggaraan Pendidikan', '810183000'),
+(34, '004', '521', '050', '2132', 'Dukungan Operasional Penyelenggaraan Pendidikan', '1809117000'),
+(35, '004', '522', '050', '2132', 'Dukungan Operasional Penyelenggaraan Pendidikan', '1570820000'),
+(36, '051', '001', '053', '2132', 'KIP Kuliah', '1650000000'),
+(37, '007', '004', '951', '2132', 'Peralatan dan Mesin', '213259000'),
+(38, '008', '005', '951', '2132', 'Gedung dan Bangunan', '0'),
+(39, '002', '400', '994', '2132', 'Operasional dan Pemeliharaan Kantor', '9992111000');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_output`
+--
+
+CREATE TABLE `tbl_output` (
+  `id_output` int(9) NOT NULL,
+  `kode_output` text NOT NULL,
+  `kode_kegiatan` text NOT NULL,
+  `output` text NOT NULL,
+  `pagu` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_output`
+--
+
+INSERT INTO `tbl_output` (`id_output`, `kode_output`, `kode_kegiatan`, `output`, `pagu`) VALUES
+(0, '002', '2132', 'Penyelenggaraan Pendidikan Tinggi Keagamaan Islam', '19264466000'),
+(1, '007', '2132', 'Sarana dan Prasarana PTKI', '378881000'),
+(2, '012', '2132', 'Sarana dan Prasarana PTKI melalui SBSN', '40481279000'),
+(3, '022', '2132', 'Mahasiswa Penerima Beasiswa Peningkatan Prestasi dan Akademik (PPA)', '64000000'),
+(4, '025', '2132', 'Mahasiswa Penerima Beasiswa Kajian Keislaman (Prodi Ilmu Dasar Islam)', '100000000'),
+(5, '027', '2132', 'Prodi yang Terkreditasi Menjadi Minimal B', '52248000'),
+(6, '031', '2132', 'Mahasiswa Baru', '577576000'),
+(7, '035', '2132', 'Bidik Misi PTKI', '5942400000'),
+(8, '041', '2132', 'Mahasiswa PTKI Penerima Beasiswa Tahfidz Al Qur\'an', '84000000'),
+(9, '050', '2132', 'PTKIN Penerima BOPTN', '9005732000'),
+(10, '053', '2132', 'PIP Kuliah', '1650000000'),
+(11, '951', '2132', 'Layanan Sarana dan Prasarana Internal', '213259000'),
+(12, '994', '2132', 'Layanan Perkantoran', '9992111000'),
+(13, '950', '2135', 'Layanan Dukungan Manajemen Eselon I', '95000000'),
+(14, '994', '2135', 'Layanan Perkantoran', '35003315000');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_sub_komponen`
+--
+
+CREATE TABLE `tbl_sub_komponen` (
+  `id_sub_komponen` int(9) NOT NULL,
+  `kode_sub_komponen` text NOT NULL,
+  `kode_komponen` text NOT NULL,
+  `kode_sub_output` text NOT NULL,
+  `kode_output` text NOT NULL,
+  `kode_kegiatan` text NOT NULL,
+  `sub_komponen` text NOT NULL,
+  `pagu` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_sub_komponen`
+--
+
+INSERT INTO `tbl_sub_komponen` (`id_sub_komponen`, `kode_sub_komponen`, `kode_komponen`, `kode_sub_output`, `kode_output`, `kode_kegiatan`, `sub_komponen`, `pagu`) VALUES
+(0, 'MA', '051', '002', '950', '2135', 'KOORDINASI PERENCANAAN', '95000000'),
+(1, 'A', '001', '001', '994', '2135', 'GAJI DAN TUNJANGAN', '12335751000'),
+(2, 'B', '001', '001', '994', '2135', 'PEMBAYARAN UANG MAKAN PNS', '2225280000'),
+(3, 'C', '001', '001', '994', '2135', 'PEMBAYARAN TUNJANGAN PROFESI DOSEN', '3654960000'),
+(4, 'D', '001', '001', '994', '2135', 'PEMBAYARAN TUNJANGAN KINERJA PEGAWAI', '9863334000'),
+(5, 'E', '001', '001', '994', '2135', 'PEMBAYARAN LEMBUR BAGI PEGAWAI', '513990000'),
+(6, 'AA', '002', '001', '994', '2135', 'OPERASIONAL PERKANTORAN', '5060780000'),
+(7, 'AB', '002', '001', '994', '2135', 'LANGGANAN DAYA DAN JASA', '1349220000'),
+(8, 'A', '051', '001', '022', '2132', 'BEASISWA PENINGKATAN PRESTASI DAN AKADEMIK', '64000000'),
+(9, 'A', '051', '400', '025', '2132', 'BEASISWA MAHASISWA PADA PRODI [LANGKA PEMINAT]', '100000000'),
+(10, 'A', '051', '400', '041', '2132', 'BEASISWA TAHFIDZ AL-QUR\'AN', '84000000'),
+(11, 'AA', '056', '200', '002', '2132', 'Manajemen Beasiswa Mahasiswa', '14150000'),
+(12, 'AA', '060', '200', '002', '2132', 'Manajemen pengelolaan beasiswa mahasiswa asing', '16000000'),
+(13, 'AA', '600', '400', '002', '2132', 'PENGENALAN BUDAYA AKADEMIK DAN KEMAHASISWAAN (PBAK)', '353563000'),
+(14, 'AA', '053', '401', '002', '2132', 'Penghargaan Studi Lanjut bagi Tenaga Kependidikan', '90000000'),
+(15, 'AA', '054', '401', '002', '2132', 'FGD ALUMNI DAN USER ALUMNI', '41070000'),
+(16, 'AA', '055', '401', '002', '2132', 'PENDELEGASIAN TENAGA PENDIDIK DAN KEPENDIDIKAN PADA KEGIATAN ILMIAH', '328000000'),
+(17, 'AA', '051', '403', '002', '2132', 'PENGHARGAAN MAHASISWA BERPRETASI BIDANG NON AKADEMIK', '30000000'),
+(18, 'AA', '051', '405', '002', '2132', 'STUDIUM GENERAL', '117805000'),
+(19, 'AA', '051', '411', '002', '2132', 'WISUDA SARJANA DAN PASCASARJANA', '1585500000'),
+(20, 'AA', '051', '412', '002', '2132', 'OPERASIONAL KEGIATAN ORGANISASI KEMAHASISWAAN', '523400000'),
+(21, 'AA', '052', '412', '002', '2132', 'PENDELEGASIAN MAHASISWA PADA KEGIATAN NASIONAL/INTERNASIONAL', '300000000'),
+(22, 'AA', '051', '400', '007', '2132', 'PENGADAAN APLIKASI TRACER STUDY', '0'),
+(23, 'AA', '051', '300', '012', '2132', 'PEMBANGUNAN GEDUNG FAKULTAS SYARIAH', '36046741000'),
+(24, 'AA', '051', '400', '031', '2132', 'SOSIALISASI PMB', '135590000'),
+(25, 'AA', '004', '500', '050', '2132', 'PENELITIAN PADA PTKIN', '1386175000'),
+(26, 'AA', '004', '503', '050', '2132', 'SARANA DAN PRASARANA KEMAHASISWAAN', '200000000'),
+(27, 'AA', '004', '520', '050', '2132', 'PEMBINAAN KEROHANIAN  DALAM RANGKA IDUL ADHA', '32493000'),
+(28, 'AA', '004', '522', '050', '2132', 'BIMTEK PENGUATAN KOMPETENSI OPERATOR SIKADU', '1299630000'),
+(29, 'AA', '008', '005', '951', '2132', 'PEKERJAAN LANJUTAN PEMBUATAN GAPURA KAMPUS II', '0'),
+(30, 'AA', '002', '400', '994', '2132', 'ADMINISTRASI MANAJEMEN PERKANTORAN', '5492058000'),
+(31, 'AB', '056', '200', '002', '2132', 'MANAJEMEN PENGELOLAAN KIP KULIAH', '83314000'),
+(32, 'AB', '060', '200', '002', '2132', 'BEASISWA MAHASISWA ASING', '84000000'),
+(33, 'AB', '600', '400', '002', '2132', 'BIMBINGAN KONSELING MAHASISWA', '26567000'),
+(34, 'AB', '051', '405', '002', '2132', 'UJIAN SEMESTER', '1805390000'),
+(35, 'AB', '052', '412', '002', '2132', 'IPPBMM', '386300000'),
+(36, 'AB', '051', '400', '007', '2132', 'PENGADAAN PENERANGAN JALAN', '0'),
+(37, 'AB', '051', '300', '012', '2132', 'PENGADAAN MEUBELAIR DAN PERLENGKAPAN GEDUNG SBSN', '4434538000'),
+(38, 'AB', '051', '400', '031', '2132', 'SELEKSI PENERIMAAN MAHASISWA BARU JALUR MANDIRI', '379440000'),
+(39, 'AB', '004', '500', '050', '2132', 'PUBLIKASI ILMIAH PERCEPATAN GURU BESAR', '500000000'),
+(40, 'AB', '004', '520', '050', '2132', 'MENGASAH JATI DIRI KEMBALI FITRI', '46310000'),
+(41, 'AB', '004', '522', '050', '2132', 'USER SIKADU EDUCATION', '44185000'),
+(42, 'AB', '008', '005', '951', '2132', 'PEMBANGUNAN DINDING PENAHAN TANAH (TALUD) DAN PENATAAN LAHAN', '0'),
+(43, 'AB', '002', '400', '994', '2132', 'DOSEN YANG MENDAPAT TUGAS TAMBAHAN', '645600000'),
+(44, 'AC', '600', '400', '002', '2132', 'JOB FAIR DAN PAMERAN INOVASI PRODUK MAHASISWA SERTA ALUMNI', '75023000'),
+(45, 'AC', '052', '412', '002', '2132', 'PERKEMAHAN WIRAKARYA', '154380000'),
+(46, 'AC', '004', '500', '050', '2132', 'PENDAMPINGAN PENULISAN PUBLIKASI BERBASIS RISET', '12600000'),
+(47, 'AC', '004', '520', '050', '2132', 'ISTIGHOSAH MEWUJUDKAN PERDAMAIAN BANGSA', '51620000'),
+(48, 'AC', '004', '522', '050', '2132', 'PENGEMBANGAN KARIR BAGI ALUMNI', '122280000'),
+(49, 'AC', '002', '400', '994', '2132', 'PEMELIHARAAN GEDUNG PERKANTORAN', '900000000'),
+(50, 'AD', '600', '400', '002', '2132', 'PENGADAAN JAKET ALMAMATER', '308000000'),
+(51, 'AD', '051', '401', '002', '2132', 'PENYUSUNAN PROPOSAL ALIH STATUS MENJADI UIN', '32865000'),
+(52, 'AD', '004', '520', '050', '2132', 'PEMBINAAN MENTAL DAN SPIRITUAL PEGAWAI MENYAMBUT RAMADHAN', '24950000'),
+(53, 'AD', '008', '005', '951', '2132', 'PEMBUATAN TEMPAT PARKIR DAN FASILITAS PUBLIK', '0'),
+(54, 'AD', '002', '400', '994', '2132', 'PEMELIHARAAN PERALATAN DAN MESIN', '1244500000'),
+(55, 'AE', '051', '401', '002', '2132', 'SEMINAR WAWASAN KEBANGSAAN', '16473000'),
+(56, 'AE', '004', '520', '050', '2132', 'MEMBANGUN JATIDIRI MENUJU PTKIN YANG UNGGUL', '61400000'),
+(57, 'AF', '051', '401', '002', '2132', 'FGD PERENCANAAN PTKIN SE-JAWA TENGAH', '59025000'),
+(58, 'AF', '004', '520', '050', '2132', 'SINKRONISASI PELAKSANAAN ANGGARAN', '52780000'),
+(59, 'AF', '008', '005', '951', '2132', 'PENATAAN SANITASI DAN AIR BERSIH', '0'),
+(60, 'AF', '002', '400', '994', '2132', 'OUTSOURCING CLEANING SERVICE', '1085595000'),
+(61, 'AG', '051', '401', '002', '2132', 'WORKSHOP PENINGKATAN KUALITAS AUDIT KEUANGAN', '29352000'),
+(62, 'AG', '004', '520', '050', '2132', 'PENYUSUNAN RKA-KL UNIT KERJA DI LINGKUNGAN IAIN PEKALONGAN', '107950000'),
+(63, 'AG', '008', '005', '951', '2132', 'PENAMBAHAN LANTAI GEDUNG KANTOR', '0'),
+(64, 'AH', '051', '401', '002', '2132', 'RAPAT KERJA', '249974000'),
+(65, 'AH', '004', '520', '050', '2132', 'SERTIFIKASI ISO', '50000000'),
+(66, 'AI', '051', '401', '002', '2132', 'RAPAT KOORDINASI PIMPINAN', '9126000'),
+(67, 'AI', '004', '520', '050', '2132', 'WORKSHOP TUNAS BANGSA ANTI KORUPSI', '130475000'),
+(68, 'AJ', '004', '500', '050', '2132', 'PENELAAHAN RENCANA KERJA DAN ANGGARAN 2021', '19946000'),
+(69, 'AJ', '004', '520', '050', '2132', 'REFLEKSI KETELADANAN RASUL MELALUI SEJUTA SHOLAWAT', '69415000'),
+(70, 'AK', '004', '500', '050', '2132', 'PENYUSUNAN JUKSUNLAH RENCANA KERJA ANGGARAN 2021', '102238000'),
+(71, 'BA', '600', '400', '002', '2132', 'WORKSHOP PENGEMBANGAN KURIKULUM DI ERA REVOLUSI INDUSTRI 4.0 (PAI)', '30067000'),
+(72, 'BA', '051', '401', '002', '2132', 'RAPAT KERJA FTIK', '123570000'),
+(73, 'BA', '051', '405', '002', '2132', 'UJIAN TINGKAT AKHIR FTIK - JURUSAN PENDIDIKAN AGAMA ISLAM', '384400000'),
+(74, 'BA', '051', '412', '002', '2132', 'EXPO MAHASISWA FTIK', '49020000'),
+(75, 'BA', '051', '400', '007', '2132', 'PENGADAAN PERALATAN PENDIDIKAN DAN GEDUNG FTIK', '0'),
+(76, 'BA', '004', '505', '050', '2132', 'Dosen Luar Biasa dan Dosen Tamu FTIK', '951360000'),
+(77, 'BA', '002', '400', '994', '2132', 'OPERASIONAL FTIK', '95020000'),
+(78, 'BB', '600', '400', '002', '2132', 'PELATIHAN PEMBELAJARAN PAI BERBASIS IT (PAI)', '23385000'),
+(79, 'BB', '051', '401', '002', '2132', 'PELATIHAN GURU PROFESIONAL MAHASISWA', '38272000'),
+(80, 'BB', '051', '405', '002', '2132', 'KULIAH KERJA LAPANGAN FTIK', '142145000'),
+(81, 'BB', '051', '412', '002', '2132', 'MENGGALI MINAT DAN BAKAT MAHASISWA FTIK', '213800000'),
+(82, 'BB', '002', '400', '994', '2132', 'PENDELEGASIAN TENAGA PENDIDIK DAN KEPENDIDIKAN PADA SEMINAR/KEG SEJENIS', '185000000'),
+(83, 'BC', '600', '400', '002', '2132', 'WORKSHOP REKONSTRUKSI KURIKULUM (PBA)', '31617000'),
+(84, 'BC', '051', '401', '002', '2132', 'PENGELOLAAN JURNAL EDUKASIA ISLAMIKA', '30960000'),
+(85, 'BC', '051', '405', '002', '2132', 'PRAKTIK MENGAJAR', '353762000'),
+(86, 'BC', '051', '412', '002', '2132', 'SOSIALISASI PEMBELAJARAN DI FTIK', '100565000'),
+(87, 'BD', '600', '400', '002', '2132', 'WORKSHOP REDESAIN VISI, MISI, RENSTRA, RENOP, RIP, DAN KURIKULUM PIAUD', '40720000'),
+(88, 'BD', '051', '401', '002', '2132', 'PENGELOLAAN JURNAL ALSINATUNA', '30960000'),
+(89, 'BD', '051', '405', '002', '2132', 'ORIENTASI PENGENALAN PRAMUKA DAN OUTDOOR LEARNING', '43932000'),
+(90, 'BE', '600', '400', '002', '2132', 'WORKSHOP PENYUSUNAN STANDAR MUTU (T.MAT)', '33315000'),
+(91, 'BE', '051', '405', '002', '2132', 'PRAKTIKUM SENI TARI', '24900000'),
+(92, 'BF', '600', '400', '002', '2132', 'WORKSHOP ACADEMIC WRITING (T.BIG)', '38410000'),
+(93, 'BF', '051', '405', '002', '2132', 'SEMESTER PENDEK FTIK', '39200000'),
+(94, 'BG', '600', '400', '002', '2132', 'WORKSHOP REVIEW KURIKULUM (T.BIG)', '28220000'),
+(95, 'BG', '051', '405', '002', '2132', 'SKPI MAHASISWA FTIK', '135672000'),
+(96, 'BH', '600', '400', '002', '2132', 'SEMINAR INTERNASIONAL FTIK', '108925000'),
+(97, 'BH', '051', '405', '002', '2132', 'LAYANAN PERWALIAN/PENASEHAT AKADEMIK', '291450000'),
+(98, 'BI', '600', '400', '002', '2132', 'PENGAJUAN PROGRAM STUDI BARU TADRIS BAHASA INDONESIA DAN TADRIS IPA', '29180000'),
+(99, 'BI', '051', '405', '002', '2132', 'KELEBIHAN MENGAJAR FTIK', '450600000'),
+(100, 'BJ', '600', '400', '002', '2132', 'WORKSHOP PERSIAPAN AKREDITASI PROGRAM STUDI BERBASIS ONLINE (SAPTO)', '42090000'),
+(101, 'BJ', '051', '405', '002', '2132', 'STUDIUM GENERAL SEMESTER GENAP FTIK', '31055000'),
+(102, 'BK', '600', '400', '002', '2132', 'FGD DAN SILATURAHMI ORANG TUA MAHASISWA', '22570000'),
+(103, 'BK', '051', '405', '002', '2132', 'SOSIALISASI PENERIMAAN MAHASISWA BARU', '17950000'),
+(104, 'BL', '600', '400', '002', '2132', 'SEMINAR JURUSAN PIAUD', '21747000'),
+(105, 'BM', '600', '400', '002', '2132', 'RAPAT PERSIAPAN DAN EVALUASI PERKULIAHAN FTIK', '15260000'),
+(106, 'BN', '600', '400', '002', '2132', 'FGD DENGAN PENGGUNA LULUSAN DAN TRACER STUDY', '35420000'),
+(107, 'BO', '600', '400', '002', '2132', 'FGD DOSEN FTIK DAN DOSEN UIN SNJ CIREBON DAN IAIN PURWOKERTO', '20160000'),
+(108, 'BP', '600', '400', '002', '2132', 'FGD PEMBENTUKAN JURNAL BARU DI FTIK', '15620000'),
+(109, 'BQ', '600', '400', '002', '2132', 'FGD PERINTISAN MADRASAH BINAAN', '15430000'),
+(110, 'BR', '600', '400', '002', '2132', 'FGD PENGUATAN PROFIL FTIK DAN JURUSAN', '15780000'),
+(111, 'BS', '600', '400', '002', '2132', 'WORKSHOP PENINGKATAN KOMPETENSI DOSEN FTIK', '53290000'),
+(112, 'BT', '600', '400', '002', '2132', 'WORKSHOP PENINGKATAN KOMPETENSI TENAGA KEPENDIDIKAN FTIK', '42090000'),
+(113, 'BU', '600', '400', '002', '2132', 'SOFTSKILL BAGI MAHASISWA FTIK', '117400000'),
+(114, 'BV', '600', '400', '002', '2132', 'PENGHARGAAN BAGI MAHASISWA DAN DOSEN BERPRESTASI', '30000000'),
+(115, 'BW', '600', '400', '002', '2132', 'STUDIUM GENERAL / KULIAH UMUM', '117992000'),
+(116, 'CA', '051', '401', '002', '2132', 'PARTISIPASI TENAGA PENDIDIK DAN KEPENDIDIKAN', '75500000'),
+(117, 'CA', '051', '405', '002', '2132', 'UJIAN TINGKAT AKHIR FAKULTAS SYARIAH JURUSAN HUKUM KELUARGA ISLAM', '98500000'),
+(118, 'CA', '051', '412', '002', '2132', 'MENGGALI MINAT BAKAT MAHASISWA', '141984000'),
+(119, 'CA', '004', '500', '050', '2132', 'STUDIUM GENERAL FAKULTAS', '21634000'),
+(120, 'CA', '002', '400', '994', '2132', 'BELANJA KEPERLUAN PERKANTORAN', '59041000'),
+(121, 'CB', '051', '401', '002', '2132', 'SEMINAR INTERNASIONAL DAN CALL PAPER FAKULTAS SYARIAH', '163100000'),
+(122, 'CB', '051', '405', '002', '2132', 'UJIAN TINGKAT AKHIR FAKULTAS SYARIAH JURUSAN HUKUM EKONOMI SYARIAH', '92000000'),
+(123, 'CB', '004', '500', '050', '2132', 'TRAINING SKILL MAHASISWA JURUSAN HUKUM TATA NEGARA', '12435000'),
+(124, 'CC', '051', '401', '002', '2132', 'PENGELOLA JURNAL HUKUM ISLAM', '29960000'),
+(125, 'CC', '051', '405', '002', '2132', 'PRAKTIKUM MAHASISWA FAKULTAS SYARIAH JURUSAN HUKUM KELUARGA ISLAM', '6625000'),
+(126, 'CC', '004', '500', '050', '2132', 'WORKSHOP PENINGKATAN KUALITAS AKADEMIK DOSEN', '36966000'),
+(127, 'CD', '051', '401', '002', '2132', 'PENINGKATAN KERJASAMA KELEMBAGAAN', '100800000'),
+(128, 'CD', '051', '405', '002', '2132', 'PRAKTIKUM MAHASISWA FAKULTAS SYARIAH JURUSAN HUKUM EKONOMI SYARIAH', '750000'),
+(129, 'CD', '004', '500', '050', '2132', 'WORKSHOP TENAGA KEPENDIDIKAN FAKULTAS SYARIAH', '32905000'),
+(130, 'CE', '051', '405', '002', '2132', 'PRAKTIKUM MAHASISWA FAKULTAS SYARIAH JURUSAN HUKUM TATA NEGARA', '750000'),
+(131, 'CE', '004', '500', '050', '2132', 'TRAINING SKILL MAHASISWA JURUSAN HUKUM EKONOMI SYARIAH', '13650000'),
+(132, 'CF', '051', '405', '002', '2132', 'PRAKTIK PENGALAMAN LAPANGAN JURUSAN HUKUM KELUARGA ISLAM', '61450000'),
+(133, 'CF', '004', '500', '050', '2132', 'TRAINING SKILL MAHASISWA JURUSAN HUKUM KELUARGA', '13950000'),
+(134, 'CG', '051', '405', '002', '2132', 'PRAKTIK PENGALAMAN LAPANGAN JURUSAN HUKUM EKONOMI SYARIAH', '55295000'),
+(135, 'CG', '004', '500', '050', '2132', 'WORKSHOP PENINGKATAN KUALITAS SDM LBH', '18415000'),
+(136, 'CH', '051', '405', '002', '2132', 'PRAKTIK PENGALAMAN LAPANGAN JURUSAN HUKUM TATA NEGARA', '39440000'),
+(137, 'CH', '004', '500', '050', '2132', 'TRAINING MOTIVASI AKADEMIK CALON WISUDAWAN FAKULTAS SYARIAH (SOFTSKILL)', '20020000'),
+(138, 'CI', '051', '405', '002', '2132', 'KULIAH KERJA LAPANGAN JURUSAN HKI', '13650000'),
+(139, 'CI', '004', '500', '050', '2132', 'SOSIALISASI PEMBELAJARAN', '21085000'),
+(140, 'CJ', '051', '405', '002', '2132', 'KULIAH KERJA LAPANGAN JURUSAN HES', '12100000'),
+(141, 'CJ', '004', '500', '050', '2132', 'RAPAT KERJA FAKULTAS SYARIAH', '56865000'),
+(142, 'CK', '051', '405', '002', '2132', 'KULIAH KERJA LAPANGAN JURUSAN HTN', '10355000'),
+(143, 'CK', '004', '500', '050', '2132', 'WORKSHOP REVIEW KURIKULUM FAKULTAS SYARIAH', '25040000'),
+(144, 'CL', '051', '405', '002', '2132', 'LAYANAN PERWALIAN/PENASEHAT AKADEMIK', '162350000'),
+(145, 'CM', '051', '405', '002', '2132', 'HONORARIUM KELEBIHAN JAM MENGAJAR', '96000000'),
+(146, 'CN', '051', '405', '002', '2132', 'LAYANAN ADMINISTRASI SEMESTER PENDEK', '26400000'),
+(147, 'CO', '051', '405', '002', '2132', 'LAYANAN ADMINISTRASI DOSEN LUAR BIASA', '246000000'),
+(148, 'DA', '051', '401', '002', '2132', 'PENGELOLA JURNAL IJIBEC', '37160000'),
+(149, 'DA', '051', '405', '002', '2132', 'UJIAN TINGKAT AKHIR FEBI PRODI D.3 PERBANKAN SYARIAH', '59840000'),
+(150, 'DA', '051', '412', '002', '2132', 'MENGGALI MINAT DAN BAKAT MAHASISWA', '174300000'),
+(151, 'DA', '051', '400', '007', '2132', 'PENGADAAN PERALATAN PERKANTORAN FEBI', '0'),
+(152, 'DA', '004', '500', '050', '2132', 'HONOR DOSEN LUAR BIASA', '548800000'),
+(153, 'DA', '002', '400', '994', '2132', 'OPERASIONAL FEBI', '78000000'),
+(154, 'DB', '051', '401', '002', '2132', 'WORKSHOP PENINGKATAN KAPASITAS PENELITIAN DOSEN', '58619000'),
+(155, 'DB', '051', '405', '002', '2132', 'UJIAN TINGKAT AKHIR FEBI PRODI EKONOMI SYARIAH', '261200000'),
+(156, 'DB', '051', '412', '002', '2132', 'SOSIALISASI PEMBELAJARAN MAHASISWA FEBI', '43460000'),
+(157, 'DB', '004', '500', '050', '2132', 'SEMESTER PENDEK', '30240000'),
+(158, 'DB', '002', '400', '994', '2132', 'PEMELIHARAAN GEDUNG DAN BANGUNAN', '0'),
+(159, 'DC', '051', '401', '002', '2132', 'WORKSHOP EVALUASI KURIKULUM FEBI', '28035000'),
+(160, 'DC', '051', '405', '002', '2132', 'UJIAN TINGKAT AKHIR FEBI PRODI PERBANKAN SYARIAH', '10700000'),
+(161, 'DC', '051', '412', '002', '2132', 'SERTIFIKASI KOMPETENSI PENDAMPING IJAZAH MAHASISWA FEBI', '29935000'),
+(162, 'DC', '004', '500', '050', '2132', 'KOMPETISI EKONOMI SYARIAH', '24390000'),
+(163, 'DD', '051', '401', '002', '2132', 'TOT PERBANKAN SYARIAH', '36710000'),
+(164, 'DD', '051', '405', '002', '2132', 'UJIAN TINGKAT AKHIR FEBI PRODI AKUNTASI SYARIAH', '23000000'),
+(165, 'DD', '051', '412', '002', '2132', 'SOFTSKILL BAGI MAHASISWA FEBI', '57380000'),
+(166, 'DE', '051', '401', '002', '2132', 'WORKSHOP PENINGKATAN LAYANAN MUTU AKADEMIK BAGI TENAGA KEPENDIDIKAN', '71938000'),
+(167, 'DE', '051', '405', '002', '2132', 'HONORARIUM KELEBIHAN MENGAJAR', '161280000'),
+(168, 'DE', '051', '412', '002', '2132', 'SEMINAR MOTIVASI MAHASISWA', '43780000'),
+(169, 'DF', '051', '401', '002', '2132', 'SEMINAR FEBI', '49470000'),
+(170, 'DF', '051', '405', '002', '2132', 'LAYANAN PERWALIAN / PENASEHAT AKADEMIK', '268500000'),
+(171, 'DF', '051', '412', '002', '2132', 'JAMBORE EKONOMI SYARIAH', '54186000'),
+(172, 'DG', '051', '401', '002', '2132', 'AKADEMIC WRITING ADVOKASI STUDI MAHASISWA', '40050000'),
+(173, 'DG', '051', '405', '002', '2132', 'STUDIUM GENERAL', '49840000'),
+(174, 'DH', '051', '401', '002', '2132', 'SHORT COURSE PELAYANAN PRIMA', '5390000'),
+(175, 'DH', '051', '405', '002', '2132', 'KKL FEBI JURUSAN EKONOMI SYARIAH', '60800000'),
+(176, 'DI', '051', '401', '002', '2132', 'FGD STAKEHOLDER FEBI', '22059000'),
+(177, 'DI', '051', '405', '002', '2132', 'KKL FEBI JURUSAN AKUNTASI SYARIAH', '13100000'),
+(178, 'DJ', '051', '401', '002', '2132', 'RAPAT KERJA PENGELOLA FEBI', '32285000'),
+(179, 'DJ', '051', '405', '002', '2132', 'KKL FEBI JURUSAN PERBANKAN SYARIAH', '30050000'),
+(180, 'DK', '051', '401', '002', '2132', 'FGD KONSORSIUM KEILMUAN', '23140000'),
+(181, 'DK', '051', '405', '002', '2132', 'PPL FEBI EKONOMI SYARIAH', '99050000'),
+(182, 'DL', '051', '401', '002', '2132', 'PENDELEGASIAN TENAGA PENDIDIK DAN KEPENDIDIKAN PADA SEMINAR / KEGIATAN SEJENISNYA', '107200000'),
+(183, 'DL', '051', '405', '002', '2132', 'PPL FEBI PERBANKAN SYARIAH', '22410000'),
+(184, 'DM', '051', '401', '002', '2132', 'AKREDITASI PRODI AKUNTANSI SYARIAH DAN PERBANKAN SYARIAH', '61474000'),
+(185, 'DM', '051', '405', '002', '2132', 'PPL FEBI AKUNTASI SYARIAH', '38325000'),
+(186, 'DN', '051', '401', '002', '2132', 'AUDIT MUTU INTERNAL RE-AKREDITASI PRODI EKONOMI SYARIAH', '13475000'),
+(187, 'DN', '051', '405', '002', '2132', 'PRAKTIKUM FEBI PERBANKAN SYARIAH', '5700000'),
+(188, 'DO', '051', '401', '002', '2132', 'PENYUSUNAN BORANG RE-AKREDITASI PRODI EKONOMI SYARIAH', '15260000'),
+(189, 'DO', '051', '405', '002', '2132', 'PRAKTIKUM FEBI EKONOMI SYARIAH', '11200000'),
+(190, 'DP', '051', '401', '002', '2132', 'GUEST LECTURE / VISITOR', '19325000'),
+(191, 'DP', '051', '405', '002', '2132', 'PRAKTIKUM FEBI AKUNTANSI SYARIAH', '11400000'),
+(192, 'EA', '051', '401', '002', '2132', 'PENGELOLAAN JURNAL RELIGIA', '34960000'),
+(193, 'EA', '051', '405', '002', '2132', 'UJIAN TINGKAT AKHIR FAKULTAS', '157000000'),
+(194, 'EA', '051', '411', '002', '2132', 'SOFT SKILL DAN PENGUKUGAN KELULUSAN MAHASISWA', '28600000'),
+(195, 'EA', '051', '412', '002', '2132', 'PEMBINAAN UKM', '163800000'),
+(196, 'EA', '051', '400', '007', '2132', 'PENGADAAN PERALATAN LABORATORIUM KOMPUTER FAKULTAS', '257000000'),
+(197, 'EA', '051', '200', '027', '2132', 'VISITASI AKREDITASI 3 PRODI FUAD', '52248000'),
+(198, 'EA', '004', '500', '050', '2132', 'LAYANAN PERWALIAN/PENASEHAT AKADEMIK', '151100000'),
+(199, 'EA', '002', '400', '994', '2132', 'OPERASIONAL FUAD', '46750000'),
+(200, 'EB', '051', '401', '002', '2132', 'PENGELOLAAN JURNAL TAFSIR HADIS', '34960000'),
+(201, 'EB', '051', '412', '002', '2132', 'PENDELEGASIAN MAHASISWA', '31000000'),
+(202, 'EB', '051', '400', '007', '2132', 'PENGADAAN PERALATAN LABORATORIUM MANAJEMEN DAKWAH', '46000000'),
+(203, 'EB', '004', '500', '050', '2132', 'HONORARIUM KELEBIHAN MENGAJAR', '91800000'),
+(204, 'EB', '002', '400', '994', '2132', 'BELANJA BARANG CETAKAN', '18800000'),
+(205, 'EC', '051', '401', '002', '2132', 'SEMINAR PENDIDIKAN', '63426000'),
+(206, 'EC', '051', '405', '002', '2132', 'SKPI', '39600000'),
+(207, 'EC', '051', '412', '002', '2132', 'SOSIALISASI PEMBELAJARAN MAHASISWA BARU', '22275000'),
+(208, 'EC', '051', '400', '007', '2132', 'PENGADAAN PERALATAN PERKANTORAN', '17881000'),
+(209, 'EC', '004', '500', '050', '2132', 'RAPAT KERJA TAHUNAN FAKULTAS', '73243000'),
+(210, 'EC', '002', '400', '994', '2132', 'PEMELIHARAAN GEDUNG', '18760000'),
+(211, 'ED', '051', '405', '002', '2132', 'STUDIUM GENERAL SEMESTER GENAP', '18689000'),
+(212, 'ED', '051', '400', '007', '2132', 'PENGADAAN PERALATAN LABORATORIUM ILMU AL-QUR\'AN DAN TAFSIR', '58000000'),
+(213, 'ED', '002', '400', '994', '2132', 'PENDELEGASIAN TENAGA PENDIDIK DAN KEPENDIDIKAN PADA SEMINAR/KEGIATAN SEJENIS (SPD)', '54000000'),
+(214, 'EE', '051', '401', '002', '2132', 'WORKSHOP PENGELOLAAN KEUANGAN FAKULTAS BERBASIS (PERENCANAAN, PELAKSANAAN, PELAPORAN DAN EVALUASI)', '36800000'),
+(215, 'EF', '051', '401', '002', '2132', 'WORKSHOP \"PENGEMBANGAN BRANDING KEILMUAN ISLAM DALAM MENEGUHKAN FUAD IAIN PEKALONGAN SEBAGAI DESTINASI ISLAM MODERAT\"', '39050000'),
+(216, 'EF', '051', '405', '002', '2132', 'HONOR DOSEN LUAR BIASA FUAD', '391200000'),
+(217, 'EG', '051', '405', '002', '2132', 'SEMESTER PENDEK', '16800000'),
+(218, 'EH', '051', '405', '002', '2132', 'PPL Jurusan BPI', '26860000'),
+(219, 'EI', '051', '405', '002', '2132', 'PPL JURUSAN TASAWUF DAN PSIKOTERAPI', '7379000'),
+(220, 'EJ', '051', '405', '002', '2132', 'PPL JURUSAN KPI', '35380000'),
+(221, 'EK', '051', '405', '002', '2132', 'PPL JURUSAN ILMU HADIS', '11581000'),
+(222, 'EL', '051', '405', '002', '2132', 'PPL JURUSAN ILMU AL-QUR\'AN DAN TAFSIR', '26790000'),
+(223, 'EM', '051', '405', '002', '2132', 'PPL JURUSAN MANAJEMEN DAKWAH', '22516000'),
+(224, 'EN', '051', '405', '002', '2132', 'KULIAH KERJA LAPANGAN (KKL) JURUSAN BPI', '20610000'),
+(225, 'EO', '051', '405', '002', '2132', 'KULIAH KERJA LAPANGAN (KKL) JURUSAN TASAWUF DAN PSIKOTERAPI', '10698000'),
+(226, 'EP', '051', '405', '002', '2132', 'KULIAH KERJA LAPANGAN  (KKL) JURUSAN ILMU HADIS', '10468000'),
+(227, 'EQ', '051', '405', '002', '2132', 'KULIAH KERJA LAPANGAN (KKL) JURUSAN ILMU AL-QUR\'AN DAN TAFSIR', '17190000'),
+(228, 'ER', '051', '405', '002', '2132', 'KULIAH KERJA LAPANGAN (KKL) JURUSAN KPI', '20610000'),
+(229, 'ES', '051', '405', '002', '2132', 'KULIAH KERJA LAPANGAN (KKL) JURUSAN MANAJEMEN DAKWAH', '17190000'),
+(230, 'FA', '051', '401', '002', '2132', 'PENGELOLAAN JURNAL HIKMATUNA', '49560000'),
+(231, 'FA', '051', '405', '002', '2132', 'UJIAN TINGKAT AKHIR PROGRAM PESCASARJANA', '240000000'),
+(232, 'FA', '051', '400', '031', '2132', 'PENERIMAAN MAHASISWA BARU PASCASARJANA', '32770000'),
+(233, 'FA', '002', '400', '994', '2132', 'OPERASIONAL PASCASARJANA', '15829000'),
+(234, 'FB', '051', '401', '002', '2132', 'INTERNASIONAL CONFERENCE', '160165000'),
+(235, 'FB', '051', '405', '002', '2132', 'UJIAN AKHIR SEMESTER PROGRAM PASCASARJANA', '33000000'),
+(236, 'FB', '051', '400', '031', '2132', 'SOSIALISASI PMB PASCASARJANA', '29776000'),
+(237, 'FC', '051', '401', '002', '2132', 'WORKSHOP STRATEGI MEDIASI KETAHANAN KELUARGA', '40603000'),
+(238, 'FC', '051', '405', '002', '2132', 'HONOR KELEBIHAN MENGAJAR', '341000000'),
+(239, 'FD', '051', '401', '002', '2132', 'WORKSHOP METODE PEMBELAJARAN INOVATIF DI ERA INDUSTRI 4.0', '40603000'),
+(240, 'FD', '051', '405', '002', '2132', 'HONOR DOSEN LUAR BIASA', '180800000'),
+(241, 'FE', '051', '401', '002', '2132', 'WORKSHOP MANAJEMEN TATA KELOLA PRODI BERBASIS ISO', '40603000'),
+(242, 'FE', '051', '405', '002', '2132', 'HONOR PENASEHAT AKADEMIK', '25000000'),
+(243, 'FF', '051', '401', '002', '2132', 'SIMULASI PENDIRIAN PRODI EKONOMI SYARIAH, PGMI, DAN MPI', '47666000'),
+(244, 'FF', '051', '405', '002', '2132', 'STUDIUM GENERAL PROGRAM PASCASARJANA', '30430000'),
+(245, 'FG', '051', '401', '002', '2132', 'VISITASI PENDIRIAN PRODI EKONOMI SYARIAH', '7165000'),
+(246, 'FG', '051', '405', '002', '2132', 'STUDENT FIELD TRIP PASCASARJANA', '70700000'),
+(247, 'FH', '051', '401', '002', '2132', 'VISITASI PENDIRIAN PRODI PGMI', '7165000'),
+(248, 'FI', '051', '401', '002', '2132', 'VISITASI PENDIRIAN PRODI MPI', '7165000'),
+(249, 'GA', '051', '401', '002', '2132', 'PENYUSUNAN JADWAL IMSAKIYAH', '24312000'),
+(250, 'GA', '004', '521', '050', '2132', 'BANTUAN PEMBERDAYAAN MASYARAKAT BERBASIS PRODI BAGI DOSEN', '231500000'),
+(251, 'GB', '051', '401', '002', '2132', 'SOSIALISASI KEBIJAKAN, PROGRAM, DAN KEGIATAN LP2M IAIN PEKALONGAN', '19300000'),
+(252, 'GB', '004', '521', '050', '2132', 'PEMBEKALAN KLASIKAL KKN [1 TAHUN 2 GELOMBANG]', '55800000'),
+(253, 'GC', '051', '401', '002', '2132', 'FGD PENELITIAN, PUBLIKASI, PENGABDIAN, DAN GA TAHUN 2020', '24235000'),
+(254, 'GC', '004', '521', '050', '2132', 'KKN BERBASIS PRODI [ 1 TAHUN 2 GELOMBANG]', '795700000'),
+(255, 'GD', '051', '401', '002', '2132', 'RAPAT KERJA LP2M TAHUN 2020', '31210000'),
+(256, 'GD', '004', '521', '050', '2132', 'RDK REVIEW PROPOSAL DAN HASIL PROGRAM PEMBERDAYAAN MASYARAKAT', '30150000'),
+(257, 'GE', '051', '401', '002', '2132', 'PENGUATAN ANALISYS RESPONSIF GENDER', '46743000'),
+(258, 'GE', '004', '521', '050', '2132', 'WORKSHOP  METODOLOGI PENGABDIAN KEPADA MASYARAKAT TAHUN 2020', '31005000'),
+(259, 'GF', '004', '521', '050', '2132', 'RDK PENYUSUNAN PANDUAN LITAPDIMAS TAHUN 2020', '13675000'),
+(260, 'GG', '004', '521', '050', '2132', 'PENERBITAN JURNAL PENELITIAN VOL. 14 NOMOR 1 MEI 2020', '25520000'),
+(261, 'GH', '004', '521', '050', '2132', 'PENERBITAN JURNAL MUWAZAH VOLUME 14 NOMOR 1, MEI 2020', '25520000'),
+(262, 'GI', '004', '521', '050', '2132', 'PENERBITAN JURNAL ISJOUST VOLUME 14 NOMOR 1, MEI 2020', '25520000'),
+(263, 'GJ', '004', '521', '050', '2132', 'PENYUSUNAN LAPORAN KINERJA LP2M BERBASIS AKRED', '18710000'),
+(264, 'GK', '004', '521', '050', '2132', 'SEMINAR GENDER DAN ANAK TAHUN 2020', '16127000'),
+(265, 'GL', '004', '521', '050', '2132', 'WORKSHOP METODOLOGI PENELITIAN BERBASIS GENDER TAHUN 2020', '29430000'),
+(266, 'GM', '004', '521', '050', '2132', 'CETAK BUKU PROGRAM LP2M TAHUN 2020', '6000000'),
+(267, 'GN', '004', '521', '050', '2132', 'LANGGANAN DOI JURNAL', '250000000'),
+(268, 'GO', '004', '521', '050', '2132', 'SELEKSI SEMINAR PROPOSAL PENELITIAN TAHUN 2021', '254460000'),
+(269, 'HA', '051', '401', '002', '2132', 'REFRESHMENT AUDITOR AMI', '64795000'),
+(270, 'HA', '004', '502', '050', '2132', 'AUDIT MUTU INTERNAL (AMI)', '28005000'),
+(271, 'HB', '051', '401', '002', '2132', 'PENYAMAAN PERSEPSI DAN REKRUTMEN ASESOR BKD', '36950000'),
+(272, 'HB', '004', '502', '050', '2132', 'PELATIHAN PENYUSUNAN BORANG APT 9 KRITERIA', '21040000'),
+(273, 'HC', '051', '401', '002', '2132', 'REFRESHMENT GKM-UJM', '45005000'),
+(274, 'HC', '004', '502', '050', '2132', 'WORKSHOP OUTCOME BASED EDUCATION (OBE)', '31525000'),
+(275, 'HD', '051', '401', '002', '2132', 'EVALUASI BKD', '16720000'),
+(276, 'HD', '004', '502', '050', '2132', 'FGD PENYUSUNAN IKU DAN IKT', '46785000'),
+(277, 'HE', '051', '401', '002', '2132', 'SERTIFIKASI DOSEN TAHUN 2020', '3185000'),
+(278, 'HE', '004', '502', '050', '2132', 'RAPAT KERJA LPM', '17900000'),
+(279, 'HF', '051', '401', '002', '2132', 'SEKOLAH AKREDITASI PRODI', '7080000'),
+(280, 'HG', '051', '401', '002', '2132', 'PENYUSUNAN BUKU PEDOMAN SURVEI KEPUASAN LAYANAN KAMPUS BERORIENTASI PADA CAPAIAN AKREDITASI 9 KRITERIA', '16407000'),
+(281, 'IA', '056', '401', '002', '2132', 'FGD PERPUSTAKAAN', '16177000'),
+(282, 'IA', '004', '511', '050', '2132', 'PENGADAAN BAHAN PUSTAKA', '200000000'),
+(283, 'IA', '004', '519', '050', '2132', 'Langganan turnitin', '105500000'),
+(284, 'IB', '056', '401', '002', '2132', 'PENYELENGGARAAN PENDIDIKAN USER EDUCATION PEMUSTAKA', '37092000'),
+(285, 'IC', '056', '401', '002', '2132', 'PARTISIPASI TENAGA PENDIDIK / TENAGA KEPENDIDIKAN SDM PERPUSTAKAAN PADA KEGIATAN SEMINAR', '20500000'),
+(286, 'ID', '056', '401', '002', '2132', 'BEDAH BUKU', '18391000'),
+(287, 'IE', '056', '401', '002', '2132', 'LOMBA RESENSI BUKU TINGKAT NASIONAL', '19840000'),
+(288, 'JA', '051', '405', '002', '2132', 'PENYELENGGARAAN PROGRAM PEMBELAJARAN PPBAI', '742000000'),
+(289, 'JA', '004', '522', '050', '2132', 'PELATIHAN EPT (English Proficiency Test)', '80800000'),
+(290, 'JB', '051', '405', '002', '2132', 'SEMESTER PENDEK', '8400000'),
+(291, 'JB', '004', '522', '050', '2132', 'PENYUSUNAN BANK SOAL TES KEMAMPUAN BAHASA ARAB DAN INGGRIS', '23925000'),
+(292, 'JC', '051', '405', '002', '2132', 'UJIAN TOEFL-TOAFL MAHASISWA', '45800000'),
+(293, 'JD', '051', '405', '002', '2132', 'KELAS PENDAMPINGAN TOEFL/TOAFL', '29270000'),
+(294, 'JE', '051', '405', '002', '2132', 'KELAS PENINGKATAN KEMAMPUAN BAHASA ASING', '14500000'),
+(295, 'KA', '007', '004', '951', '2132', 'BELANJA MODAL PERALATAN DAN MESIN', '213259000'),
+(296, 'KA', '002', '400', '994', '2132', 'BELANJA SEWA UTIPD', '17408000'),
+(297, 'LA', '600', '400', '002', '2132', 'BELANJA BARANG CETAK AKADEMIK', '566000000'),
+(298, 'LA', '052', '001', '035', '2132', 'BIDIK MISI ON GOING TAHUN 2019', '2468400000'),
+(299, 'LA', '053', '001', '035', '2132', 'BIDIK MISI ON GOING TAHUN 2018', '1650000000'),
+(300, 'LA', '054', '001', '035', '2132', 'BIDIK MISI ON GOING TAHUN 2017', '1254000000'),
+(301, 'LA', '055', '001', '035', '2132', 'BIDIK MISI ON GOING TAHUN 2016', '570000000'),
+(302, 'LA', '051', '001', '053', '2132', 'KIP KULIAH', '1650000000'),
+(303, 'MA', '051', '401', '002', '2132', 'PENINGKATAN KAPASITAS SDM PERENCANAAN DAN KEUANGAN', '54000000'),
+(304, 'MA', '004', '520', '050', '2132', 'BIMBINGAN TEKNIS PERENCANAAN DAN KEUANGAN', '91395000'),
+(305, 'MB', '051', '401', '002', '2132', 'SOSIALISASI PERATURAN PENGANGGARAN BERBASIS KINERJA', '25790000'),
+(306, 'NA', '051', '401', '002', '2132', 'SOSIALISASI PENILAIAN KINERJA ASN (OKPP)', '30630000'),
+(307, 'NA', '004', '520', '050', '2132', 'PENGEMBANGAN SOFTWARE APLIKASI KEPEGAWAIAN (OKPP)', '20000000'),
+(308, 'NB', '051', '401', '002', '2132', 'WORKSHOP KETATAUSAHAAN BAGI TENAGA KEPENDIDIKAN (THR)', '53370000'),
+(309, 'NB', '004', '520', '050', '2132', 'OPNAME FISIK BARANG (THR)', '35600000'),
+(310, 'NC', '004', '520', '050', '2132', 'TRAINING MOTIVASI TENAGA KEBERSIHAN DAN KEAMANAN (THR)', '35795000'),
+(311, 'ND', '600', '400', '002', '2132', 'REKRUTMEN CPNS (OKPP)', '42301000'),
+(312, 'NE', '600', '400', '002', '2132', 'REKRUTMEN PEGAWAI PEMERINTAH DENGAN PERJANJIAN KERJA (OKPP)', '42301000'),
+(313, 'NF', '600', '400', '002', '2132', 'PENILAIAN MANDIRI PELAKSANAAN REFORMASI BIROKRASI (OKPP)', '4154000'),
+(314, 'NG', '600', '400', '002', '2132', 'PENILAIAN MANDIRI PEMBANGUNAN ZONA INTEGRITAS (OKPP)', '5262000'),
+(315, 'NI', '600', '400', '002', '2132', 'PEMILIHAN DOSEN DAN TENDIK BERPRESTASI/TELADAN (UMUM)', '38630000'),
+(316, 'NJ', '600', '400', '002', '2132', 'PENGANGKATAN SUMPAH PNS, PELANTIKAN PEJABAT DAN PEMBINAAN PEGAWAI (OKPP)', '22100000'),
+(317, 'NK', '002', '400', '994', '2132', 'SERAGAM TENAGA KEBERSIHAN DAN SATPAM (THR)', '22500000'),
+(318, 'NL', '600', '400', '002', '2132', 'WORKSHOP KOMPETENSI CALON DOSEN CPNS (WR I)', '55120000'),
+(319, 'NM', '600', '400', '002', '2132', 'WORKSHOP PENGEMBANGAN KARIR DOSEN (WR I)', '58120000'),
+(320, 'NN', '600', '400', '002', '2132', 'KONSORSIUM KEILMUAN TINGKAT INSTITUT (WR I)', '49490000'),
+(321, 'NO', '051', '400', '007', '2132', 'PENGADAAN MESIN FINGER PRINT', '0'),
+(322, 'NP', '051', '400', '007', '2132', 'PENGEMBANGAN APLIKASI KETATAUSAHAAN', '0'),
+(323, 'NQ', '051', '400', '007', '2132', 'PENATAAN HALAMAN DAN TAMANISASI', '0'),
+(324, 'NR', '051', '400', '007', '2132', 'PENERANGAN JALAN DAN HALAMAN', '0'),
+(325, 'TA', '600', '400', '002', '2132', 'PROGRAM DIRASAH TAHSINUL QUR\'AN MAHASANTRI MA\'HAD AL-JAMI\'AH', '194400000'),
+(326, 'TA', '002', '400', '994', '2132', 'BARANG CETAK MA\'HAD AL-JAMI\'AH', '13250000'),
+(327, 'TB', '600', '400', '002', '2132', 'DIRASAH TAHFIDZUL QURAN MAHASANTRI MA\'HAD AL-JAMI\'AH', '58496000'),
+(328, 'TC', '600', '400', '002', '2132', 'DIRASAH KITAB TURATS MAHASANTRI MA\'HAD AL-JAMI\'AH', '194400000'),
+(329, 'TD', '600', '400', '002', '2132', 'HAFLAH AKHIRUSSANAH MAHASANTRI MA\'HAD AL-JAMI\'AH', '60520000'),
+(330, 'TT', '051', '405', '002', '2132', 'PRAKTIKUM IBADAH FEBI', '30200000'),
+(331, 'TU', '051', '405', '002', '2132', 'PRAKTIKUM IBADAH TILAWAH FUAD', '30000000');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_sub_output`
+--
+
+CREATE TABLE `tbl_sub_output` (
+  `id_sub_output` int(9) NOT NULL,
+  `kode_sub_output` text NOT NULL,
+  `kode_output` text NOT NULL,
+  `kode_kegiatan` text NOT NULL,
+  `sub_output` text NOT NULL,
+  `pagu` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_sub_output`
+--
+
+INSERT INTO `tbl_sub_output` (`id_sub_output`, `kode_sub_output`, `kode_output`, `kode_kegiatan`, `sub_output`, `pagu`) VALUES
+(0, '002', '950', '2135', 'LAYANAN ADMINISTRASI PERENCANAAN, EVALUASI DAN PELAPORAN', '95000000'),
+(1, '001', '994', '2135', '', '35003315000'),
+(2, '200', '002', '2132', 'Penguatan Tusi Bidang Pendidikan Tinggi Keagamaan Islam', '197464000'),
+(3, '400', '002', '2132', 'Penyelenggaraan PTKIN (PNBP/BLU)', '3083135000'),
+(4, '401', '002', '2132', 'Sistem Tata Kelola, Kelembagaan, dan SDM (PNBP/BLU)', '3292220000'),
+(5, '403', '002', '2132', 'Mahasiswa Penerima Penghargaan (PNBP/BLU)', '30000000'),
+(6, '405', '002', '2132', 'Praktikum/Kuliah (PNBP/BLU)', '8557982000'),
+(7, '411', '002', '2132', 'Yudisium/Wisuda (PNBP/BLU)', '1614100000'),
+(8, '412', '002', '2132', 'Pembinaan kegiatan kemahasiswaan (PNBP/BLU)', '2489565000'),
+(9, '400', '007', '2132', 'Sarana dan Prasarana PTKI (PNBP/BLU)', '378881000'),
+(10, '300', '012', '2132', 'Sarana dan Prasarana Pembiayaan melalui SBSN', '40481279000'),
+(11, '001', '022', '2132', 'Mahasiswa Penerima Beasiswa Peningkatan Prestasi dan Akademik (RM)', '64000000'),
+(12, '400', '025', '2132', 'Mahasiswa Penerima Beasiswa Kajian Keislaman/Prodi Ilmu Dasar Islam (PNBP/BLU)', '100000000'),
+(13, '200', '027', '2132', 'Prodi yang Terkreditasi Menjadi Minimal B (RM)', '52248000'),
+(14, '400', '031', '2132', 'Penerimaan Mahasiswa Baru (PNBP/BLU)', '577576000'),
+(15, '001', '035', '2132', 'Bidik Misi PTKI (RM)', '5942400000'),
+(16, '400', '041', '2132', 'Mahasiswa PTKI Penerima Beasiswa Tahfidz Al Quran (PNBP/BLU)', '84000000'),
+(17, '500', '050', '2132', 'PTKIN Penerima BOPTN', '3213497000'),
+(18, '502', '050', '2132', 'Penjaminan Mutu (BOPTN)', '145255000'),
+(19, '503', '050', '2132', 'Kegiatan Kemahasiswaan (BOPTN)', '200000000'),
+(20, '511', '050', '2132', 'Bahan Pustaka (BOPTN)', '200000000'),
+(21, '519', '050', '2132', 'Operasional dan Layanan Perkantoran (BOPTN)', '105500000'),
+(22, '520', '050', '2132', 'Pelaksanaan Kegiatan Penunjang (BOPTN)', '810183000'),
+(23, '521', '050', '2132', 'Kegiatan lain yang merupakan prioritas dalam Renstra Perguruan Tinggi masing-masing (BOPTN)', '1809117000'),
+(24, '522', '050', '2132', 'Peningkatan Mutu Akademik (BOPTN)', '1570820000'),
+(25, '001', '053', '2132', 'KIP Kuliah', '1650000000'),
+(26, '004', '951', '2132', 'Peralatan dan Fasilitas Perkantoran', '213259000'),
+(27, '005', '951', '2132', 'Gedung dan Bangunan', '0'),
+(28, '400', '994', '2132', 'Layanan Perkantoran (PNBP/BLU)', '9992111000');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(9) UNSIGNED NOT NULL,
+  `username` varchar(200) DEFAULT NULL,
+  `pass` varchar(64) DEFAULT NULL,
+  `fullname` text NOT NULL,
+  `photo` text DEFAULT NULL,
+  `total_login` int(9) UNSIGNED NOT NULL DEFAULT 0,
+  `last_login` datetime DEFAULT NULL,
+  `last_activity` datetime DEFAULT NULL,
+  `login_attempts` int(9) UNSIGNED DEFAULT 0,
+  `last_login_attempt` datetime DEFAULT NULL,
+  `remember_time` datetime DEFAULT NULL,
+  `remember_exp` text DEFAULT NULL,
+  `ip_address` text DEFAULT NULL,
+  `is_active` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
+  `verification_token` varchar(128) DEFAULT NULL,
+  `recovery_token` varchar(128) DEFAULT NULL,
+  `unlock_token` varchar(128) DEFAULT NULL,
+  `created_by` int(9) UNSIGNED NOT NULL DEFAULT 0,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_by` int(9) UNSIGNED DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_by` int(9) UNSIGNED DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `pass`, `fullname`, `photo`, `total_login`, `last_login`, `last_activity`, `login_attempts`, `last_login_attempt`, `remember_time`, `remember_exp`, `ip_address`, `is_active`, `verification_token`, `recovery_token`, `unlock_token`, `created_by`, `created_at`, `updated_by`, `updated_at`, `deleted_by`, `deleted_at`, `deleted`) VALUES
+(0, 'admin', '1', 'Administrator', NULL, 27, '2020-03-25 20:40:48', '2020-03-25 20:40:48', 27, '2020-03-25 20:40:48', NULL, NULL, '::1', 1, NULL, NULL, NULL, 0, '2019-12-07 22:15:17', NULL, NULL, NULL, NULL, 0),
+(1, 'adm', '1234', 'Administrator', NULL, 29, '2020-02-20 20:43:25', '2020-02-20 20:43:25', 29, '2020-02-20 20:43:25', NULL, NULL, '::1', 1, NULL, NULL, NULL, 0, '2019-12-08 23:32:46', NULL, NULL, NULL, NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_role`
+--
+
+CREATE TABLE `user_role` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `company_id` int(9) DEFAULT NULL,
+  `name` varchar(100) NOT NULL,
+  `definition` varchar(255) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `route` varchar(32) DEFAULT NULL,
+  `created_by` int(9) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_by` int(9) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_by` int(9) DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `user_role`
+--
+
+INSERT INTO `user_role` (`id`, `company_id`, `name`, `definition`, `description`, `route`, `created_by`, `created_at`, `updated_by`, `updated_at`, `deleted_by`, `deleted_at`, `deleted`) VALUES
+(0, NULL, 'Super Admin', 'Super Administrator', NULL, 'admin_side/beranda', 0, '2018-10-27 17:52:08', NULL, NULL, NULL, NULL, 0),
+(1, NULL, 'Admin', 'Administrator (Owner)', NULL, 'admin_side/beranda', 0, '2017-03-06 01:19:26', 2, '2018-10-27 18:55:37', NULL, NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_to_role`
+--
+
+CREATE TABLE `user_to_role` (
+  `user_id` int(9) UNSIGNED NOT NULL DEFAULT 0,
+  `role_id` int(9) UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `user_to_role`
+--
+
+INSERT INTO `user_to_role` (`user_id`, `role_id`) VALUES
+(0, 0),
+(1, 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `activity_logs`
+--
+ALTER TABLE `activity_logs`
+  ADD PRIMARY KEY (`activity_id`);
+
+--
+-- Indeks untuk tabel `departemen`
+--
+ALTER TABLE `departemen`
+  ADD PRIMARY KEY (`id_departemen`),
+  ADD KEY `kode_departemen` (`kode_departemen`(768)),
+  ADD KEY `kode_anggaran` (`kode_anggaran`(768));
+
+--
+-- Indeks untuk tabel `kegiatan`
+--
+ALTER TABLE `kegiatan`
+  ADD PRIMARY KEY (`id_kegiatan`),
+  ADD KEY `kode_kegiatan` (`kode_kegiatan`(768)),
+  ADD KEY `id_departemen` (`id_departemen`);
+
+--
+-- Indeks untuk tabel `tbl_belanja`
+--
+ALTER TABLE `tbl_belanja`
+  ADD PRIMARY KEY (`id_belanja`),
+  ADD KEY `kode_sub_komponen` (`kode_sub_komponen`(768)),
+  ADD KEY `kode_komponen` (`kode_komponen`(768)),
+  ADD KEY `kode_sub_output` (`kode_sub_output`(768)),
+  ADD KEY `kode_output` (`kode_output`(768)),
+  ADD KEY `kode_kegiatan` (`kode_kegiatan`(768)),
+  ADD KEY `user_id` (`created_by`);
+
+--
+-- Indeks untuk tabel `tbl_kegiatan`
+--
+ALTER TABLE `tbl_kegiatan`
+  ADD PRIMARY KEY (`id_kegiatan`),
+  ADD KEY `kode_kegiatan` (`kode_kegiatan`(768));
+
+--
+-- Indeks untuk tabel `tbl_komponen`
+--
+ALTER TABLE `tbl_komponen`
+  ADD PRIMARY KEY (`id_komponen`),
+  ADD KEY `kode_komponen` (`kode_komponen`(768)),
+  ADD KEY `kode_output` (`kode_output`(768)),
+  ADD KEY `kode_sub_output` (`kode_sub_output`(768)),
+  ADD KEY `kode_kegiatan` (`kode_kegiatan`(768));
+
+--
+-- Indeks untuk tabel `tbl_output`
+--
+ALTER TABLE `tbl_output`
+  ADD PRIMARY KEY (`id_output`),
+  ADD KEY `kode_output` (`kode_output`(768)),
+  ADD KEY `kode_kegiatan` (`kode_kegiatan`(768));
+
+--
+-- Indeks untuk tabel `tbl_sub_komponen`
+--
+ALTER TABLE `tbl_sub_komponen`
+  ADD PRIMARY KEY (`id_sub_komponen`),
+  ADD KEY `kode_sub_komponen` (`kode_sub_komponen`(768)),
+  ADD KEY `kode_komponen` (`kode_komponen`(768)),
+  ADD KEY `kode_sub_output` (`kode_sub_output`(768)),
+  ADD KEY `kode_output` (`kode_output`(768)),
+  ADD KEY `kode_kegiatan` (`kode_kegiatan`(768));
+
+--
+-- Indeks untuk tabel `tbl_sub_output`
+--
+ALTER TABLE `tbl_sub_output`
+  ADD PRIMARY KEY (`id_sub_output`),
+  ADD KEY `kode_sub_output` (`kode_sub_output`(768)),
+  ADD KEY `kode_output` (`kode_output`(768)),
+  ADD KEY `kode_kegiatan` (`kode_kegiatan`(768));
+
+--
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username_index` (`username`),
+  ADD KEY `is_active_index` (`is_active`);
+
+--
+-- Indeks untuk tabel `user_role`
+--
+ALTER TABLE `user_role`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `name_index` (`name`),
+  ADD KEY `company_id_index` (`company_id`) USING BTREE;
+
+--
+-- Indeks untuk tabel `user_to_role`
+--
+ALTER TABLE `user_to_role`
+  ADD PRIMARY KEY (`user_id`,`role_id`),
+  ADD KEY `role_id_index` (`role_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `activity_logs`
+--
+ALTER TABLE `activity_logs`
+  MODIFY `activity_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- AUTO_INCREMENT untuk tabel `departemen`
+--
+ALTER TABLE `departemen`
+  MODIFY `id_departemen` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT untuk tabel `kegiatan`
+--
+ALTER TABLE `kegiatan`
+  MODIFY `id_kegiatan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=304;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_belanja`
+--
+ALTER TABLE `tbl_belanja`
+  MODIFY `id_belanja` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=237;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_kegiatan`
+--
+ALTER TABLE `tbl_kegiatan`
+  MODIFY `id_kegiatan` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_komponen`
+--
+ALTER TABLE `tbl_komponen`
+  MODIFY `id_komponen` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_output`
+--
+ALTER TABLE `tbl_output`
+  MODIFY `id_output` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_sub_komponen`
+--
+ALTER TABLE `tbl_sub_komponen`
+  MODIFY `id_sub_komponen` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=332;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_sub_output`
+--
+ALTER TABLE `tbl_sub_output`
+  MODIFY `id_sub_output` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `user_role`
+--
+ALTER TABLE `user_role`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
