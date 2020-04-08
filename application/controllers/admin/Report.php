@@ -91,6 +91,7 @@ class Report extends CI_Controller {
 		}else{
 			$data_where['kode_beban'] = $this->input->post('kode_beban_where');
 		}
+		$data_where['bulan'] = $this->Main_model->get_where_bulan();
 		$get_data = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', $data_where)->result();
 		$data_tampil = array();
 		$no = 1;

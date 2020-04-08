@@ -67,6 +67,7 @@
 <div class="page-content-inner">
 	<div class="m-heading-1 border-yellow m-bordered" style="background-color:#FAD405;">
 		<h3>Catatan</h3>
+		<p> Data merupakan rekapan bulan <?= $this->Main_model->convert_bulan_tahun($this->Main_model->get_where_bulan()); ?></p>
 	</div>
 	<div class="row">
 		<div class="col-md-12">

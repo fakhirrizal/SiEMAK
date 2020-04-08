@@ -8,6 +8,9 @@
         <span>Dashboard</span>
     </li>
 </ul>
+<?php
+$bulan_lalu = 0;
+?>
 <!-- END PAGE BREADCRUMBS -->
 <!-- BEGIN PAGE CONTENT INNER -->
 <div class="page-content-inner">
@@ -60,7 +63,7 @@
                             xAxis: {
                                 categories: [
                                     <?php
-                                    $data_kegiatan = $this->Main_model->getSelectedData('tbl_kegiatan a', 'a.*,(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_kegiatan=a.kode_kegiatan) as realisasi')->result();
+                                    $data_kegiatan = $this->Main_model->getSelectedData('tbl_kegiatan a', 'a.*,(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_kegiatan=a.kode_kegiatan AND b.bulan="'.$this->Main_model->get_where_bulan().'") as realisasi')->result();
                                     foreach ($data_kegiatan as $key => $value) {
                                         echo"'".$value->kegiatan."',";
                                     }
@@ -91,7 +94,7 @@
                                 color: 'rgba(165,170,217,1)',
                                 data: [
                                 <?php
-                                $data_kegiatan = $this->Main_model->getSelectedData('tbl_kegiatan a', 'a.*,(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_kegiatan=a.kode_kegiatan) as realisasi')->result();
+                                $data_kegiatan = $this->Main_model->getSelectedData('tbl_kegiatan a', 'a.*,(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_kegiatan=a.kode_kegiatan AND b.bulan="'.$this->Main_model->get_where_bulan().'") as realisasi')->result();
                                 foreach ($data_kegiatan as $key => $value) {
                                     echo $value->pagu.",";
                                 }
@@ -107,7 +110,7 @@
                                 color: 'rgba(126,86,134,.9)',
                                 data: [
                                 <?php
-                                $data_kegiatan = $this->Main_model->getSelectedData('tbl_kegiatan a', 'a.*,(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_kegiatan=a.kode_kegiatan) as realisasi')->result();
+                                $data_kegiatan = $this->Main_model->getSelectedData('tbl_kegiatan a', 'a.*,(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_kegiatan=a.kode_kegiatan AND b.bulan="'.$this->Main_model->get_where_bulan().'") as realisasi')->result();
                                 foreach ($data_kegiatan as $key => $value) {
                                     echo $value->realisasi.",";
                                 }
@@ -425,7 +428,7 @@
                                 <?php
                                 $data_departemen = $this->Main_model->getSelectedData('departemen a', 'a.*')->result();
                                 foreach ($data_departemen as $key => $value) {
-                                    $data_kegiatan = $this->Main_model->getSelectedData('kegiatan a', '(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_sub_komponen=a.kode_kegiatan) AS jum', array('a.id_departemen'=>$value->id_departemen))->result();
+                                    $data_kegiatan = $this->Main_model->getSelectedData('kegiatan a', '(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_sub_komponen=a.kode_kegiatan  AND b.bulan="'.$this->Main_model->get_where_bulan().'") AS jum', array('a.id_departemen'=>$value->id_departemen))->result();
                                     $jum = 0;
                                     foreach ($data_kegiatan as $key => $row) {
                                         $jum += $row->jum;
@@ -499,6 +502,7 @@
                             $jum += $value->realisasi;
                         }
                         echo $jum;
+                        $bulan_lalu = $jum;
                         ?>
                         }, {
                         "country": "Februari",
@@ -508,7 +512,8 @@
                         foreach ($data_belanja as $key => $value) {
                             $jum += $value->realisasi;
                         }
-                        echo $jum;
+                        echo $jum-$bulan_lalu;
+                        $bulan_lalu = $jum;
                         ?>
                         }, {
                         "country": "Maret",
@@ -518,7 +523,7 @@
                         foreach ($data_belanja as $key => $value) {
                             $jum += $value->realisasi;
                         }
-                        echo $jum;
+                        echo $jum-$bulan_lalu;
                         ?>
                         }
                         ];

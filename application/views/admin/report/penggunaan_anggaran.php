@@ -67,7 +67,7 @@
 <div class="page-content-inner">
 	<div class="m-heading-1 border-yellow m-bordered" style="background-color:#FAD405;">
 		<h3>Catatan</h3>
-		<!-- <p> 1. Ketika mengklik <b>Atur Ulang Sandi</b>, maka kata sandi otomatis menjadi "<b>1234</b>"</p> -->
+		<p> Data merupakan rekapan bulan <?= $this->Main_model->convert_bulan_tahun($this->Main_model->get_where_bulan()); ?></p>
 	</div>
 	<div class="row">
 		<div class="col-md-12">
@@ -223,7 +223,7 @@
 					<div class="table-toolbar">
 						<div class="row">
 							<div class="col-md-8">
-								<a href="#" class="btn green uppercase">Tambah Data <i class="fa fa-plus"></i> </a>
+								<!-- <a href="#" class="btn green uppercase">Tambah Data <i class="fa fa-plus"></i> </a> -->
 							</div>
 							<div class="col-md-4" style='text-align: right;'>
 								<a href="#" class="btn btn-info" data-toggle="modal" data-target="#fi">Impor Data <i class="fa fa-cloud-upload"></i></a>

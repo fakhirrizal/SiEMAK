@@ -1,5 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Main_model extends CI_Model{
+	function get_where_bulan(){
+		$where_bulan = $this->getSelectedData('tbl_belanja a', 'a.*', '', "a.bulan DESC", '1')->row();
+		return $where_bulan->bulan;
+	}
 	function getSelectedData($tbl_name, $select = '', $where = '', $order = '', $limit = '', $start = '0', $group = '', $join = '') {
 		if (!empty($select))
 			$this->db->select($select, false);

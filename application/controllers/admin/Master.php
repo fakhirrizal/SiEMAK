@@ -67,7 +67,7 @@ class Master extends CI_Controller {
 			$isi['kode'] = $value->kode_kegiatan;
 			$isi['kegiatan'] = $value->kegiatan;
 			$isi['pagu'] = 'Rp '.number_format($value->pagu,2);
-			$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_kegiatan'=>$value->kode_kegiatan))->result();
+			$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_kegiatan'=>$value->kode_kegiatan,'a.bulan'=>$this->Main_model->get_where_bulan()))->result();
 			$realisasi = 0;
 			foreach ($get_data_belanja as $key => $row) {
 				$realisasi += $row->realisasi;
@@ -254,7 +254,7 @@ class Master extends CI_Controller {
 			$isi['kegiatan'] = $value->kode_kegiatan;
 			$isi['output'] = $value->output;
 			$isi['pagu'] = 'Rp '.number_format($value->pagu,2);
-			$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_output'=>$value->kode_output,'a.kode_kegiatan'=>$value->kode_kegiatan))->result();
+			$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_output'=>$value->kode_output,'a.kode_kegiatan'=>$value->kode_kegiatan,'a.bulan'=>$this->Main_model->get_where_bulan()))->result();
 			$realisasi = 0;
 			foreach ($get_data_belanja as $key => $row) {
 				$realisasi += $row->realisasi;
@@ -443,7 +443,7 @@ class Master extends CI_Controller {
 			$isi['kegiatan'] = $value->kode_kegiatan;
 			$isi['sub_output'] = $value->sub_output;
 			$isi['pagu'] = 'Rp '.number_format($value->pagu,2);
-			$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_sub_output'=>$value->kode_sub_output,'a.kode_output'=>$value->kode_output,'a.kode_kegiatan'=>$value->kode_kegiatan))->result();
+			$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_sub_output'=>$value->kode_sub_output,'a.kode_output'=>$value->kode_output,'a.kode_kegiatan'=>$value->kode_kegiatan,'a.bulan'=>$this->Main_model->get_where_bulan()))->result();
 			$realisasi = 0;
 			foreach ($get_data_belanja as $key => $row) {
 				$realisasi += $row->realisasi;
@@ -586,7 +586,7 @@ class Master extends CI_Controller {
 			$isi['kegiatan'] = $value->kode_kegiatan;
 			$isi['komponen'] = $value->komponen;
 			$isi['pagu'] = 'Rp '.number_format($value->pagu,2);
-			$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_komponen'=>$value->kode_komponen,'a.kode_sub_output'=>$value->kode_sub_output,'a.kode_output'=>$value->kode_output,'a.kode_kegiatan'=>$value->kode_kegiatan))->result();
+			$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_komponen'=>$value->kode_komponen,'a.kode_sub_output'=>$value->kode_sub_output,'a.kode_output'=>$value->kode_output,'a.kode_kegiatan'=>$value->kode_kegiatan,'a.bulan'=>$this->Main_model->get_where_bulan()))->result();
 			$realisasi = 0;
 			foreach ($get_data_belanja as $key => $row) {
 				$realisasi += $row->realisasi;
@@ -731,7 +731,7 @@ class Master extends CI_Controller {
 			$isi['kegiatan'] = $value->kode_kegiatan;
 			$isi['sub_komponen'] = $value->sub_komponen;
 			$isi['pagu'] = 'Rp '.number_format($value->pagu,2);
-			$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_sub_komponen'=>$value->kode_sub_komponen,'a.kode_komponen'=>$value->kode_komponen,'a.kode_sub_output'=>$value->kode_sub_output,'a.kode_output'=>$value->kode_output,'a.kode_kegiatan'=>$value->kode_kegiatan))->result();
+			$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_sub_komponen'=>$value->kode_sub_komponen,'a.kode_komponen'=>$value->kode_komponen,'a.kode_sub_output'=>$value->kode_sub_output,'a.kode_output'=>$value->kode_output,'a.kode_kegiatan'=>$value->kode_kegiatan,'a.bulan'=>$this->Main_model->get_where_bulan()))->result();
 			$realisasi = 0;
 			foreach ($get_data_belanja as $key => $row) {
 				$realisasi += $row->realisasi;
@@ -1174,7 +1174,7 @@ class Master extends CI_Controller {
 				$cek_string = substr($row->kode_sub_komponen,0,1);
 				if($cek_string==$value->kode_anggaran){
 					$pagu += $row->pagu;
-					$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_sub_komponen'=>$row->kode_sub_komponen,'a.kode_komponen'=>$row->kode_komponen,'a.kode_sub_output'=>$row->kode_sub_output,'a.kode_output'=>$row->kode_output,'a.kode_kegiatan'=>$row->kode_kegiatan))->result();
+					$get_data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.kode_sub_komponen'=>$row->kode_sub_komponen,'a.kode_komponen'=>$row->kode_komponen,'a.kode_sub_output'=>$row->kode_sub_output,'a.kode_output'=>$row->kode_output,'a.kode_kegiatan'=>$row->kode_kegiatan,'a.bulan'=>$this->Main_model->get_where_bulan()))->result();
 					foreach ($get_data_belanja as $key => $g) {
 						$realisasi += $g->realisasi;
 					}
