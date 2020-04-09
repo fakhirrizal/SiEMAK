@@ -52,9 +52,9 @@ License: You must have a valid license purchased only from themeforest(the above
     <body class=" login">
         <!-- BEGIN LOGO -->
         <div style='text-align:center'>
-            <br><img src="https://image.psikolif.com/wp-content/uploads/2018/11/Logo-IAIN-Pekalongan-Institut-Agama-Islam-Negeri-Pekalongan.jpg" style="height: 100px;" alt="" />
-            <br><img src="<?=base_url('assets/pages/img/logo.png');?>" style="height: 50px;" alt="" />
-                <font color='black'><b><h4>Sistem Informasi Evaluasi dan Monitoring Anggaran dan Kegiatan - Institut Agama Islam Negeri</h4></b></font>
+            <br><img src="<?=base_url('assets/pages/img/iain.png');?>" style="height: 100px;" alt="" />
+            <br><br><img src="<?=base_url('assets/pages/img/gambar.png');?>" style="height: 30px;" alt="" />
+            <!-- <font color='black'><b><h4>Sistem Informasi Evaluasi dan Monitoring Anggaran dan Kegiatan - Institut Agama Islam Negeri</h4></b></font> -->
         </div>
         <!-- <div class="logo">
             <a href="#">

@@ -4,11 +4,8 @@ Login page
 ***/
 /* bg color */
 .login {
-  background-image: url('../img/background/bg.JPG');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('../img/background/bg.png');
+  background-repeat: repeat;
 }
   /* background-color: #fdfeff; } */
   .login a {
