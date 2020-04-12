@@ -53,6 +53,7 @@
                             <?php
                             $get_file = $this->Main_model->getSelectedData('rkakl a', 'a.*',array('a.is_active'=>'1'))->row();
                             ?>
+                            <a href='<?=base_url()?>data_upload/rkakl/<?= $get_file->file; ?>' class='btn green'>Unduh Dokumen RKAKL</a><br><br>
                             <iframe height="600" width="100%" src="<?=base_url()?>data_upload/rkakl/<?= $get_file->file; ?>"></iframe>
 						</div>
 					</div>

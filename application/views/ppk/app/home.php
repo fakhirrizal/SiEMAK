@@ -10,8 +10,9 @@
 </ul>
 <?php
 $bulan_lalu = 0;
-$where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a.bulan DESC", '1')->row();
 ?>
+<!-- END PAGE BREADCRUMBS -->
+<!-- BEGIN PAGE CONTENT INNER -->
 <div class="page-content-inner">
     <div class="row">
         <div class="col-md-6 col-sm-6">
@@ -62,7 +63,7 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
                             xAxis: {
                                 categories: [
                                     <?php
-                                    $data_kegiatan = $this->Main_model->getSelectedData('tbl_kegiatan a', 'a.*,(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_kegiatan=a.kode_kegiatan) as realisasi')->result();
+                                    $data_kegiatan = $this->Main_model->getSelectedData('tbl_kegiatan a', 'a.*,(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_kegiatan=a.kode_kegiatan AND b.bulan="'.$this->Main_model->get_where_bulan().'") as realisasi')->result();
                                     foreach ($data_kegiatan as $key => $value) {
                                         echo"'".$value->kegiatan."',";
                                     }
@@ -93,7 +94,7 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
                                 color: 'rgba(165,170,217,1)',
                                 data: [
                                 <?php
-                                $data_kegiatan = $this->Main_model->getSelectedData('tbl_kegiatan a', 'a.*,(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_kegiatan=a.kode_kegiatan) as realisasi')->result();
+                                $data_kegiatan = $this->Main_model->getSelectedData('tbl_kegiatan a', 'a.*,(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_kegiatan=a.kode_kegiatan AND b.bulan="'.$this->Main_model->get_where_bulan().'") as realisasi')->result();
                                 foreach ($data_kegiatan as $key => $value) {
                                     echo $value->pagu.",";
                                 }
@@ -129,236 +130,15 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
         </div>
         <div class="col-md-6 col-sm-6">
             <div class="portlet light ">
-                <!-- <div class="portlet-title">
-                    <div class="caption caption-md">
-                        <i class="icon-bar-chart font-dark hide"></i>
-                        <span class="caption-subject font-dark bold uppercase">Member Activity</span>
-                        <span class="caption-helper">weekly stats...</span>
-                    </div>
-                    <div class="actions">
-                        <div class="btn-group btn-group-devided" data-toggle="buttons">
-                            <label class="btn btn-transparent green btn-outline btn-circle btn-sm active">
-                                <input type="radio" name="options" class="toggle" id="option1">Today</label>
-                            <label class="btn btn-transparent green btn-outline btn-circle btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Week</label>
-                            <label class="btn btn-transparent green btn-outline btn-circle btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Month</label>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="portlet-body">
-                    <script src="https://code.highcharts.com/highcharts.js"></script>
+                    <!-- <script src="https://code.highcharts.com/highcharts.js"></script>
                     <script src="https://code.highcharts.com/modules/exporting.js"></script>
                     <script src="https://code.highcharts.com/modules/export-data.js"></script>
                     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
                     <figure class="highcharts-figure">
                         <div id="container2"></div>
-                        <!-- <p class="highcharts-description">
-                            Pie charts are very popular for showing a compact overview of a
-                            composition or comparison. While they can be harder to read than
-                            column charts, they remain a popular choice for small datasets.
-                        </p> -->
                     </figure>
                     <script>
-                        // Highcharts.createElement('link', {
-                        //     href: 'https://fonts.googleapis.com/css?family=Unica+One',
-                        //     rel: 'stylesheet',
-                        //     type: 'text/css'
-                        // }, null, document.getElementsByTagName('head')[0]);
-                        // Highcharts.theme = {
-                        //     colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
-                        //         '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
-                        //     chart: {
-                        //         backgroundColor: {
-                        //             linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
-                        //             stops: [
-                        //                 [0, '#2a2a2b'],
-                        //                 [1, '#3e3e40']
-                        //             ]
-                        //         },
-                        //         style: {
-                        //             fontFamily: '\'Unica One\', sans-serif'
-                        //         },
-                        //         plotBorderColor: '#606063'
-                        //     },
-                        //     title: {
-                        //         style: {
-                        //             color: '#E0E0E3',
-                        //             textTransform: 'uppercase',
-                        //             fontSize: '20px'
-                        //         }
-                        //     },
-                        //     subtitle: {
-                        //         style: {
-                        //             color: '#E0E0E3',
-                        //             textTransform: 'uppercase'
-                        //         }
-                        //     },
-                        //     xAxis: {
-                        //         gridLineColor: '#707073',
-                        //         labels: {
-                        //             style: {
-                        //                 color: '#E0E0E3'
-                        //             }
-                        //         },
-                        //         lineColor: '#707073',
-                        //         minorGridLineColor: '#505053',
-                        //         tickColor: '#707073',
-                        //         title: {
-                        //             style: {
-                        //                 color: '#A0A0A3'
-                        //             }
-                        //         }
-                        //     },
-                        //     yAxis: {
-                        //         gridLineColor: '#707073',
-                        //         labels: {
-                        //             style: {
-                        //                 color: '#E0E0E3'
-                        //             }
-                        //         },
-                        //         lineColor: '#707073',
-                        //         minorGridLineColor: '#505053',
-                        //         tickColor: '#707073',
-                        //         tickWidth: 1,
-                        //         title: {
-                        //             style: {
-                        //                 color: '#A0A0A3'
-                        //             }
-                        //         }
-                        //     },
-                        //     tooltip: {
-                        //         backgroundColor: 'rgba(0, 0, 0, 0.85)',
-                        //         style: {
-                        //             color: '#F0F0F0'
-                        //         }
-                        //     },
-                        //     plotOptions: {
-                        //         series: {
-                        //             dataLabels: {
-                        //                 color: '#F0F0F3',
-                        //                 style: {
-                        //                     fontSize: '13px'
-                        //                 }
-                        //             },
-                        //             marker: {
-                        //                 lineColor: '#333'
-                        //             }
-                        //         },
-                        //         boxplot: {
-                        //             fillColor: '#505053'
-                        //         },
-                        //         candlestick: {
-                        //             lineColor: 'white'
-                        //         },
-                        //         errorbar: {
-                        //             color: 'white'
-                        //         }
-                        //     },
-                        //     legend: {
-                        //         backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        //         itemStyle: {
-                        //             color: '#E0E0E3'
-                        //         },
-                        //         itemHoverStyle: {
-                        //             color: '#FFF'
-                        //         },
-                        //         itemHiddenStyle: {
-                        //             color: '#606063'
-                        //         },
-                        //         title: {
-                        //             style: {
-                        //                 color: '#C0C0C0'
-                        //             }
-                        //         }
-                        //     },
-                        //     credits: {
-                        //         style: {
-                        //             color: '#666'
-                        //         }
-                        //     },
-                        //     labels: {
-                        //         style: {
-                        //             color: '#707073'
-                        //         }
-                        //     },
-                        //     drilldown: {
-                        //         activeAxisLabelStyle: {
-                        //             color: '#F0F0F3'
-                        //         },
-                        //         activeDataLabelStyle: {
-                        //             color: '#F0F0F3'
-                        //         }
-                        //     },
-                        //     navigation: {
-                        //         buttonOptions: {
-                        //             symbolStroke: '#DDDDDD',
-                        //             theme: {
-                        //                 fill: '#505053'
-                        //             }
-                        //         }
-                        //     },
-                        //     // scroll charts
-                        //     rangeSelector: {
-                        //         buttonTheme: {
-                        //             fill: '#505053',
-                        //             stroke: '#000000',
-                        //             style: {
-                        //                 color: '#CCC'
-                        //             },
-                        //             states: {
-                        //                 hover: {
-                        //                     fill: '#707073',
-                        //                     stroke: '#000000',
-                        //                     style: {
-                        //                         color: 'white'
-                        //                     }
-                        //                 },
-                        //                 select: {
-                        //                     fill: '#000003',
-                        //                     stroke: '#000000',
-                        //                     style: {
-                        //                         color: 'white'
-                        //                     }
-                        //                 }
-                        //             }
-                        //         },
-                        //         inputBoxBorderColor: '#505053',
-                        //         inputStyle: {
-                        //             backgroundColor: '#333',
-                        //             color: 'silver'
-                        //         },
-                        //         labelStyle: {
-                        //             color: 'silver'
-                        //         }
-                        //     },
-                        //     navigator: {
-                        //         handles: {
-                        //             backgroundColor: '#666',
-                        //             borderColor: '#AAA'
-                        //         },
-                        //         outlineColor: '#CCC',
-                        //         maskFill: 'rgba(255,255,255,0.1)',
-                        //         series: {
-                        //             color: '#7798BF',
-                        //             lineColor: '#A6C7ED'
-                        //         },
-                        //         xAxis: {
-                        //             gridLineColor: '#505053'
-                        //         }
-                        //     },
-                        //     scrollbar: {
-                        //         barBackgroundColor: '#808083',
-                        //         barBorderColor: '#808083',
-                        //         buttonArrowColor: '#CCC',
-                        //         buttonBackgroundColor: '#606063',
-                        //         buttonBorderColor: '#606063',
-                        //         rifleColor: '#FFF',
-                        //         trackBackgroundColor: '#404043',
-                        //         trackBorderColor: '#404043'
-                        //     }
-                        // };
-                        // Highcharts.setOptions(Highcharts.theme);
                         Highcharts.chart('container2', {
                             chart: {
                                 plotBackgroundColor: null,
@@ -394,40 +174,10 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
                                 name: 'Serapan',
                                 colorByPoint: true,
                                 data: [
-                                // {
-                                //     name: 'Kegiatan A',
-                                //     y: 61.41,
-                                //     sliced: true,
-                                //     selected: true
-                                // }, {
-                                //     name: 'Kegiatan B',
-                                //     y: 11.84
-                                // }, {
-                                //     name: 'Kegiatan C',
-                                //     y: 10.85
-                                // }, {
-                                //     name: 'Kegiatan D',
-                                //     y: 4.67
-                                // }, {
-                                //     name: 'Kegiatan E',
-                                //     y: 4.18
-                                // }, {
-                                //     name: 'Kegiatan F',
-                                //     y: 1.64
-                                // }, {
-                                //     name: 'Kegiatan G',
-                                //     y: 1.6
-                                // }, {
-                                //     name: 'Kegiatan H',
-                                //     y: 1.2
-                                // }, {
-                                //     name: 'Kegiatan I',
-                                //     y: 2.61
-                                // }
                                 <?php
                                 $data_departemen = $this->Main_model->getSelectedData('departemen a', 'a.*')->result();
                                 foreach ($data_departemen as $key => $value) {
-                                    $data_kegiatan = $this->Main_model->getSelectedData('kegiatan a', '(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_sub_komponen=a.kode_kegiatan AND b.bulan="'.$this->Main_model->get_where_bulan().'") AS jum', array('a.id_departemen'=>$value->id_departemen))->result();
+                                    $data_kegiatan = $this->Main_model->getSelectedData('kegiatan a', '(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_sub_komponen=a.kode_kegiatan  AND b.bulan="'.$this->Main_model->get_where_bulan().'") AS jum', array('a.id_departemen'=>$value->id_departemen))->result();
                                     $jum = 0;
                                     foreach ($data_kegiatan as $key => $row) {
                                         $jum += $row->jum;
@@ -443,7 +193,75 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
                                 ]
                             }]
                         });
-                    </script>
+                    </script> -->
+                    <script src="https://code.highcharts.com/modules/data.js"></script>
+                    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+
+                    <figure class="highcharts-figure">
+                        <div id="container2"></div>
+                    </figure>
+                    <script>
+                    Highcharts.chart('container2', {
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: 'Sebaran Penggunaan Anggaran Tahun 2020'
+                        },
+                        // subtitle: {
+                        //     text: 'Click the columns to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+                        // },
+                        accessibility: {
+                            announceNewData: {
+                                enabled: true
+                            }
+                        },
+                        xAxis: {
+                            type: 'category'
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Juta Rupiah'
+                            }
+
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        credits: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>Rp {point.y}</b>'
+                        },
+
+                        series: [
+                            {
+                                name: "Departemen",
+                                colorByPoint: true,
+                                data: [
+                                    <?php
+                                    $data_departemen = $this->Main_model->getSelectedData('departemen a', 'a.*')->result();
+                                    foreach ($data_departemen as $key => $value) {
+                                        $data_kegiatan = $this->Main_model->getSelectedData('kegiatan a', '(SELECT SUM(b.realisasi) FROM tbl_belanja b WHERE b.kode_sub_komponen=a.kode_kegiatan AND b.bulan="'.$this->Main_model->get_where_bulan().'") AS jum', array('a.id_departemen'=>$value->id_departemen), '', '', '', 'a.kode_kegiatan')->result();
+                                        $jum = 0;
+                                        foreach ($data_kegiatan as $key => $row) {
+                                            $jum += $row->jum;
+                                        }
+                                        echo"
+                                        {
+                                            name: '".$value->kode_departemen."',
+                                            y: ".$jum."
+                                        },
+                                        ";
+                                    }
+                                    ?>
+                                ]
+                            }
+                        ]
+                    });
+                    </script>                    
                 </div>
             </div>
         </div>
@@ -455,15 +273,7 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
                     <div class="caption caption-md">
                         <i class="icon-bar-chart font-dark hide"></i>
                         <span class="caption-subject font-dark bold">Rekap Penyerapan Anggaran Per Bulan Tahun 2020</span>
-                        <!-- <span class="caption-helper">45 pending</span> -->
                     </div>
-                    <!-- <div class="inputs">
-                        <div class="portlet-input input-inline input-small ">
-                            <div class="input-icon right">
-                                <i class="icon-magnifier"></i>
-                                <input type="text" class="form-control form-control-solid input-circle" placeholder="search..."> </div>
-                        </div>
-                    </div> -->
                 </div>
                 <div class="portlet-body">
                     <style>
@@ -473,24 +283,18 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
                         }
                     </style>
 
-                    <!-- Resources -->
                     <script src="https://www.amcharts.com/lib/4/core.js"></script>
                     <script src="https://www.amcharts.com/lib/4/charts.js"></script>
                     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 
-                    <!-- Chart code -->
                     <script>
                         am4core.ready(function() {
 
-                        // Themes begin
                         am4core.useTheme(am4themes_animated);
-                        // Themes end
 
-                        // Create chart instance
                         var chart = am4core.create("chartdiv", am4charts.XYChart);
                         chart.scrollbarX = new am4core.Scrollbar();
 
-                        // Add data
                         chart.data = [
                         {
                         "country": "Januari",
@@ -527,7 +331,6 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
                         }
                         ];
 
-                        // Create axes
                         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
                         categoryAxis.dataFields.category = "country";
                         categoryAxis.renderer.grid.template.location = 0;
@@ -541,7 +344,6 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
                         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
                         valueAxis.renderer.minWidth = 50;
 
-                        // Create series
                         var series = chart.series.push(new am4charts.ColumnSeries());
                         series.sequencedInterpolation = true;
                         series.dataFields.valueY = "visits";
@@ -555,7 +357,6 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
                         series.columns.template.column.cornerRadiusTopRight = 10;
                         series.columns.template.column.fillOpacity = 0.8;
 
-                        // on hover, make corner radiuses bigger
                         var hoverState = series.columns.template.column.states.create("hover");
                         hoverState.properties.cornerRadiusTopLeft = 0;
                         hoverState.properties.cornerRadiusTopRight = 0;
@@ -565,18 +366,17 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
                         return chart.colors.getIndex(target.dataItem.index);
                         });
 
-                        // Cursor
                         chart.cursor = new am4charts.XYCursor();
 
-                        }); // end am4core.ready()
+                        });
                     </script>
 
-                    <!-- HTML -->
                     <div id="chartdiv"></div>		
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="row">
         <div class="col-md-12 col-sm-12">
             <div class="portlet light ">
@@ -590,10 +390,12 @@ $where_bulan = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', "a
                     <?php
                     $get_file = $this->Main_model->getSelectedData('rkakl a', 'a.*',array('a.is_active'=>'1'))->row();
                     ?>
+                    <a href='<?=base_url()?>data_upload/rkakl/<?= $get_file->file; ?>' class='btn green'>Unduh Dokumen RKAKL</a><br><br>
                     <iframe height="600" width="100%" src="<?=base_url()?>data_upload/rkakl/<?= $get_file->file; ?>"></iframe>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <!-- END PAGE CONTENT INNER -->

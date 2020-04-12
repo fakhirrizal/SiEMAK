@@ -146,21 +146,31 @@ class Report extends CI_Controller {
 					$id_belanja = $get_id['id_belanja']+1;
 					// $pecah_kegiatan = explode(' ',$row['B'],2);
 					if($row['N']>0 AND $row['G']!=NULL){
-						$data_insert1 = array(
-							'id_belanja' => $id_belanja,
-							'kode_jenis_belanja' => $row['G'],
-							'kode_beban' => $row['F'],
-							'kode_sub_komponen' => $row['E'],
-							'kode_komponen' => $row['D'],
-							'kode_sub_output' => $row['C'],
-							'kode_output' => $row['B'],
-							'kode_kegiatan' => $row['A'],
-							'realisasi' => $row['N'],
-							'keterangan' => substr($row['Q'],52,10000),
-							'bulan' => $this->input->post('bulan')
-						);
-						$this->Main_model->insertData('tbl_belanja',$data_insert1);
-						// print_r($data_insert1);
+						$cek_ada = $this->Main_model->getSelectedData('tbl_belanja', '*', array('kode_jenis_belanja'=>$row['G'],'kode_beban'=>$row['F'],'kode_sub_komponen'=>$row['E'],'kode_komponen'=>$row['D'],'kode_sub_output'=>$row['C'],'kode_output'=>$row['B'],'kode_kegiatan'=>$row['A'],'bulan' => $this->input->post('bulan')))->row();
+						if($cek_ada==NULL){
+							$data_insert1 = array(
+								'id_belanja' => $id_belanja,
+								'kode_jenis_belanja' => $row['G'],
+								'kode_beban' => $row['F'],
+								'kode_sub_komponen' => $row['E'],
+								'kode_komponen' => $row['D'],
+								'kode_sub_output' => $row['C'],
+								'kode_output' => $row['B'],
+								'kode_kegiatan' => $row['A'],
+								'realisasi' => $row['N'],
+								'keterangan' => substr($row['Q'],52,10000),
+								'bulan' => $this->input->post('bulan')
+							);
+							$this->Main_model->insertData('tbl_belanja',$data_insert1);
+							// print_r($data_insert1);
+						}else{
+							$data_insert1 = array(
+								'realisasi' => $row['N'],
+								'keterangan' => substr($row['Q'],52,10000)
+							);
+							$this->Main_model->updateData('tbl_belanja',$data_insert1,array('id_belanja'=>$cek_ada->id_belanja));
+							// print_r($data_insert1);
+						}
 					}else{
 						echo'';
 					}
