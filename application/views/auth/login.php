@@ -49,7 +49,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link rel="shortcut icon" href="http://iainpekalongan.ac.id/images/favicon.ico" /> </head>
     <!-- END HEAD -->
 
-    <body class=" login">
+    <body class=" login" onload="getLocation()">
         <!-- BEGIN LOGO -->
         <div style='text-align:center'>
             <br><img src="<?=base_url('assets/pages/img/iain.png');?>" style="height: 100px;" alt="" />
