@@ -328,6 +328,26 @@ $bulan_lalu = 0;
                         }
                         echo $jum-$bulan_lalu;
                         ?>
+                        }, {
+                        "country": "April",
+                        "visits": <?php
+                        $data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.bulan'=>'2020-04'))->result();
+                        $jum = 0;
+                        foreach ($data_belanja as $key => $value) {
+                            $jum += $value->realisasi;
+                        }
+                        echo $jum-$bulan_lalu;
+                        ?>
+                        }, {
+                        "country": "Mei",
+                        "visits": <?php
+                        $data_belanja = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', array('a.bulan'=>'2020-05'))->result();
+                        $jum = 0;
+                        foreach ($data_belanja as $key => $value) {
+                            $jum += $value->realisasi;
+                        }
+                        echo $jum-$bulan_lalu;
+                        ?>
                         }
                         ];
 
