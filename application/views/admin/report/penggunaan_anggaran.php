@@ -67,7 +67,8 @@
 <div class="page-content-inner">
 	<div class="m-heading-1 border-yellow m-bordered" style="background-color:#FAD405;">
 		<h3>Catatan</h3>
-		<p> Data merupakan rekapan bulan <?= $this->Main_model->convert_bulan_tahun($this->Main_model->get_where_bulan()); ?></p>
+		<p>1. Data merupakan rekapan bulan <?= $this->Main_model->convert_bulan_tahun($this->Main_model->get_where_bulan()); ?></p>
+		<p>2. Sebelum upload data pastikan kolom di Excel sinkron dengan pengaturan yang ada di Sistem (<b><a target='_blank' href='<?= base_url() ?>admin_side/upload_setting'>Lihat Disini</a></b>)</p>
 	</div>
 	<div class="row">
 		<div class="col-md-12">
@@ -193,12 +194,12 @@
 										<select class="form-control" id='kode_beban' name="kode_beban_where">
 											<option value='All' <?php if($kode_beban_where=='All'){echo'selected';}else{echo'';} ?>>All</option>
 											<?php
-                                            $beb = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', '', '', '', 'a.kode_beban')->result();
-                                            foreach ($beb as $key => $value) {
-												if($value->kode_beban==$kode_beban_where){
-													echo"<option value='".$value->kode_beban."' selected>".$value->kode_beban."</option>";
+                                            $beba = $this->Main_model->getSelectedData('tbl_belanja a', 'a.*', '', '', '', '', 'a.kode_beban')->result();
+                                            foreach ($beba as $key => $b) {
+												if($b->kode_beban==$kode_beban_where){
+													echo"<option value='".$b->kode_beban."' selected>".$b->kode_beban."</option>";
 												}else{
-													echo"<option value='".$value->kode_beban."'>".$value->kode_beban."</option>";
+													echo"<option value='".$b->kode_beban."'>".$b->kode_beban."</option>";
 												}
                                             }
                                             ?>
@@ -227,7 +228,7 @@
 							</div>
 							<div class="col-md-4" style='text-align: right;'>
 								<a href="#" class="btn btn-info" data-toggle="modal" data-target="#fi">Impor Data <i class="fa fa-cloud-upload"></i></a>
-								<a href="<?=base_url()?>import_data_template/template_anggaran.xlsx" class="btn btn-warning">Unduh Template</a>
+								<!-- <a href="<?=base_url()?>import_data_template/template_anggaran.xlsx" class="btn btn-warning">Unduh Template</a> -->
 							</div>
 						</div>
 					</div>

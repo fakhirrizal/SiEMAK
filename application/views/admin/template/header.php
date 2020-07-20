@@ -199,6 +199,18 @@ if(($this->session->userdata('id'))==NULL){
 									</li>
 								</ul>
 							</li>
+							<li class="menu-dropdown classic-menu-dropdown <?php if($parent=='setting'){echo 'active';}else{echo '';} ?>">
+								<a href="javascript:;"><i class="icon-settings"></i> Pengaturan
+									<span class="arrow <?php if($parent=='setting'){echo 'open';}else{echo '';} ?>"></span>
+								</a>
+								<ul class="dropdown-menu pull-left">
+									<li class=" <?php if($child=='upload_setting'){echo 'active';}else{echo '';} ?>">
+										<a href="<?php echo site_url('admin_side/upload_setting'); ?>" class="nav-link nav-toggle ">
+											<i class="icon-pin"></i> Upload Setting
+										</a>
+									</li>
+								</ul>
+							</li>
 							<li class="menu-dropdown classic-menu-dropdown <?php if($parent=='log_activity'){echo 'active';}else{echo '';} ?>">
 								<a href="<?php echo site_url('admin_side/log_activity'); ?>"><i class="fa fa-rss"></i> Log Aktifitas
 								</a>

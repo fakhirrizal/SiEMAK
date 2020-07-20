@@ -140,6 +140,10 @@ $route['admin_side/penggunaan_anggaran'] = 'admin/Report/penggunaan_anggaran';
 $route['admin_side/detail_belanja/(:any)'] = 'admin/Report/detail_belanja/$1';
 $route['admin_side/hapus_data_belanja/(:any)'] = 'admin/Report/hapus_data_belanja/$1';
 
+$route['admin_side/upload_setting'] = 'admin/Settings/upload_setting';
+$route['admin_side/format_upload'] = 'admin/Settings/format_upload';
+$route['admin_side/update_format_upload'] = 'admin/Settings/update_format_upload';
+
 /* KPA */
 $route['kpa_side/launcher'] = 'kpa/App/launcher';
 $route['kpa_side/beranda'] = 'kpa/App/home';

@@ -142,31 +142,40 @@ class Report extends CI_Controller {
 			$id_belanja = '';
 			foreach($sheet as $row){
 				if($numrow > 1){
+					$kode_jenis_belanja = $this->Main_model->getSelectedData('upload_setting a', 'a.*', array('a.keterangan'=>'Kode Jenis Belanja'))->row();
+					$kode_beban = $this->Main_model->getSelectedData('upload_setting a', 'a.*', array('a.keterangan'=>'Kode Beban'))->row();
+					$kode_sub_komponen = $this->Main_model->getSelectedData('upload_setting a', 'a.*', array('a.keterangan'=>'Kode Sub Komponen'))->row();
+					$kode_komponen = $this->Main_model->getSelectedData('upload_setting a', 'a.*', array('a.keterangan'=>'Kode Komponen'))->row();
+					$kode_sub_output = $this->Main_model->getSelectedData('upload_setting a', 'a.*', array('a.keterangan'=>'Kode Sub Output'))->row();
+					$kode_output = $this->Main_model->getSelectedData('upload_setting a', 'a.*', array('a.keterangan'=>'Kode Output'))->row();
+					$kode_kegiatan = $this->Main_model->getSelectedData('upload_setting a', 'a.*', array('a.keterangan'=>'Kode Kegiatan'))->row();
+					$realisasi = $this->Main_model->getSelectedData('upload_setting a', 'a.*', array('a.keterangan'=>'Realisasi'))->row();
+					$keterangan = $this->Main_model->getSelectedData('upload_setting a', 'a.*', array('a.keterangan'=>'Keterangan'))->row();
 					$get_id = $this->Main_model->getLastID('tbl_belanja','id_belanja');
 					$id_belanja = $get_id['id_belanja']+1;
 					// $pecah_kegiatan = explode(' ',$row['B'],2);
-					if($row['AC']>0 AND $row['V']!=NULL){
-						$cek_ada = $this->Main_model->getSelectedData('tbl_belanja', '*', array('kode_jenis_belanja'=>$row['V'],'kode_beban'=>$row['R'],'kode_sub_komponen'=>$row['P'],'kode_komponen'=>$row['O'],'kode_sub_output'=>$row['N'],'kode_output'=>$row['M'],'kode_kegiatan'=>$row['J'],'bulan' => $this->input->post('bulan')))->row();
+					if($row[$realisasi->kolom]>0 AND $row[$kode_jenis_belanja->kolom]!=NULL){
+						$cek_ada = $this->Main_model->getSelectedData('tbl_belanja', '*', array('kode_jenis_belanja'=>$row[$kode_jenis_belanja->kolom],'kode_beban'=>$row[$kode_beban->kolom],'kode_sub_komponen'=>$row[$kode_sub_komponen->kolom],'kode_komponen'=>$row[$kode_komponen->kolom],'kode_sub_output'=>$row[$kode_sub_output->kolom],'kode_output'=>$row[$kode_output->kolom],'kode_kegiatan'=>$row[$kode_kegiatan->kolom],'bulan' => $this->input->post('bulan')))->row();
 						if($cek_ada==NULL){
 							$data_insert1 = array(
 								'id_belanja' => $id_belanja,
-								'kode_jenis_belanja' => $row['V'],
-								'kode_beban' => $row['R'],
-								'kode_sub_komponen' => $row['P'],
-								'kode_komponen' => $row['O'],
-								'kode_sub_output' => $row['N'],
-								'kode_output' => $row['M'],
-								'kode_kegiatan' => $row['J'],
-								'realisasi' => $row['AC'],
-								'keterangan' => substr($row['AI'],52,10000),
+								'kode_jenis_belanja' => $row[$kode_jenis_belanja->kolom],
+								'kode_beban' => $row[$kode_beban->kolom],
+								'kode_sub_komponen' => $row[$kode_sub_komponen->kolom],
+								'kode_komponen' => $row[$kode_komponen->kolom],
+								'kode_sub_output' => $row[$kode_sub_output->kolom],
+								'kode_output' => $row[$kode_output->kolom],
+								'kode_kegiatan' => $row[$kode_kegiatan->kolom],
+								'realisasi' => $row[$realisasi->kolom],
+								'keterangan' => substr($row[$keterangan->kolom],52,10000),
 								'bulan' => $this->input->post('bulan')
 							);
 							$this->Main_model->insertData('tbl_belanja',$data_insert1);
 							// print_r($data_insert1);
 						}else{
 							$data_insert1 = array(
-								'realisasi' => $row['K'],
-								'keterangan' => substr($row['Q'],52,10000)
+								'realisasi' => $row[$realisasi->kolom],
+								'keterangan' => substr($row[$keterangan->kolom],52,10000)
 							);
 							$this->Main_model->updateData('tbl_belanja',$data_insert1,array('id_belanja'=>$cek_ada->id_belanja));
 							// print_r($data_insert1);

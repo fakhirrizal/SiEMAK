@@ -62,7 +62,7 @@ class Auth extends CI_Controller {
 															<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 															<strong>Ups! </strong>Akun Anda tidak dikenali sistem.
 														</div>' );
-						echo "<script>window.location='".base_url('login')."'</script>";
+						echo "<script>window.location='".base_url()."'</script>";
 					}else{
 						foreach ($role as $key => $value2) {
 							if($value2->role_id!=NULL){
@@ -78,7 +78,7 @@ class Auth extends CI_Controller {
 															<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 															<strong>Ups! </strong>Akun Anda tidak dikenali sistem.
 														</div>' );
-								echo "<script>window.location='".base_url('login')."'</script>";
+								echo "<script>window.location='".base_url()."'</script>";
 							}
 						}
 					}
@@ -95,7 +95,7 @@ class Auth extends CI_Controller {
 													<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 													<strong>Ups! </strong>Password yg Anda masukkan tidak valid.
 												</div>' );
-					echo "<script>window.location='".base_url('login')."'</script>";
+					echo "<script>window.location='".base_url()."'</script>";
 				}
 			}
 		}
@@ -104,7 +104,7 @@ class Auth extends CI_Controller {
 											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 											<strong>Ups! </strong>Username/ Email yang Anda masukkan tidak terdaftar.
 										</div>' );
-			echo "<script>window.location='".base_url('login')."'</script>";
+			echo "<script>window.location='".base_url()."'</script>";
 		}
 	}
 	public function registration()

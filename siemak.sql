@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.4
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Waktu pembuatan: 06 Apr 2020 pada 22.43
--- Versi server: 10.3.22-MariaDB-cll-lve
--- Versi PHP: 7.3.6
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 20 Jul 2020 pada 15.08
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `aplikasi_siemak`
+-- Database: `backup_db`
 --
 
 -- --------------------------------------------------------
@@ -2165,6 +2165,33 @@ INSERT INTO `tbl_sub_output` (`id_sub_output`, `kode_sub_output`, `kode_output`,
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `upload_setting`
+--
+
+CREATE TABLE `upload_setting` (
+  `id` int(9) NOT NULL,
+  `keterangan` text NOT NULL,
+  `kolom` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `upload_setting`
+--
+
+INSERT INTO `upload_setting` (`id`, `keterangan`, `kolom`) VALUES
+(0, 'Realisasi', 'AC'),
+(1, 'Keterangan', 'AI'),
+(2, 'Kode Kegiatan', 'J'),
+(3, 'Kode Output', 'M'),
+(4, 'Kode Sub Output', 'N'),
+(5, 'Kode Komponen', 'O'),
+(6, 'Kode Sub Komponen', 'P'),
+(7, 'Kode Beban', 'R'),
+(8, 'Kode Jenis Belanja', 'V');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
@@ -2349,6 +2376,12 @@ ALTER TABLE `tbl_sub_output`
   ADD KEY `kode_sub_output` (`kode_sub_output`(768)),
   ADD KEY `kode_output` (`kode_output`(768)),
   ADD KEY `kode_kegiatan` (`kode_kegiatan`(768));
+
+--
+-- Indeks untuk tabel `upload_setting`
+--
+ALTER TABLE `upload_setting`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `user`
