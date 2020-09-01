@@ -293,6 +293,12 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel">Form Impor Data</h4>
 			</div>
+			<div class="m-heading-1 border-yellow m-bordered" style="background-color:#FAD405;">
+				<p>Catatan</p>
+				<p>1. Isian dengan tanda bintang (<font color='red'>*</font>) adalah wajib untuk di isi.</p>
+				<p>2. Ekstensi file yang diizinkan adalah <b>.xlsx</b>.</p>
+				<p>3. File size maksimal adalah <b>3MB</b>.</p>
+			</div>
 			<form role="form" action="<?php echo base_url()."admin/Report/import_serapan"; ?>" method='post' enctype="multipart/form-data">
 				<div class="modal-body">
 					<div class="form-body">
